@@ -42,7 +42,6 @@ LOCAL_SRC_FILES += $(call all-java-files-under, libs/StickyHeadersRecyclerView/s
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/src/main/res \
-    external/google/google_play_services/libproject/google-play-services_lib/res \
     frameworks/support/v7/appcompat/res \
     frameworks/support/v7/cardview/res \
     frameworks/support/v7/recyclerview/res \
@@ -80,7 +79,6 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     jar-mina-core \
     jar-slf4j-api \
     jar-slf4j-simple \
-    play \
     volley
 
 LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
@@ -88,17 +86,24 @@ LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
     aar-libsuperuser \
     aar-material-dialogs \
     aar-mp-android-chart \
+    aar-play-services-base \
+    aar-play-services-basement \
+    aar-play-services-plus \
     aar-systembartint
 
 include $(BUILD_PACKAGE)
 
 include $(CLEAR_VARS)
 
+PLAY_VERSION := 10.2.1
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     aar-fab:libs/com.github.clans.fab-1.6.1.aar \
     aar-libsuperuser:libs/libsuperuser-1.0.0.201608240809.aar \
     aar-material-dialogs:libs/com.afollestad.material-dialogs.core-0.9.2.3.aar \
     aar-mp-android-chart:libs/com.github.mikephil-3.0.1.aar \
+    aar-play-services-base:../../../external/google/play-services-base/$(PLAY_VERSION)/play-services-base-$(PLAY_VERSION).aar \
+    aar-play-services-basement:../../../external/google/play-services-basement/$(PLAY_VERSION)/play-services-basement-$(PLAY_VERSION).aar \
+    aar-play-services-plus:../../../external/google/play-services-plus/$(PLAY_VERSION)/play-services-plus-$(PLAY_VERSION).aar \
     aar-systembartint:libs/com.readystatesoftware.systembartint.systembartint-1.0.3.aar \
     jar-commons-compress:libs/org.apache.commons.commons-compress-1.10.jar \
     jar-ftplet-api:libs/org.apache.ftpserver.ftplet-api-1.1.0.jar \

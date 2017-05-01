@@ -82,6 +82,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     volley
 
 LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
+    aar-cloudrail-si-android \
     aar-fab \
     aar-libsuperuser \
     aar-material-dialogs \
@@ -101,16 +102,17 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     aar-libsuperuser:libs/libsuperuser-1.0.0.201608240809.aar \
     aar-material-dialogs:libs/com.afollestad.material-dialogs.core-0.9.2.3.aar \
     aar-mp-android-chart:libs/com.github.mikephil-3.0.1.aar \
+    aar-systembartint:libs/com.readystatesoftware.systembartint-1.0.3.aar \
+    aar-cloudrail-si-android:libs/com.cloudrail-2.16.5.aar \
     aar-play-services-base:../../../external/google/play-services-base/$(PLAY_VERSION)/play-services-base-$(PLAY_VERSION).aar \
     aar-play-services-basement:../../../external/google/play-services-basement/$(PLAY_VERSION)/play-services-basement-$(PLAY_VERSION).aar \
     aar-play-services-plus:../../../external/google/play-services-plus/$(PLAY_VERSION)/play-services-plus-$(PLAY_VERSION).aar \
-    aar-systembartint:libs/com.readystatesoftware.systembartint.systembartint-1.0.3.aar \
     jar-commons-compress:libs/org.apache.commons.commons-compress-1.10.jar \
     jar-ftplet-api:libs/org.apache.ftpserver.ftplet-api-1.1.0.jar \
     jar-ftpserver-core:libs/org.apache.ftpserver.ftpserver-core-1.1.0.jar \
     jar-jcifs:libs/jcifs-1.3.18.jar \
     jar-jsch:libs/jsch-0.1.53.jar \
-    jar-junrar:libs/com.github.junrar.junrar-0.7.jar \
+    jar-junrar:libs/com.github.junrar-0.7.jar \
     jar-mina-core:libs/mina-core-2.0.13.jar \
     jar-slf4j-api:libs/org.slf4j.slf4j-api-1.7.21.jar \
     jar-slf4j-simple:libs/org.slf4j.slf4j-simple-1.7.21.jar

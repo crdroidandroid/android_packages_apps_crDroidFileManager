@@ -103,7 +103,7 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     aar-material-dialogs:libs/com.afollestad.material-dialogs.core-0.9.2.3.aar \
     aar-mp-android-chart:libs/com.github.mikephil-3.0.1.aar \
     aar-systembartint:libs/com.readystatesoftware.systembartint-1.0.3.aar \
-    aar-cloudrail-si-android:libs/com.cloudrail-2.16.5.aar \
+    aar-cloudrail-si-android:libs/com.cloudrail-2.17.0.aar \
     aar-play-services-base:../../../external/google/play-services-base/$(PLAY_VERSION)/play-services-base-$(PLAY_VERSION).aar \
     aar-play-services-basement:../../../external/google/play-services-basement/$(PLAY_VERSION)/play-services-basement-$(PLAY_VERSION).aar \
     aar-play-services-plus:../../../external/google/play-services-plus/$(PLAY_VERSION)/play-services-plus-$(PLAY_VERSION).aar \

@@ -11,7 +11,7 @@ import android.support.v4.content.AsyncTaskLoader;
 import android.text.format.Formatter;
 
 import com.amaze.filemanager.R;
-import com.amaze.filemanager.ui.LayoutElements;
+import com.amaze.filemanager.ui.LayoutElement;
 import com.amaze.filemanager.utils.FileListSorter;
 import com.amaze.filemanager.utils.InterestingConfigChange;
 import com.amaze.filemanager.utils.broadcast_receiver.PackageReceiver;
@@ -27,12 +27,12 @@ import java.util.List;
  * Class loads all the packages installed
  */
 
-public class AppListLoader extends AsyncTaskLoader<List<LayoutElements>> {
+public class AppListLoader extends AsyncTaskLoader<List<LayoutElement>> {
 
     private PackageManager packageManager;
     private PackageReceiver packageReceiver;
     private Context context;
-    private List<LayoutElements> mApps;
+    private List<LayoutElement> mApps;
     private int sortBy, asc;
 
     public AppListLoader(Context context, int sortBy, int asc) {
@@ -50,7 +50,7 @@ public class AppListLoader extends AsyncTaskLoader<List<LayoutElements>> {
     }
 
     @Override
-    public List<LayoutElements> loadInBackground() {
+    public List<LayoutElement> loadInBackground() {
         List<ApplicationInfo> apps = packageManager.getInstalledApplications(
                 PackageManager.MATCH_UNINSTALLED_PACKAGES |
                         PackageManager.MATCH_DISABLED_UNTIL_USED_COMPONENTS);
@@ -81,7 +81,7 @@ public class AppListLoader extends AsyncTaskLoader<List<LayoutElements>> {
                 info = null;
             }
 
-            mApps.add(new LayoutElements(new BitmapDrawable(context.getResources(),
+            mApps.add(new LayoutElement(new BitmapDrawable(context.getResources(),
                     BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_doc_apk_grid)),
                     label == null ? object.packageName : label, object.sourceDir,
                     object.packageName, object.flags + "_" + (info!=null ? info.versionName:""),
@@ -94,7 +94,7 @@ public class AppListLoader extends AsyncTaskLoader<List<LayoutElements>> {
     }
 
     @Override
-    public void deliverResult(List<LayoutElements> data) {
+    public void deliverResult(List<LayoutElement> data) {
         if (isReset()) {
 
             if (data != null)
@@ -102,7 +102,7 @@ public class AppListLoader extends AsyncTaskLoader<List<LayoutElements>> {
         }
 
         // preserving old data for it to be closed
-        List<LayoutElements> oldData = mApps;
+        List<LayoutElement> oldData = mApps;
         mApps = data;
         if (isStarted()) {
             // loader has been started, if we have data, return immediately
@@ -140,7 +140,7 @@ public class AppListLoader extends AsyncTaskLoader<List<LayoutElements>> {
     }
 
     @Override
-    public void onCanceled(List<LayoutElements> data) {
+    public void onCanceled(List<LayoutElement> data) {
         super.onCanceled(data);
 
         onReleaseResources(data);//TODO onReleaseResources() is empty
@@ -171,10 +171,10 @@ public class AppListLoader extends AsyncTaskLoader<List<LayoutElements>> {
     /**
      * We would want to release resources here
      * List is nothing we would want to close
-     * @param layoutElementsList
+     * @param layoutElementList
      */
     //TODO do something
-    private void onReleaseResources(List<LayoutElements> layoutElementsList) {
+    private void onReleaseResources(List<LayoutElement> layoutElementList) {
 
     }
 }

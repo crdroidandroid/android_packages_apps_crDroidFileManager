@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze 檔案管理器</string>
+  <string name="app_name">檔案管理器</string>
   <string name="drawer_open">打開導航抽屜</string>
   <string name="drawer_close">關閉導航抽屜</string>
   <string name="books">書籤</string>
@@ -82,7 +82,7 @@
   <string name="entername">請輸入名稱</string>
   <string name="extracting">正在解壓</string>
   <string name="stopping">正在停止</string>
-  <string name="guide1">歡迎使用 Amaze 檔案管理器</string>
+  <string name="guide1">歡迎使用 檔案管理器</string>
   <string name="guide2">觸摸藍條以顯示或隱藏地址欄</string>
   <string name="guide3">長按條目以使用更多選項</string>
   <string name="guide4">例如複製、移動、查看屬性等等</string>
@@ -299,7 +299,7 @@
   <string name="image">圖像</string>
   <string name="contributors">捐贈人員</string>
   <string name="savepaths">記住路徑</string>
-  <string name="savepathsummary">當您開啟 Amaze 檔管理器時，每個標籤將會顯示您上次訪問的目錄</string>
+  <string name="savepathsummary">當您開啟 檔管理器時，每個標籤將會顯示您上次訪問的目錄</string>
   <string name="select_intent">選擇</string>
   <string name="md5copied">MD5 碼已複製到剪切板</string>
   <string name="generating">正在生成…</string>
@@ -400,7 +400,7 @@
   <string name="domain">網域名稱</string>
   <string name="invalid">不正確 %s</string>
   <string name="ftp_notif_starting">FTP 伺服器啟動中</string>
-  <string name="ftp_notif_title">Amaze FTP 伺服器執行中</string>
+  <string name="ftp_notif_title">FTP 伺服器執行中</string>
   <string name="ftp_notif_text">在 %s</string>
   <string name="ftp_notif_stop_server">停止</string>
   <string name="ftp_port_edit_menu_title">選擇 FTP 埠號</string>
@@ -413,7 +413,7 @@
   <string name="report_bugs_title">回報程式錯誤</string>
   <string name="report_bugs_summary">回報問題或告訴我們您想要的新功能</string>
   <string name="translate_title">翻譯</string>
-  <string name="translate_summary">用您的語言翻譯 Amaze</string>
+  <string name="translate_summary">用您的語言翻譯</string>
   <string name="g_plus_community_summary">參與 beta 測試和討論
          與發展有關</string>
   <string name="easter_egg_title">工作室模式</string>

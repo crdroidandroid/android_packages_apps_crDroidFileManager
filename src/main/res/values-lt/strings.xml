@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze bylų tvarkyklė</string>
+  <string name="app_name">bylų tvarkyklė</string>
   <string name="drawer_open">Atidaryti navigacijos stalčių</string>
   <string name="drawer_close">Uždaryti navigacijos stalčių</string>
   <string name="books">Žymos</string>
@@ -79,7 +79,7 @@
   <string name="entername">Įvesti pavadinimą</string>
   <string name="extracting">Išskleidžiama</string>
   <string name="stopping">Stabdoma</string>
-  <string name="guide1">Sveiki tai Amaze bylų tvarkyklė</string>
+  <string name="guide1">Sveiki tai bylų tvarkyklė</string>
   <string name="guide2">Palieskite mėlyną juostelę, kad rodyti kelio laukelį</string>
   <string name="guide3">Paspauskite ir laikykite bet kurią bylą dėl daugiau pasirinkimų</string>
   <string name="guide4">Mėgti kopijuoti,perkelti,ypatybės ir t.t.</string>

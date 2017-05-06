@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Открыть меню навигации</string>
   <string name="drawer_close">Закрыть меню навигации</string>
   <string name="books">Закладки</string>
@@ -82,7 +82,7 @@
   <string name="entername">Введите имя</string>
   <string name="extracting">Извлечение...</string>
   <string name="stopping">Остановка</string>
-  <string name="guide1">Добро пожаловать в Amaze File Manager!</string>
+  <string name="guide1">Добро пожаловать в File Manager!</string>
   <string name="guide2">Нажмите на синюю полоску, чтобы показать или скрыть панель</string>
   <string name="guide3">Нажмите и удерживайте на любом файле, чтобы открыть больше действий...</string>
   <string name="guide4">Копирование, перемещение, свойства и т.д.</string>
@@ -231,7 +231,7 @@
   <string name="miscellaneous">Прочее</string>
   <string name="rootPrefSummary">Показывать разрешения для файлов и папок</string>
   <string name="rootPref">Показать разрешения</string>
-  <string name="aboutFileManager">Об Amaze File Manager</string>
+  <string name="aboutFileManager">Об File Manager</string>
   <string name="version">Версия</string>
   <string name="rate">Оцените приложение</string>
   <string name="license">Лицензия Open Source</string>
@@ -402,7 +402,7 @@
   <string name="domain">Домен</string>
   <string name="invalid">Неверный %s</string>
   <string name="ftp_notif_starting">FTP сервер включается</string>
-  <string name="ftp_notif_title">Amaze FTP сервер работает</string>
+  <string name="ftp_notif_title">FTP сервер работает</string>
   <string name="ftp_notif_text">на %s</string>
   <string name="ftp_notif_stop_server">СТОП</string>
   <string name="ftp_port_edit_menu_title">Выберите FTP порт</string>
@@ -415,7 +415,7 @@
   <string name="report_bugs_title">Сообщить о баге</string>
   <string name="report_bugs_summary">Сообщить о баге или запросить новый функционал</string>
   <string name="translate_title">Перевести</string>
-  <string name="translate_summary">Перевести Amaze на ваш язык</string>
+  <string name="translate_summary">Перевести на ваш язык</string>
   <string name="g_plus_community_summary">Принять участие в бета тестировании и обсуждениях,
         связанных с разработкой</string>
   <string name="easter_egg_title">Студийный режим</string>

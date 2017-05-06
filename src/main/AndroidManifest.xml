@@ -102,7 +102,7 @@
             android:name=".activities.TextReader"
             android:theme="@style/appCompatLight">
             <intent-filter
-                android:label="Amaze Text Editor">
+                android:label="Text Editor">
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/*" />
@@ -118,7 +118,7 @@
             android:theme="@style/appCompatLight"
             android:screenOrientation="locked">
             <intent-filter
-                android:label="Amaze Database Reader">
+                android:label="Database Reader">
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="db/*" />

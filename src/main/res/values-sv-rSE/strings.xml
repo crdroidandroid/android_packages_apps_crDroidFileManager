@@ -22,7 +22,7 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <string name="app_name">Amaze Filhanterare</string>
+    <string name="app_name">Filhanterare</string>
     <string name="drawer_open">Öppna navigationsfält</string>
     <string name="drawer_close">Stäng navigationsfält</string>
     <string name="books">Bokmärken</string>
@@ -82,7 +82,7 @@
     <string name="entername">Ange Namn</string>
     <string name="extracting">Packar upp</string>
     <string name="stopping">Avbryter</string>
-    <string name="guide1">Välkommen till Amaze Filhanterare</string>
+    <string name="guide1">Välkommen till Filhanterare</string>
     <string name="guide2">Peka på den blå linjen för att visa eller dölja Sökvägsfältet</string>
     <string name="guide3">Peka och håll på någon fil för mer valmöjligheter</string>
     <string name="guide4">Såsom kopiera,flytta,egenskaper etc</string>
@@ -233,7 +233,7 @@
     <string name="miscellaneous">Blandat</string>
     <string name="rootPrefSummary">Visa Behörigheter för Filer och Kataloger</string>
     <string name="rootPref">Visa Behörigheter</string>
-    <string name="aboutFileManager">Om Amaze Filhanterare</string>
+    <string name="aboutFileManager">Om Filhanterare</string>
     <string name="version">Version</string>
     <string name="rate">Betygsätt appen</string>
     <string name="license">Öppna källicenser</string>
@@ -407,7 +407,7 @@ kommer annars att söka efter förekomster.</string>
     <string name="domain">Domän</string>
     <string name="invalid">Ogiltig %s</string>
     <string name="ftp_notif_starting">FTP-server startar</string>
-    <string name="ftp_notif_title">Amaze FTP-server kör</string>
+    <string name="ftp_notif_title">FTP-server kör</string>
     <string name="ftp_notif_text">vid %s</string>
     <string name="ftp_notif_stop_server">STANNA</string>
     <string name="ftp_port_edit_menu_title">Välj FTP-port</string>
@@ -420,7 +420,7 @@ kommer annars att söka efter förekomster.</string>
     <string name="report_bugs_title">Rapportera Buggar</string>
     <string name="report_bugs_summary">Rapportera buggar eller föreslå nya funktioner</string>
     <string name="translate_title">Översätt</string>
-    <string name="translate_summary">Översätt Amaze till ditt språk</string>
+    <string name="translate_summary">Översätt till ditt språk</string>
     <string name="g_plus_community_summary">Var delaktig i betatestning och diskussioner
 kopplade till utveckling</string>
     <string name="easter_egg_title">Studioläge</string>

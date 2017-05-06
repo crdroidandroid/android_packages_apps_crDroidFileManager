@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Otevřít navigační lištu</string>
   <string name="drawer_close">Zavřít navigační lištu</string>
   <string name="books">Záložky</string>
@@ -400,7 +400,7 @@
   <string name="domain">Doména</string>
   <string name="invalid">Neplatné %s</string>
   <string name="ftp_notif_starting">Spouštění serveru FTP</string>
-  <string name="ftp_notif_title">FTP Server Amaze je spuštěn</string>
+  <string name="ftp_notif_title">FTP Server je spuštěn</string>
   <string name="ftp_notif_text">na %s</string>
   <string name="ftp_notif_stop_server">STOP</string>
   <string name="ftp_port_edit_menu_title">FTP Port</string>
@@ -413,7 +413,7 @@
   <string name="report_bugs_title">Ohlásit chybu</string>
   <string name="report_bugs_summary">Nahlásit chybu nebo požádat o nové funkce</string>
   <string name="translate_title">Přeložit</string>
-  <string name="translate_summary">Přeložte Amaze do vašeho jazyka</string>
+  <string name="translate_summary">Přeložte do vašeho jazyka</string>
   <string name="g_plus_community_summary">Zúčastnit se beta testování a diskuse související s vývojem</string>
   <string name="easter_egg_title">Studiový mód</string>
   <string name="paypal_copy_message">Paypal ID bylo zkopírováno do schránky</string>

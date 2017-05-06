@@ -22,7 +22,7 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <string name="app_name">Amaze File Manager</string>
+    <string name="app_name">File Manager</string>
     <string name="drawer_open">Buka laci navigasi</string>
     <string name="drawer_close">Tutup laci navigasi</string>
     <string name="books">Markah</string>
@@ -82,7 +82,7 @@
     <string name="entername">Masukkan Nama</string>
     <string name="extracting">Mengekstrak</string>
     <string name="stopping">Menghentikan</string>
-    <string name="guide1">Selamat datang di Amaze File Manager</string>
+    <string name="guide1">Selamat datang di File Manager</string>
     <string name="guide2">Sentuh strip biru untuk menampilkan atau menyembunyikan BilahJalur</string>
     <string name="guide3">Sentuh dan tahan berkas apapun untuk menampilkan opsi tambahan</string>
     <string name="guide4">Seperti salin,pindah,properti dll</string>
@@ -233,7 +233,7 @@
     <string name="miscellaneous">Macam-macam</string>
     <string name="rootPrefSummary">Tampilkan Perizinan dari Berkas dan Folder</string>
     <string name="rootPref">Tampilkan Perizinan</string>
-    <string name="aboutFileManager">Tentang Amaze File Manager</string>
+    <string name="aboutFileManager">Tentang File Manager</string>
     <string name="version">Versi</string>
     <string name="rate">Beri nilai apl</string>
     <string name="license">Lisensi Sumber Terbuka</string>
@@ -407,7 +407,7 @@ jika tidak, akan mencari yang lain</string>
     <string name="domain">Domain</string>
     <string name="invalid">%s tidak valid</string>
     <string name="ftp_notif_starting">Server FTP sedang berjalan</string>
-    <string name="ftp_notif_title">Server FTP Amaze sedang berjalan</string>
+    <string name="ftp_notif_title">Server FTP sedang berjalan</string>
     <string name="ftp_notif_text">pada %s</string>
     <string name="ftp_notif_stop_server">BERHENTI</string>
     <string name="ftp_port_edit_menu_title">Pilih Port FTP</string>
@@ -420,7 +420,7 @@ jika tidak, akan mencari yang lain</string>
     <string name="report_bugs_title">Laporkan Bug</string>
     <string name="report_bugs_summary">Laporkan bug atau minta fitur baru</string>
     <string name="translate_title">Terjemahkan</string>
-    <string name="translate_summary">Terjemahkan Amaze ke bahasa Anda</string>
+    <string name="translate_summary">Terjemahkan ke bahasa Anda</string>
     <string name="g_plus_community_summary">Ambil bagian dalam uji coba versi beta dan diskusi
 terkait dengan pengembangan</string>
     <string name="easter_egg_title">Mode Studio</string>

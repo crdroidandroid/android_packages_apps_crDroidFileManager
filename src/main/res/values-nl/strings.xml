@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze-bestandsbeheerder</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Navigatielade openen</string>
   <string name="drawer_close">Navigatielade sluiten</string>
   <string name="books">Bladwijzers</string>
@@ -82,7 +82,7 @@
   <string name="entername">Naam invoeren</string>
   <string name="extracting">Uitpakken</string>
   <string name="stopping">Stoppen</string>
-  <string name="guide1">Welkom bij Amaze-bestandsbeheerder</string>
+  <string name="guide1">Welkom bij File Manager</string>
   <string name="guide2">Druk op de blauwe strip om de padbalk weer te geven of te verbergen</string>
   <string name="guide3">Druk en houd een bestand ingedrukt voor meer opties</string>
   <string name="guide4">Zoals kopiëren, verplaatsen, eigenschappen, enz.</string>
@@ -231,7 +231,7 @@
   <string name="miscellaneous">Overig</string>
   <string name="rootPrefSummary">Permissies van bestanden en mappen weergeven</string>
   <string name="rootPref">Permissies weergeven</string>
-  <string name="aboutFileManager">Over Amaze-bestandsbeheerder</string>
+  <string name="aboutFileManager">Over File Manager</string>
   <string name="version">Versie</string>
   <string name="rate">Beoordeel de app</string>
   <string name="license">Opensourcelicenties</string>
@@ -401,7 +401,7 @@ Anders wordt er naar een voorval gezocht.</string>
   <string name="domain">Domein</string>
   <string name="invalid">Niet geldig %s</string>
   <string name="ftp_notif_starting">FTP server wordt gestart</string>
-  <string name="ftp_notif_title">Amaze FTP Server actief</string>
+  <string name="ftp_notif_title">FTP Server actief</string>
   <string name="ftp_notif_text">op %s</string>
   <string name="ftp_notif_stop_server">STOP</string>
   <string name="ftp_port_edit_menu_title">Kies FTP poort</string>
@@ -414,7 +414,7 @@ Anders wordt er naar een voorval gezocht.</string>
   <string name="report_bugs_title">Bugs melden</string>
   <string name="report_bugs_summary">Meld een bug of verzoek nieuwe functies</string>
   <string name="translate_title">Vertalen</string>
-  <string name="translate_summary">Amaze vertalen in uw eigen taal</string>
+  <string name="translate_summary">File Manager vertalen in uw eigen taal</string>
   <string name="g_plus_community_summary">Neem deel aan beta tests en discussies
 *.* Verwant aan ontwikkeling</string>
   <string name="easter_egg_title">Studiomodus</string>

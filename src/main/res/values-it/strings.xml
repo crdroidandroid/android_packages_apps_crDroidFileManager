@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Apri pannello di navigazione</string>
   <string name="drawer_close">Chiudi pannello di navigazione</string>
   <string name="books">Segnalibri</string>
@@ -82,7 +82,7 @@
   <string name="entername">Inserisci nome</string>
   <string name="extracting">Estrazione</string>
   <string name="stopping">Interruzione</string>
-  <string name="guide1">Benvenuto in Amaze File Manager</string>
+  <string name="guide1">Benvenuto in File Manager</string>
   <string name="guide2">
 Tocca la striscia blu per mostrare o nascondere la barra del percorso
 </string>
@@ -241,7 +241,7 @@ I cambiamenti saranno effettivi dopo il riavvio dell\'app
   <string name="miscellaneous">Varie</string>
   <string name="rootPrefSummary">Mostra permessi di file e cartelle</string>
   <string name="rootPref">Mostra permessi</string>
-  <string name="aboutFileManager">Informazioni su Amaze File Manager</string>
+  <string name="aboutFileManager">Informazioni su File Manager</string>
   <string name="version">Versione</string>
   <string name="rate">Vota l\'app</string>
   <string name="license">Licenze open source</string>
@@ -413,7 +413,7 @@ altrimenti verrà controllata solo l\'occorrenza.</string>
   <string name="domain">Dominio</string>
   <string name="invalid">%s non valido</string>
   <string name="ftp_notif_starting">Server FTP in fase di avvio</string>
-  <string name="ftp_notif_title">Server FTP Amaze in esecuzione</string>
+  <string name="ftp_notif_title">Server FTP in esecuzione</string>
   <string name="ftp_notif_text">a %s</string>
   <string name="ftp_notif_stop_server">FERMA</string>
   <string name="ftp_port_edit_menu_title">Scegli la porta FTP</string>
@@ -426,7 +426,7 @@ altrimenti verrà controllata solo l\'occorrenza.</string>
   <string name="report_bugs_title">Segnala bug</string>
   <string name="report_bugs_summary">Segnala bug o richiedi nuove funzionalità</string>
   <string name="translate_title">Traduci</string>
-  <string name="translate_summary">Traduci Amaze nella tua lingua</string>
+  <string name="translate_summary">Traduci nella tua lingua</string>
   <string name="g_plus_community_summary">Prendi parte al beta testing e alle discussioni
 relative allo sviluppo</string>
   <string name="easter_egg_title">Modalità studio</string>

@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Амејз менаџер фајлова</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Отвори фиоку навигације</string>
   <string name="drawer_close">Затвори фиоку навигације</string>
   <string name="books">Обележивачи</string>

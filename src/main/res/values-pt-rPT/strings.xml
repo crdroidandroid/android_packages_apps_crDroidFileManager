@@ -78,7 +78,7 @@
   <string name="entername">Digite o nome</string>
   <string name="extracting">A extrair</string>
   <string name="stopping">A parar</string>
-  <string name="guide1">Bem-vindo ao Amaze File Manager</string>
+  <string name="guide1">Bem-vindo ao File Manager</string>
   <string name="guide2">Toque na faixa azul para mostrar/ocultar a barra de caminho</string>
   <string name="guide3">Toque longo no ficheiro para mais opções</string>
   <string name="guide4">Por exemplo: copiar, mover, propriedades...</string>
@@ -222,7 +222,7 @@
   <string name="miscellaneous">Outras</string>
   <string name="rootPrefSummary">Mostrar permissões das pastas e dos ficheiros</string>
   <string name="rootPref">Mostrar permissões</string>
-  <string name="aboutFileManager">Acerca do Amaze File Manager</string>
+  <string name="aboutFileManager">Acerca do File Manager</string>
   <string name="version">Versão</string>
   <string name="rate">Avaliar</string>
   <string name="license">Licenças Open Source</string>
@@ -396,7 +396,7 @@ Se inativa, será procurada qualquer correspondência.</string>
   <string name="report_bugs_title">Reporte de erros</string>
   <string name="report_bugs_summary">Reporte de erros e novas funcionalidades</string>
   <string name="translate_title">Tradução</string>
-  <string name="translate_summary">Traduza o Amaze para o seu idioma</string>
+  <string name="translate_summary">Traduza o File Manager para o seu idioma</string>
   <string name="g_plus_community_summary">Participar no programa de versões Beta e
 debater ideias com os programadores</string>
   <string name="easter_egg_title">Modo estúdio</string>

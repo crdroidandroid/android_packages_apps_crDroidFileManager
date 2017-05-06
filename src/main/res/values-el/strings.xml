@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Αμέιζ</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Άνοιγμα μενού πλοήγησης</string>
   <string name="drawer_close">Κλείσιμο μενού πλοήγησης</string>
   <string name="books">Σελιδοδείκτες</string>
@@ -82,7 +82,7 @@
   <string name="entername">Εισάγετε όνομα</string>
   <string name="extracting">Εξαγωγή</string>
   <string name="stopping">Παύση</string>
-  <string name="guide1">Καλώς ήρθατε στον Amaze File Manager</string>
+  <string name="guide1">Καλώς ήρθατε στον File Manager</string>
   <string name="guide2">Αγγίξτε την μπλε ταινία για εμφάνιση ή απόκρυψη της μπάρας διαδρομής</string>
   <string name="guide3">Αγγίξτε παρατεταμένα ένα αρχείο για περισσότερες επιλογές</string>
   <string name="guide4">Όπως αντιγραφή, μετακίνηση, ιδιότητες κλπ</string>
@@ -231,7 +231,7 @@
   <string name="miscellaneous">Διάφορα</string>
   <string name="rootPrefSummary">Εμφάνιση αδειών αρχείων και φακέλων</string>
   <string name="rootPref">Εμφάνιση αδειών</string>
-  <string name="aboutFileManager">Περί του Amaze File Manager</string>
+  <string name="aboutFileManager">Περί του File Manager</string>
   <string name="version">Έκδοση</string>
   <string name="rate">Βαθμολογήστε την εφαρμογή</string>
   <string name="license">Άδειες Ανοικτού Κώδικα</string>

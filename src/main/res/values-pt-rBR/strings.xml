@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Abrir menu de navegação</string>
   <string name="drawer_close">Fechar menu de navegação</string>
   <string name="books">Favoritos</string>
@@ -82,7 +82,7 @@
   <string name="entername">Insira o nome</string>
   <string name="extracting">Extraindo</string>
   <string name="stopping">Parando</string>
-  <string name="guide1">Bem-vindo ao Gerenciador de Arquivos Amaze</string>
+  <string name="guide1">Bem-vindo ao Gerenciador de Arquivos File Manager</string>
   <string name="guide2">Toque na faixa azul para mostrar/ocultar a barra de caminho</string>
   <string name="guide3">Toque longo no arquivo para mais opções</string>
   <string name="guide4">Por exemplo: copiar, mover, propriedades, etc.</string>
@@ -231,7 +231,7 @@
   <string name="miscellaneous">Diversos</string>
   <string name="rootPrefSummary">Mostra as permissões dos arquivos e pastas</string>
   <string name="rootPref">Mostrar permissões</string>
-  <string name="aboutFileManager">Sobre o Gerenciador de Arquivos Amaze</string>
+  <string name="aboutFileManager">Sobre o Gerenciador de Arquivos File Manager</string>
   <string name="version">Versão</string>
   <string name="rate">Avalie o aplicativo</string>
   <string name="license">Licenças Open Source</string>
@@ -400,7 +400,7 @@
   <string name="domain">Domínio</string>
   <string name="invalid">Inválido %s</string>
   <string name="ftp_notif_starting">O servidor FTP está iniciando</string>
-  <string name="ftp_notif_title">Servidor FTP Amaze em execução</string>
+  <string name="ftp_notif_title">Servidor FTP File Manager em execução</string>
   <string name="ftp_notif_text">em %s</string>
   <string name="ftp_notif_stop_server">PARAR</string>
   <string name="ftp_port_edit_menu_title">Escolha a porta FTP</string>
@@ -413,7 +413,7 @@
   <string name="report_bugs_title">Relate erros</string>
   <string name="report_bugs_summary">Comunique erros encontrados ou solicite novas funcionalidades</string>
   <string name="translate_title">Traduza</string>
-  <string name="translate_summary">Traduza o Amaze para seu idioma</string>
+  <string name="translate_summary">Traduza o File Manager para seu idioma</string>
   <string name="g_plus_community_summary">Participe dos testes da versão beta e de discussões relacionadas ao desenvolvimento</string>
   <string name="easter_egg_title">Modo Studio</string>
   <string name="paypal_copy_message">ID do Paypal copiado para a área de transferência</string>

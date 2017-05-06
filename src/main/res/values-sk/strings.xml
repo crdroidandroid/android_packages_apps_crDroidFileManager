@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Otvoriť navigačný panel</string>
   <string name="drawer_close">Zavrieť navigačný panel</string>
   <string name="books">Záložky</string>
@@ -82,7 +82,7 @@
   <string name="entername">Zadajte názov</string>
   <string name="extracting">Rozbaľovanie</string>
   <string name="stopping">Zastavovanie...</string>
-  <string name="guide1">Vitajte v správcovu súborov Amaze</string>
+  <string name="guide1">Vitajte v správcovu súborov</string>
   <string name="guide2">Kliknutím na modrú lištu zobrazíte alebo skryjete panel</string>
   <string name="guide3">Dlhým podržaním prstu na ľubovoľnom súbore otvoríte ďalšie akcie</string>
   <string name="guide4">Ako kopírovanie, presúvanie, vlastnosti, atď.</string>
@@ -231,7 +231,7 @@
   <string name="miscellaneous">Rôzne</string>
   <string name="rootPrefSummary">Zobraziť povolenia na súbory a priečinky</string>
   <string name="rootPref">Zobraziť povolenia</string>
-  <string name="aboutFileManager">O správcovi súborov Amaze</string>
+  <string name="aboutFileManager">O správcovi súborov</string>
   <string name="version">Verzia</string>
   <string name="rate">Ohodnotiť aplikáciu</string>
   <string name="license">Open Source licencie</string>
@@ -400,7 +400,7 @@
   <string name="domain">Doména</string>
   <string name="invalid">Neplatné %s</string>
   <string name="ftp_notif_starting">FTP Server sa spúšťa</string>
-  <string name="ftp_notif_title">Amaze FTP Server beží</string>
+  <string name="ftp_notif_title">FTP Server beží</string>
   <string name="ftp_notif_text">na %s</string>
   <string name="ftp_notif_stop_server">STOP</string>
   <string name="ftp_port_edit_menu_title">FTP port</string>
@@ -413,7 +413,7 @@
   <string name="report_bugs_title">Nahlásiť chyby</string>
   <string name="report_bugs_summary">Nahlásiť chyby alebo požiadať o novú funkciu</string>
   <string name="translate_title">Preložiť</string>
-  <string name="translate_summary">Preložiť Amaze do vašho jazyka</string>
+  <string name="translate_summary">Preložiť do vašho jazyka</string>
   <string name="g_plus_community_summary">Zúčastniť sa beta testovania a diskusií súvisiacich s rozvojom</string>
   <string name="easter_egg_title">Štúdiový režim</string>
   <string name="paypal_copy_message">Paypal id bol skopírovaný do schránky</string>

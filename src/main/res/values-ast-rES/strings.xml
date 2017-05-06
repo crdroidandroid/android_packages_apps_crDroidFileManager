@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Xestor de ficheros Amaze</string>
+  <string name="app_name">Xestor de ficheros</string>
   <string name="drawer_open">Abrir caxón de navegación</string>
   <string name="drawer_close">Zarrar caxón de navegación</string>
   <string name="books">Marcadores</string>
@@ -80,7 +80,7 @@
   <string name="entername">Introduz el nome</string>
   <string name="extracting">Estrayendo</string>
   <string name="stopping">Parando</string>
-  <string name="guide1">Bienllegáu al xestor de ficheros Amaze</string>
+  <string name="guide1">Bienllegáu al xestor de ficheros</string>
   <string name="guide2">Toca la tira azul p\'amosar/anubrir la barra de caminos</string>
   <string name="guide3">Toca y ten primío cualesquier ficheru pa más opciones</string>
   <string name="guide4">Como copiar, mover, propiedaes... etc</string>
@@ -228,7 +228,7 @@
   <string name="miscellaneous">Miscelaina</string>
   <string name="rootPrefSummary">Amuesa los permisos de ficheros y carpetes</string>
   <string name="rootPref">Amosar permisos</string>
-  <string name="aboutFileManager">Tocante al xestor de ficheros Amaze</string>
+  <string name="aboutFileManager">Tocante al xestor de ficheros</string>
   <string name="version">Versión</string>
   <string name="rate">Valora l\'aplicación</string>
   <string name="license">Llicencies de códigu abiertu</string>
@@ -392,7 +392,7 @@ inestable\'l preséu.\\n¿Siguir?</string>
   <string name="domain">Dominiu</string>
   <string name="invalid">%s non válidu</string>
   <string name="ftp_notif_starting">Aniciándose\'l sirvidor FTP</string>
-  <string name="ftp_notif_title">Sirvidor Amaze FTP n\'execución</string>
+  <string name="ftp_notif_title">Sirvidor FTP n\'execución</string>
   <string name="ftp_notif_text">en %s</string>
   <string name="ftp_notif_stop_server">PARAR</string>
   <string name="primary_two_title">Color primariu (llingüeta drecha)</string>
@@ -401,7 +401,7 @@ inestable\'l preséu.\\n¿Siguir?</string>
   <string name="report_bugs_title">Informar fallos</string>
   <string name="report_bugs_summary">Informa fallos o pidi carauterístiques nueves</string>
   <string name="translate_title">Tornar</string>
-  <string name="translate_summary">Torna Amaze a la to llingua</string>
+  <string name="translate_summary">Torna a la to llingua</string>
   <string name="g_plus_community_summary">Involúcrate na beta y discusiones venceyaes
 al desendolcu</string>
   <string name="easter_egg_title">Mou estudiu</string>

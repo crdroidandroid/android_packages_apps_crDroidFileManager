@@ -495,7 +495,7 @@ public class MainActivity extends BaseActivity implements OnRequestPermissionsRe
         }
         //recents header color implementation
         if (SDK_INT >= 21) {
-            ActivityManager.TaskDescription taskDescription = new ActivityManager.TaskDescription("Amaze",
+            ActivityManager.TaskDescription taskDescription = new ActivityManager.TaskDescription(getString(R.string.app_name),
                     ((BitmapDrawable) getResources().getDrawable(R.mipmap.ic_launcher)).getBitmap(),
                     getColorPreference().getColor(ColorUsage.getPrimary(MainActivity.currentTab)));
             setTaskDescription(taskDescription);
@@ -957,7 +957,7 @@ public class MainActivity extends BaseActivity implements OnRequestPermissionsRe
             return true;
         }
         if (fragmentName.contains("TabFragment")) {
-            setActionBarTitle("Amaze");
+            setActionBarTitle(getString(R.string.app_name));
             if (useGridView) {
                 s.setTitle(getResources().getString(R.string.gridview));
             } else {

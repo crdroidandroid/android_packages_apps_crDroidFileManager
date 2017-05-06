@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Navigációs fiók megnyitása</string>
   <string name="drawer_close">Navigációs fiók bezárása</string>
   <string name="books">Könyvjelzők</string>
@@ -82,7 +82,7 @@
   <string name="entername">Adja meg a nevet</string>
   <string name="extracting">Kicsomagolás</string>
   <string name="stopping">Leállítás</string>
-  <string name="guide1">Üdvözli az Amaze File Manager</string>
+  <string name="guide1">Üdvözli az File Manager</string>
   <string name="guide2">Érintse meg a kék csíkot az útvonalsáv megjelenítéséhez vagy elrejtéséhez</string>
   <string name="guide3">Érintse meg hosszan bármelyik fájlt további lehetőségek eléréséhez</string>
   <string name="guide4">Mint a másolás, áthelyezés, tulajdonságok, stb.</string>
@@ -232,7 +232,7 @@
   <string name="miscellaneous">Egyéb</string>
   <string name="rootPrefSummary">Fájl és mappa engedélyek megjelenítése</string>
   <string name="rootPref">Engedélyek megjelenítése</string>
-  <string name="aboutFileManager">Amaze File Manager névjegy</string>
+  <string name="aboutFileManager">File Manager névjegy</string>
   <string name="version">Verzió</string>
   <string name="rate">Alkalmazás értékelése</string>
   <string name="license">Nyílt forrású licencek</string>
@@ -403,7 +403,7 @@ egyébként az előfordulásokra fog rákeresni.</string>
   <string name="domain">Tartomány</string>
   <string name="invalid">Érvénytelen: %s</string>
   <string name="ftp_notif_starting">FTP-kiszolgáló indítása</string>
-  <string name="ftp_notif_title">Az Amaze FTP-kiszolgáló fut</string>
+  <string name="ftp_notif_title">Az FTP-kiszolgáló fut</string>
   <string name="ftp_notif_text">%s</string>
   <string name="ftp_notif_stop_server">LEÁLLÍTÁS</string>
   <string name="ftp_port_edit_menu_title">Válasszon FTP portot</string>
@@ -416,7 +416,7 @@ egyébként az előfordulásokra fog rákeresni.</string>
   <string name="report_bugs_title">Hibák jelentése</string>
   <string name="report_bugs_summary">Hibák jelentése vagy új funkciók igénylése</string>
   <string name="translate_title">Fordítás</string>
-  <string name="translate_summary">Fordítsa le az Amaze fájlkezelőjét a saját nyelvére</string>
+  <string name="translate_summary">Fordítsa le az fájlkezelőjét a saját nyelvére</string>
   <string name="g_plus_community_summary">Vegyenek részt a béta tesztelésben, 
 és a fejlesztéssel kapcsolatos eszmecseréken</string>
   <string name="easter_egg_title">Stúdió mód</string>

@@ -75,7 +75,7 @@
   <string name="entername">ادخل الإسم</string>
   <string name="extracting">جاري الإستخراج</string>
   <string name="stopping">جاري الإيقاف</string>
-  <string name="guide1">مرحبًا بك في مدير الملفات Amaze</string>
+  <string name="guide1">مرحبًا بك في مدير الملفات</string>
   <string name="guide2">ألمس مرتين الشريط العلوي لعرض أو إخفاء شريط المسار</string>
   <string name="guide3">اضغط مطولًا على الملف أو المجلد لإظهار المزيد من الخيارات</string>
   <string name="guide4">مثل النسخ ، اللصق ، النقل ، الخصائص ، إلخ</string>
@@ -220,7 +220,7 @@
   <string name="miscellaneous">خيارات متقدمة</string>
   <string name="rootPrefSummary">عرض أذونات الملفات والمجلدات</string>
   <string name="rootPref">عرض الأذونات</string>
-  <string name="aboutFileManager">حول مدير الملفات Amaze</string>
+  <string name="aboutFileManager">حول مدير الملفات</string>
   <string name="version">الإصدار</string>
   <string name="rate">قيّم التطبيق</string>
   <string name="license">تراخيص المصادر المفتوحة</string>

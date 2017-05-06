@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2014-2017 Arpit Khurana <arpitkh96@gmail.com>, Vishal Nehra <vishalmeham2@gmail.com>
 # Copyright (C) 2017 The MoKee Open Source Project
+# Copyright (C) 2017 crDroid Android Project
 #
 # This file is part of Amaze File Manager.
 # Amaze File Manager is free software: you can redistribute it and/or modify
@@ -21,8 +22,8 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_PACKAGE_NAME := AmazeFileManager
-LOCAL_CERTIFICATE := mokee
+LOCAL_PACKAGE_NAME := crDroidFileManager
+LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
@@ -60,7 +61,7 @@ LOCAL_AAPT_FLAGS := \
 
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 
-LOCAL_AAPT_FLAGS += --rename-manifest-package org.mokee.filemanager
+LOCAL_AAPT_FLAGS += --rename-manifest-package com.crdroid.filemanager
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-annotations \

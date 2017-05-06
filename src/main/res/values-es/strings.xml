@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Asombro</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Abrir panel de navegación</string>
   <string name="drawer_close">Cerrar panel de navegación</string>
   <string name="books">Marcadores</string>
@@ -82,7 +82,7 @@
   <string name="entername">Introducir nombre</string>
   <string name="extracting">Extrayendo</string>
   <string name="stopping">Deteniendo</string>
-  <string name="guide1">Bienvenido a Amaze File Manager</string>
+  <string name="guide1">Bienvenido a File Manager</string>
   <string name="guide2">Toque la franja azul para mostrar u ocultar la barra de ruta</string>
   <string name="guide3">Mantenga pulsado cualquier archivo para más opciones ...</string>
   <string name="guide4">Como copiar, mover, propiedades etc.</string>
@@ -231,7 +231,7 @@
   <string name="miscellaneous">Otros</string>
   <string name="rootPrefSummary">Mostrar permisos de archivos y carpetas</string>
   <string name="rootPref">Mostrar permisos</string>
-  <string name="aboutFileManager">Acerca de Amaze File Manager</string>
+  <string name="aboutFileManager">Acerca de File Manager</string>
   <string name="version">Versión</string>
   <string name="rate">Calificar la aplicacion</string>
   <string name="license">Licencias de código abierto</string>
@@ -400,7 +400,7 @@
   <string name="domain">Dominio</string>
   <string name="invalid">%s inválido</string>
   <string name="ftp_notif_starting">Se está iniciando el servidor FTP</string>
-  <string name="ftp_notif_title">Servidor FTP de Amaze funcionando</string>
+  <string name="ftp_notif_title">Servidor FTP de funcionando</string>
   <string name="ftp_notif_text">en %s</string>
   <string name="ftp_notif_stop_server">PARAR</string>
   <string name="ftp_port_edit_menu_title">Elija el puerto FTP</string>

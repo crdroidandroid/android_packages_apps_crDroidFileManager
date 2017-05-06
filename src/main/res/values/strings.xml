@@ -22,7 +22,7 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <string name="app_name">Amaze</string>
+    <string name="app_name">File Manager</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="books">Bookmarks</string>
@@ -85,7 +85,7 @@
     <string name="entername">Enter Name</string>
     <string name="extracting">Extracting</string>
     <string name="stopping">Stopping</string>
-    <string name="guide1">Welcome to Amaze File Manager</string>
+    <string name="guide1">Welcome to File Manager</string>
     <string name="guide2">Touch the blue strip to show or hide PathBar</string>
     <string name="guide3">Touch and hold any file for more options</string>
     <string name="guide4">Like copy,move,properties etc</string>
@@ -236,7 +236,7 @@
     <string name="miscellaneous">Miscellaneous</string>
     <string name="rootPrefSummary">Show Permissions of Files and Folders</string>
     <string name="rootPref">Show Permissions</string>
-    <string name="aboutFileManager">About Amaze File Manager</string>
+    <string name="aboutFileManager">About File Manager</string>
     <string name="version">Version</string>
     <string name="rate">Rate the app</string>
     <string name="license">Open Source Licenses</string>
@@ -410,7 +410,7 @@
     <string name="domain">Domain</string>
     <string name="invalid">Invalid %s</string>
     <string name="ftp_notif_starting">FTP Server is starting</string>
-    <string name="ftp_notif_title">Amaze FTP Server running</string>
+    <string name="ftp_notif_title">FTP Server running</string>
     <string name="ftp_notif_text">at %s</string>
     <string name="ftp_notif_stop_server">STOP</string>
     <string name="ftp_port_edit_menu_title">FTP port</string>
@@ -423,7 +423,7 @@
     <string name="report_bugs_title">Report Bugs</string>
     <string name="report_bugs_summary">Report bugs or request new feature</string>
     <string name="translate_title">Translate</string>
-    <string name="translate_summary">Translate Amaze in your language</string>
+    <string name="translate_summary">Translate File Manager in your language</string>
     <string name="g_plus_community_summary">Take part in beta testing and discussions
         related to development</string>
     <string name="easter_egg_title">Studio Mode</string>

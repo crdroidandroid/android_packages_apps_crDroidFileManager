@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Förvåna</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_close">Stäng navigationspanel</string>
   <string name="books">Bokmärken</string>
   <string name="icon">ikon</string>
@@ -73,7 +73,7 @@
   <string name="entername">Ange namn</string>
   <string name="extracting">Extraherar</string>
   <string name="stopping">Stoppar</string>
-  <string name="guide1">Välkommen till Amaze File Manager</string>
+  <string name="guide1">Välkommen till File Manager</string>
   <string name="guide4">Som kopiera, flytta, egenskaper, etc</string>
   <string name="openwith">Öppna med</string>
   <string name="share">Dela</string>
@@ -189,7 +189,7 @@
   <string name="miscellaneous">Diverse</string>
   <string name="rootPrefSummary">Visa behörigheter för filer och mappar</string>
   <string name="rootPref">Visa behörigheter</string>
-  <string name="aboutFileManager">Om Amaze File Manager</string>
+  <string name="aboutFileManager">Om File Manager</string>
   <string name="version">Version</string>
   <string name="rate">Betygsätt appen</string>
   <string name="license">Open Source-licenser</string>
@@ -318,7 +318,7 @@
   <string name="domain">Domän</string>
   <string name="invalid">Ogiltig %s</string>
   <string name="ftp_notif_starting">FTP-server startar</string>
-  <string name="ftp_notif_title">Amaze FTP-server körs</string>
+  <string name="ftp_notif_title">FTP-server körs</string>
   <string name="ftp_notif_stop_server">STOPP</string>
   <string name="ftp_port_edit_menu_title">Välj FTP-port</string>
   <string name="ftp_port_change_success">FTP-port ändrad</string>
@@ -329,7 +329,7 @@
   <string name="report_bugs_title">Rapportera buggar</string>
   <string name="report_bugs_summary">Rapportera buggar eller begär ny funktion</string>
   <string name="translate_title">Översätt</string>
-  <string name="translate_summary">Översätt Amaze till ditt språk</string>
+  <string name="translate_summary">Översätt till ditt språk</string>
   <string name="easter_egg_title">Studioläge</string>
   <string name="paypal_copy_message">PayPal-UD kopierat till urklipp</string>
   <string name="searchingdevices">Söker efter enheter</string>

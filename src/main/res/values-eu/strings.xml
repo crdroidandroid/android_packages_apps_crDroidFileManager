@@ -22,7 +22,7 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <string name="app_name">Amaze Fitxategi Kudeatzailea</string>
+    <string name="app_name">Fitxategi Kudeatzailea</string>
     <string name="drawer_open">Nabigazio tiradera ireki</string>
     <string name="drawer_close">Nabigazio tiradera itxi</string>
     <string name="books">Laster-markak</string>
@@ -82,7 +82,7 @@
     <string name="entername">Izena sartu</string>
     <string name="extracting">Erauzten</string>
     <string name="stopping">Gelditzen</string>
-    <string name="guide1">Ongi etorri Amaze File Managerera</string>
+    <string name="guide1">Ongi etorri File Managerera</string>
     <string name="guide2">Banda urdina uki ezazu Bide-barra ikusi edo ezkutatzeko</string>
     <string name="guide3">Ukitu eta mantendu edozein fitxategi aukera gehiago ikusteko...</string>
     <string name="guide4">Kopiatu, mugitu, xehetasunak etab. bezalakoak</string>
@@ -232,7 +232,7 @@
     <string name="miscellaneous">Beste batzuk</string>
     <string name="rootPrefSummary">Fitxategi eta karpeten baimenak erakutsi</string>
     <string name="rootPref">Baimenak erakutsi</string>
-    <string name="aboutFileManager">Amaze File Manageri buruz</string>
+    <string name="aboutFileManager">File Manageri buruz</string>
     <string name="version">Bertsioa</string>
     <string name="rate">aplikazioa puntuatu</string>
     <string name="license">Iturburu Irekiko lizentziak</string>

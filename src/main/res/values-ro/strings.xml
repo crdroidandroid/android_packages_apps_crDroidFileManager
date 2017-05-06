@@ -77,7 +77,7 @@
   <string name="entername">Introduceţi numele</string>
   <string name="extracting">Extragere</string>
   <string name="stopping">Oprire</string>
-  <string name="guide1">Bun venit la Amaze File Manager</string>
+  <string name="guide1">Bun venit la File Manager</string>
   <string name="guide2">Atingeți banda albastră a afișa sau a ascunde Bara de cale</string>
   <string name="guide3">Atingeți și mențineți orice fișier pentru mai multe opțiuni</string>
   <string name="guide4">Ca copiere, mutare, proprietăți etc.</string>
@@ -215,7 +215,7 @@
   <string name="miscellaneous">Diverse</string>
   <string name="rootPrefSummary">Se afişează permisiunile fișierelor și dosarelor</string>
   <string name="rootPref">Afişare permisiuni</string>
-  <string name="aboutFileManager">Despre Amaze File Manager</string>
+  <string name="aboutFileManager">Despre File Manager</string>
   <string name="version">Versiune</string>
   <string name="rate">Evaluaţi aplicaţia</string>
   <string name="license">Licenţă Open Source</string>

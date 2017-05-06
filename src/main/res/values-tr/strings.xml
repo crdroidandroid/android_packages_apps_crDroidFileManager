@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze Dosya Yöneticisi</string>
+  <string name="app_name">Dosya Yöneticisi</string>
   <string name="drawer_open">Gezinme çekmecesini aç</string>
   <string name="drawer_close">Gezinme çekmecesini kapat</string>
   <string name="books">Yer imleri</string>
@@ -402,7 +402,7 @@ Devam etmek istiyor musunuz?\"</string>
   <string name="domain">Alan Adı</string>
   <string name="invalid">Geçersiz %s</string>
   <string name="ftp_notif_starting">FTP Sunucu başlatılıyor</string>
-  <string name="ftp_notif_title">Amaze FTP Sunucu çalışıyor</string>
+  <string name="ftp_notif_title">FTP Sunucu çalışıyor</string>
   <string name="ftp_notif_text">%s adresinde</string>
   <string name="ftp_notif_stop_server">DUR</string>
   <string name="ftp_port_edit_menu_title">FTP bağlantı noktası seçin</string>
@@ -415,7 +415,7 @@ Devam etmek istiyor musunuz?\"</string>
   <string name="report_bugs_title">Hata Bildirimi</string>
   <string name="report_bugs_summary">Hata bildirimi veya yeni özellik isteği yapın</string>
   <string name="translate_title">Çeviri</string>
-  <string name="translate_summary">Amaze uygulamasını kendi dilinize çevirin</string>
+  <string name="translate_summary">File Manager uygulamasını kendi dilinize çevirin</string>
   <string name="g_plus_community_summary">Geliştirici ile bağlantı içerisinde beta testleri ve
 tartışmalarının parçası olun</string>
   <string name="easter_egg_title">Stüdyo Modu</string>

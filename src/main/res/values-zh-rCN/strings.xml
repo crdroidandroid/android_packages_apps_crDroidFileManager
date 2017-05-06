@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">文件管理器</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">打开导航抽屉</string>
   <string name="drawer_close">关闭导航抽屉</string>
   <string name="books">书签</string>
@@ -82,7 +82,7 @@
   <string name="entername">请输入名称</string>
   <string name="extracting">正在解压</string>
   <string name="stopping">正在停止</string>
-  <string name="guide1">欢迎使用 Amaze 文件管理器！</string>
+  <string name="guide1">欢迎使用 文件管理器！</string>
   <string name="guide2">触摸蓝条以显示或隐藏地址栏</string>
   <string name="guide3">长按条目以显示更多选项</string>
   <string name="guide4">例如复制、移动、查看属性等等</string>
@@ -400,7 +400,7 @@
   <string name="domain">域名</string>
   <string name="invalid">无效%s</string>
   <string name="ftp_notif_starting">FTP 服务器已启动</string>
-  <string name="ftp_notif_title">Amaze FTP 服务器已启动</string>
+  <string name="ftp_notif_title">FTP 服务器已启动</string>
   <string name="ftp_notif_text">位于 %s</string>
   <string name="ftp_notif_stop_server">停止</string>
   <string name="ftp_port_edit_menu_title">选择 FTP 端口</string>
@@ -413,7 +413,7 @@
   <string name="report_bugs_title">反馈问题</string>
   <string name="report_bugs_summary">反馈问题或提交新功能需求</string>
   <string name="translate_title">贡献翻译</string>
-  <string name="translate_summary">前往 Amaze 本地化系统进行语言翻译</string>
+  <string name="translate_summary">前往 本地化系统进行语言翻译</string>
   <string name="g_plus_community_summary">参与 beta 版测试并讨论后续改进</string>
   <string name="easter_egg_title">工作室模式</string>
   <string name="paypal_copy_message">Paypal ID 已复制至剪贴板</string>

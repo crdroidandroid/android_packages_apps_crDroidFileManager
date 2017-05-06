@@ -19,7 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-  <string name="app_name">Amaze</string>
+  <string name="app_name">File Manager</string>
   <string name="drawer_open">Ouvrir le panneau de navigation</string>
   <string name="drawer_close">Fermer le panneau de navigation</string>
   <string name="books">Favoris</string>
@@ -82,7 +82,7 @@
   <string name="entername">Entrer le nom</string>
   <string name="extracting">Extraction</string>
   <string name="stopping">Arrêt en cours...</string>
-  <string name="guide1">Bienvenue sur Amaze File Manager</string>
+  <string name="guide1">Bienvenue sur File Manager</string>
   <string name="guide2">Toucher la barre bleue pour afficher ou masquer la barre d\'adresse</string>
   <string name="guide3">Appuyer et maintenir le doigt sur n\'importe quel fichier pour plus d\'options</string>
   <string name="guide4">Tels que copier, déplacer, afficher les propriétés, etc</string>
@@ -231,7 +231,7 @@
   <string name="miscellaneous">Divers</string>
   <string name="rootPrefSummary">Afficher les permissions des fichiers et des dossiers</string>
   <string name="rootPref">Afficher les Permissions</string>
-  <string name="aboutFileManager">A propos d\'Amaze File Manager</string>
+  <string name="aboutFileManager">A propos d\'File Manager</string>
   <string name="version">Version</string>
   <string name="rate">Noter l\'application</string>
   <string name="license">Licences Open Source</string>
@@ -415,7 +415,7 @@
   <string name="report_bugs_title">Signaler un bug</string>
   <string name="report_bugs_summary">Signaler un bug ou demander une nouvelle fonctionnalité</string>
   <string name="translate_title">Traduire</string>
-  <string name="translate_summary">Traduire Amaze dans votre langue</string>
+  <string name="translate_summary">Traduire dans votre langue</string>
   <string name="g_plus_community_summary">Prendre part aux bêta-tests et discussions en relation au développement</string>
   <string name="easter_egg_title">Mode Studio</string>
   <string name="paypal_copy_message">Id Paypal copié dans le presse-papiers</string>

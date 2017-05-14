@@ -72,3 +72,9 @@
 -keep public class android.support.v7.widget.RecyclerView$LayoutManager
 
 -dontwarn android.support.v7.**
+
+-dontwarn org.apache.mina.**
+-keep class org.apache.mina.** { *;}
+
+-dontwarn org.apache.ftpserver.**
+-keep class org.apache.ftpserver.** { *;}

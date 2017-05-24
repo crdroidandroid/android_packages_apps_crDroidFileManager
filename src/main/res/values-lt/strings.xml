@@ -50,7 +50,6 @@
   <string name="file_empty">Byla yra tuščia</string>
   <string name="error">Klaida</string>
   <string name="cantlistfiles">Negali rodyti root bylų be root teisių</string>
-  <string name="searchresults">Paieškos rezultatai</string>
   <string name="itemsselected">Pasirinkta elementų</string>
   <string name="newhomedirectory">Nauja namų direktorija</string>
   <string name="rename">Pervardinti</string>
@@ -65,7 +64,7 @@
   <string name="name">Pavadinimas: </string>
   <string name="date">Data: </string>
   <string name="location">Vieta: </string>
-  <string name="size">Dydis aplankale: </string>
+  <string name="size_capitalized">Dydis</string>
   <string name="totalitems">Iš viso elementų: </string>
   <string name="enterzipname">Įvesti Zip Pavadinimą</string>
   <string name="noappfound">Nerasta programėlė, kuri atidarytų šią bylą</string>
@@ -94,9 +93,9 @@
   <string name="compress">Suspausti</string>
   <string name="yes">Taip</string>
   <string name="no">Ne</string>
-  <string name="confirm">Patvirtinti</string>
+  <string name="dialog_delete_disclaimer">Ar Jūs tikrai norite ištrinti šias bylas?</string>
+  <string name="dialog_delete_title">Patvirtinti</string>
   <string name="deleting">Ištrinama</string>
-  <string name="questiondelete">Ar Jūs tikrai norite ištrinti šias bylas?</string>
   <string name="questionset">Ar Jūs norite nustatyti dabartinį kelią kaip namų šiai kortelei?</string>
   <string name="viewmode">Peržiūros rėžimas</string>
   <string name="uimode">Vartotojo sąsajos rėžimas</string>
@@ -184,8 +183,6 @@
   <string name="copying_fles">Kopijuojamos bylos</string>
   <string name="done">Atlikta</string>
   <string name="Extracting_fles">Išskleidžia bylas</string>
-  <string name="items">Elementai</string>
-  <string name="item">Elementas</string>
   <string name="set">Nustayti</string>
   <string name="enablerootmde">Įgalinti root rėžimą</string>
   <string name="goback">Eiti atgal</string>
@@ -194,8 +191,6 @@
   <string name="nofiles">Nėra bylų</string>
   <string name="tapnhold">Paliesti ir laikyti failą ar aplankalą dėl daugiau parinkčių</string>
   <string name="pathcopied">Kelias nukopijuotas į iškarpinę</string>
-  <string name="used">Naudojama kitų:  </string>
-  <string name="free">Laisva vieta:  </string>
   <string name="atroot">Jūs esate root vietose</string>
   <string name="listview">Sąrašo peržiūra</string>
   <string name="gridview">Tinklelio peržiūra</string>
@@ -247,4 +242,7 @@
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">FTP Serveris</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Elementas</string>
+  <string name="items">Elementai</string>
 </resources>

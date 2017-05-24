@@ -22,10 +22,11 @@
   <string name="storage">Lagring</string>
   <string name="cancel">Avbryt</string>
   <string name="save">Lagre</string>
+  <string name="size_capitalized">Størrelse</string>
   <string name="share">Del</string>
   <string name="yes">Ja</string>
   <string name="no">Nei</string>
-  <string name="confirm">Bekreft</string>
+  <string name="dialog_delete_title">Bekreft</string>
   <string name="home">Hjem</string>
   <string name="close">Lukk</string>
   <string name="history">Logg</string>
@@ -81,4 +82,5 @@
   <!-- Reference to 'email address can't be empty' or 'Invalid e-mail address' -->
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
 </resources>

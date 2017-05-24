@@ -51,7 +51,6 @@
   <string name="file_empty">Plik jest pusty</string>
   <string name="error">Błąd</string>
   <string name="cantlistfiles">Nie można wyświetlić plików bez uprawnień roota</string>
-  <string name="searchresults">Wyniki wyszukiwania</string>
   <string name="itemsselected">Wybrane elementy</string>
   <string name="newhomedirectory">Nowy katalog wewnętrzny</string>
   <string name="rename">Zmień nazwę</string>
@@ -66,7 +65,7 @@
   <string name="name">Nazwa</string>
   <string name="date">Data</string>
   <string name="location">Lokalizacja</string>
-  <string name="size">Rozmiar katalogu</string>
+  <string name="size_capitalized">Wymiary</string>
   <string name="totalitems">Elementy (łącznie)</string>
   <string name="enterzipname">Wpisz nazwę archiwum</string>
   <string name="noappfound">Nie odnaleziono aplikacji potrzebnej do otworzenia tego pliku</string>
@@ -76,8 +75,6 @@
   <string name="tab">Karta</string>
   <string name="file">Plik</string>
   <string name="folder">Katalog</string>
-  <string name="title_files">Pliki</string>
-  <string name="title_dirs">Katalogi</string>
   <string name="newfolder">Nowy katalog</string>
   <string name="entername">Wprowadź nazwę</string>
   <string name="extracting">Rozpakowywanie</string>
@@ -97,9 +94,11 @@
   <string name="compress">Skompresuj</string>
   <string name="yes">Tak</string>
   <string name="no">Nie</string>
-  <string name="confirm">Potwierdź</string>
+  <string name="dialog_delete_category_directories">Katalogi</string>
+  <string name="dialog_delete_category_files">Pliki</string>
+  <string name="dialog_delete_disclaimer">Czy usunąć następujące pliki?</string>
+  <string name="dialog_delete_title">Potwierdź</string>
   <string name="deleting">Usuwanie</string>
-  <string name="questiondelete">Czy usunąć następujące pliki?</string>
   <string name="questionset">Czy ustawić aktualną ścieżkę jako główną dla tej karty?</string>
   <string name="viewmode">Tryb widoku</string>
   <string name="uimode">Tryb interfejsu</string>
@@ -189,8 +188,6 @@
   <string name="copying_fles">Kopiowanie plików</string>
   <string name="done">Gotowe</string>
   <string name="Extracting_fles">Rozpakowywanie plików</string>
-  <string name="items">Elementy</string>
-  <string name="item">Element</string>
   <string name="set">Ustaw</string>
   <string name="enablerootmde">Włącz tryb roota</string>
   <string name="goback">Wstecz</string>
@@ -199,8 +196,6 @@
   <string name="nofiles">Brak plików</string>
   <string name="tapnhold">Dotknij i przytrzymaj plik lub katalog, aby wyświetlić więcej opcji</string>
   <string name="pathcopied">Skopiowano ścieżkę</string>
-  <string name="used">Użyte przez innych:  </string>
-  <string name="free">Wolne:  </string>
   <string name="atroot">Jesteś w katalogu głównym</string>
   <string name="listview">Widok listy</string>
   <string name="gridview">Widok siatki</string>
@@ -356,7 +351,6 @@
   <string name="clear">Wyczyść</string>
   <string name="md5">MD5: </string>
   <string name="md5_2">Skopiuj MD5</string>
-  <string name="total">Łącznie: </string>
   <string name="calculating"> obliczanie </string>
   <string name="sort">Sortowanie</string>
   <string name="ascending">Rosnąco</string>
@@ -566,5 +560,8 @@ smb_instructions
   <string name="contributors_2_summary">Ikony i bannery</string>
   <string name="contributors_6_summary">Serwer FTP</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Element</string>
+  <string name="items">Elementy</string>
   <string name="bytes">Bajtów</string>
 </resources>

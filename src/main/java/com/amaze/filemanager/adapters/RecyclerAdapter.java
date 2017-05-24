@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.amaze.filemanager.R;
 import com.amaze.filemanager.activities.BaseActivity;
+import com.amaze.filemanager.activities.BasicActivity;
 import com.amaze.filemanager.activities.MainActivity;
 import com.amaze.filemanager.database.CryptHandler;
 import com.amaze.filemanager.database.EncryptedEntry;
@@ -34,8 +35,8 @@ import com.amaze.filemanager.filesystem.BaseFile;
 import com.amaze.filemanager.fragments.MainFragment;
 import com.amaze.filemanager.fragments.preference_fragments.Preffrag;
 import com.amaze.filemanager.services.EncryptService;
-import com.amaze.filemanager.fragments.MainFragment;
 import com.amaze.filemanager.ui.LayoutElement;
+import com.amaze.filemanager.ui.dialogs.GeneralDialogCreation;
 import com.amaze.filemanager.ui.icons.Icons;
 import com.amaze.filemanager.ui.icons.MimeTypes;
 import com.amaze.filemanager.ui.views.CircleGradientDrawable;
@@ -283,13 +284,17 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
     }
 
     public void generate(ArrayList<LayoutElement> arrayList) {
-        offset = 0;
-        stoppedAnimation = false;
-        notifyDataSetChanged();
-        items = arrayList;
-        for (int i = 0; i < items.size(); i++) {
-            myChecked.put(i, false);
-            myanim.put(i, false);
+
+        synchronized (arrayList) {
+
+            offset = 0;
+            stoppedAnimation = false;
+            notifyDataSetChanged();
+            items = arrayList;
+            for (int i = 0; i < items.size(); i++) {
+                myChecked.put(i, false);
+                myanim.put(i, false);
+            }
         }
     }
 
@@ -705,8 +710,8 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.about:
-                                utilsProvider.getFutils().showProps((rowItem).generateBaseFile(),
-                                        rowItem.getPermissions(), mainFrag,
+                                GeneralDialogCreation.showPropertiesDialogWithPermissions((rowItem).generateBaseFile(),
+                                        rowItem.getPermissions(), (BasicActivity) mainFrag.getActivity(),
                                         BaseActivity.rootMode, utilsProvider.getAppTheme());
                                 /*PropertiesSheet propertiesSheet = new PropertiesSheet();
                                 Bundle arguments = new Bundle();
@@ -761,7 +766,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                             case R.id.delete:
                                 ArrayList<Integer> positions = new ArrayList<>();
                                 positions.add(position);
-                                utilsProvider.getFutils().deleteFiles(mainFrag.getLayoutElements(), mainFrag, positions, utilsProvider.getAppTheme());
+                                GeneralDialogCreation.deleteFilesDialog(mainFrag.getLayoutElements(), mainFrag, positions, utilsProvider.getAppTheme());
                                 return true;
                             case R.id.open_with:
                                 utilsProvider.getFutils().openWith(new File(rowItem.getDesc()), mainFrag.getActivity());
@@ -809,7 +814,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                                                     Preffrag.ENCRYPT_PASSWORD_FINGERPRINT, encryptIntent);
                                         } else {
                                             // let's ask a password from user
-                                            utilsProvider.getFutils().showEncryptAuthenticateDialog(encryptIntent,
+                                            GeneralDialogCreation.showEncryptAuthenticateDialog(encryptIntent,
                                                     mainFrag, utilsProvider.getAppTheme(),
                                                     encryptButtonCallbackInterfaceAuthenticate);
                                         }
@@ -834,7 +839,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                                     }
                                 } else {
 
-                                    utilsProvider.getFutils().showEncryptWarningDialog(encryptIntent,
+                                   GeneralDialogCreation.showEncryptWarningDialog(encryptIntent,
                                             mainFrag, utilsProvider.getAppTheme(), encryptButtonCallbackInterface);
                                 }
                                 return true;

@@ -48,7 +48,6 @@
   <string name="file_empty">O ficheiro está vazio</string>
   <string name="error">Erro</string>
   <string name="cantlistfiles">Não é possível listar ficheiros sem root</string>
-  <string name="searchresults">Resultados da pesquisa</string>
   <string name="itemsselected">Itens selecionados</string>
   <string name="newhomedirectory">Nova pasta pessoal</string>
   <string name="rename">Renomear</string>
@@ -63,7 +62,7 @@
   <string name="name">Nome</string>
   <string name="date">Data</string>
   <string name="location">Localização</string>
-  <string name="size">Tamanho da pasta</string>
+  <string name="size_capitalized">Tamanho</string>
   <string name="totalitems">Total de itens</string>
   <string name="enterzipname">Digite o nome do .zip</string>
   <string name="noappfound">Não existem aplicações para abrir este ficheiro</string>
@@ -73,7 +72,6 @@
   <string name="tab">Separador</string>
   <string name="file">Ficheiro</string>
   <string name="folder">Pasta</string>
-  <string name="title_dirs">Diretórios</string>
   <string name="newfolder">Nova pasta</string>
   <string name="entername">Digite o nome</string>
   <string name="extracting">A extrair</string>
@@ -93,9 +91,10 @@
   <string name="compress">Comprimir</string>
   <string name="yes">Sim</string>
   <string name="no">Não</string>
-  <string name="confirm">Confirmação</string>
+  <string name="dialog_delete_category_directories">Diretórios</string>
+  <string name="dialog_delete_disclaimer">Deseja mesmo apagar estes ficheiros?</string>
+  <string name="dialog_delete_title">Confirmação</string>
   <string name="deleting">A apagar</string>
-  <string name="questiondelete">Deseja mesmo apagar estes ficheiros?</string>
   <string name="questionset">Deseja definir o caminho atual como padrão deste separador?</string>
   <string name="viewmode">Modo de visualização</string>
   <string name="uimode">Interface</string>
@@ -183,7 +182,6 @@
   <string name="copying_fles">A copiar ficheiros</string>
   <string name="done">Terminado</string>
   <string name="Extracting_fles">A extrair ficheiros</string>
-  <string name="items">Itens</string>
   <string name="set">Definir</string>
   <string name="enablerootmde">Ative o modo root</string>
   <string name="goback">Recuar</string>
@@ -192,8 +190,6 @@
   <string name="nofiles">Sem ficheiros</string>
   <string name="tapnhold">Toque longo no ficheiro ou pasta para mais opções</string>
   <string name="pathcopied">Caminho copiado para a área de transferência</string>
-  <string name="used">Utilizado:  </string>
-  <string name="free">Livre:  </string>
   <string name="atroot">Está na raiz</string>
   <string name="listview">Vista em lista</string>
   <string name="gridview">Vista em grelha</string>
@@ -480,4 +476,6 @@ debater ideias com os programadores</string>
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">Servidor FTP</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="items">Itens</string>
 </resources>

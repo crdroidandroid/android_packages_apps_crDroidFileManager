@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.amaze.filemanager.R;
 import com.amaze.filemanager.filesystem.BaseFile;
 import com.amaze.filemanager.utils.Futils;
+import com.amaze.filemanager.utils.Utils;
 
 import java.io.File;
 
@@ -67,13 +68,13 @@ public class PropertiesSheet extends BottomSheetDialogFragment {
         mFileTypeTextView = (TextView) rootView.findViewById(R.id.text_view_file_type);
         mFileTypeTextView.setText(mFile.isDirectory() ? getString(R.string.folder) : mFile.getName().substring(mFile.getName().lastIndexOf(".")));
         mFileSizeTextView = (TextView) rootView.findViewById(R.id.text_view_file_size);
-        mFileSizeTextView.setText(Formatter.formatFileSize(dialog.getContext(), mFile.isDirectory() ? Futils.folderSize(new File(mFile.getPath())) : mFile.getSize()));
+        mFileSizeTextView.setText(Formatter.formatFileSize(dialog.getContext(), mFile.isDirectory() ? Futils.folderSize(new File(mFile.getPath()), null) : mFile.getSize()));
         mFileLocationTextView = (TextView) rootView.findViewById(R.id.text_view_file_location);
         mFileLocationTextView.setText(mFile.getPath());
         mFileAccessedTextView = (TextView) rootView.findViewById(R.id.text_view_file_accessed);
-        mFileAccessedTextView.setText(Futils.getdate(mFile.getDate()));
+        mFileAccessedTextView.setText(Utils.getDate(mFile.getDate()));
         mFileModifiedTextView = (TextView) rootView.findViewById(R.id.text_view_file_modified);
-        mFileModifiedTextView.setText(Futils.getdate(mFile.getDate()));
+        mFileModifiedTextView.setText(Utils.getDate(mFile.getDate()));
 
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) ((View) rootView.getParent()).getLayoutParams();
 

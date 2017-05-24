@@ -51,7 +51,6 @@
   <string name="file_empty">El fichero está vacío</string>
   <string name="error">Error</string>
   <string name="cantlistfiles">No se puede enumerar los archivos sin root</string>
-  <string name="searchresults">Resultados de la búsqueda</string>
   <string name="itemsselected">Elementos seleccionados</string>
   <string name="newhomedirectory">Nuevo directorio principal</string>
   <string name="rename">Renombrar</string>
@@ -66,7 +65,7 @@
   <string name="name">Nombre </string>
   <string name="date">Fecha: </string>
   <string name="location">Ubicación</string>
-  <string name="size">Tamaño:  </string>
+  <string name="size_capitalized">Tamaño</string>
   <string name="totalitems">Número de elementos: </string>
   <string name="enterzipname">Introducir nombre del Zip</string>
   <string name="noappfound">No se encontró una aplicación para abrir este archivo</string>
@@ -76,8 +75,6 @@
   <string name="tab">Pestaña</string>
   <string name="file">Archivo</string>
   <string name="folder">Carpeta</string>
-  <string name="title_files">Archivos</string>
-  <string name="title_dirs">Directorios</string>
   <string name="newfolder">Nueva Carpeta</string>
   <string name="entername">Introducir nombre</string>
   <string name="extracting">Extrayendo</string>
@@ -97,9 +94,11 @@
   <string name="compress">Comprimir</string>
   <string name="yes">Sí</string>
   <string name="no">no</string>
-  <string name="confirm">Confirmar</string>
+  <string name="dialog_delete_category_directories">Directorios</string>
+  <string name="dialog_delete_category_files">Archivos</string>
+  <string name="dialog_delete_disclaimer">¿De verdad quiere eliminar los siguientes archivos?</string>
+  <string name="dialog_delete_title">Confirmar</string>
   <string name="deleting">Eliminando</string>
-  <string name="questiondelete">¿De verdad quiere eliminar los siguientes archivos?</string>
   <string name="questionset">¿Quieres establecer la ruta actual como base para esta pestaña?</string>
   <string name="viewmode">Modo de visualización</string>
   <string name="uimode">Modo de UI</string>
@@ -189,8 +188,6 @@
   <string name="copying_fles">Copiando archivos</string>
   <string name="done">Completado</string>
   <string name="Extracting_fles">Extrayendo archivos</string>
-  <string name="items">Elementos</string>
-  <string name="item">Elemento</string>
   <string name="set">Ajustar</string>
   <string name="enablerootmde">Activar modo Root</string>
   <string name="goback">Regresar</string>
@@ -199,8 +196,6 @@
   <string name="nofiles">No hay archivos</string>
   <string name="tapnhold">Mantenga pulsado un archivo o carpeta para más opciones</string>
   <string name="pathcopied">Ruta copiada al portapapeles</string>
-  <string name="used">Usado:  </string>
-  <string name="free">Libre:  </string>
   <string name="atroot">Estás en la raíz</string>
   <string name="listview">Vista de lista</string>
   <string name="gridview">Vista de cuadrícula</string>
@@ -354,7 +349,6 @@
   <string name="clear">Limpiar</string>
   <string name="md5">MD5:</string>
   <string name="md5_2">Copiar MD5</string>
-  <string name="total">Total:</string>
   <string name="calculating">calculando</string>
   <string name="sort">Ordenar</string>
   <string name="ascending">Ascendente</string>
@@ -534,4 +528,7 @@
   <string name="contributors_6_summary">Servidor FTP</string>
   <string name="contributors_7_summary">Creando una pantalla de comandos interactiva</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Elemento</string>
+  <string name="items">Elementos</string>
 </resources>

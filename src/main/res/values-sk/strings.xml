@@ -66,7 +66,8 @@
   <string name="name">Meno</string>
   <string name="date">Dátum</string>
   <string name="location">Miesto</string>
-  <string name="size">Veľkosť priečinka</string>
+  <string name="size_capitalized">Veľkosť</string>
+  <string name="size">veľkosť priečinka</string>
   <string name="totalitems">Celkový počet položiek</string>
   <string name="enterzipname">Zadajte meno súboru ZIP</string>
   <string name="noappfound">Nenašla sa aplikácia na otvorenie tohto typu súboru</string>
@@ -76,8 +77,6 @@
   <string name="tab">Karta</string>
   <string name="file">Súbor</string>
   <string name="folder">Priečinok</string>
-  <string name="title_files">Súbory</string>
-  <string name="title_dirs">Adresáre</string>
   <string name="newfolder">Nový priečinok</string>
   <string name="entername">Zadajte názov</string>
   <string name="extracting">Rozbaľovanie</string>
@@ -97,9 +96,11 @@
   <string name="compress">Komprimovať</string>
   <string name="yes">Áno</string>
   <string name="no">Nie</string>
-  <string name="confirm">Potvrdiť</string>
+  <string name="dialog_delete_category_directories">Adresáre</string>
+  <string name="dialog_delete_category_files">Súbory</string>
+  <string name="dialog_delete_disclaimer">Vymazaním nižšie uvedených položiek ich natrvalo odstránite zo zariadenia a nebude ich možné obnoviť.</string>
+  <string name="dialog_delete_title">Odstrániť položky natrvalo?</string>
   <string name="deleting">Odstraňovanie</string>
-  <string name="questiondelete">Naozaj chcete odstrániť nasledujúce súbory?</string>
   <string name="questionset">Chcete nastaviť aktuálnu cestu ako domácu pre túto kartu?</string>
   <string name="viewmode">Režim zobrazenia</string>
   <string name="uimode">Režim používateľského rozhrania</string>
@@ -190,8 +191,6 @@
   <string name="copying_fles">Kopírovanie súborov</string>
   <string name="done">Hotovo</string>
   <string name="Extracting_fles">Rozbaľovanie súborov</string>
-  <string name="items">Položky</string>
-  <string name="item">Položka</string>
   <string name="set">Nastaviť</string>
   <string name="enablerootmde">Povoliť Root režim</string>
   <string name="goback">Späť</string>
@@ -200,8 +199,9 @@
   <string name="nofiles">Žiadne súbory</string>
   <string name="tapnhold">Dlho podržte na súbore alebo priečinku pre viac možností</string>
   <string name="pathcopied">Cesta bola skopírovaná do schránky</string>
-  <string name="used">Iní používajú:  </string>
-  <string name="free">Voľné miesto:</string>
+  <string name="used">využité miesto</string>
+  <string name="used_by_others">používajú iné</string>
+  <string name="free">voľné miesto</string>
   <string name="atroot">Nachádzate sa v koreňovo adresári</string>
   <string name="listview">Zobrazenie zoznamu</string>
   <string name="gridview">Zobrazenie v mriežke</string>
@@ -357,7 +357,7 @@
   <string name="clear">Vymazať</string>
   <string name="md5">MD5</string>
   <string name="md5_2">Kopírovať md5</string>
-  <string name="total">Spolu:</string>
+  <string name="total">Celkovo:</string>
   <string name="calculating"> výpočet </string>
   <string name="sort">Zoradiť</string>
   <string name="ascending">Vzostupne</string>
@@ -606,7 +606,6 @@
   <string name="crypt_decryption_fail_password">Nesprávne heslo!</string>
   <string name="crypt_fingerprint_authenticate">Pre pokračovanie sa dotknite sa senzora</string>
   <string name="authenticate_password">Zadajte heslo</string>
-  <string name="bytes">Bajtov</string>
   <string name="sidebarfolders_title">Skratky bočného panela</string>
   <string name="sidebarquickaccess_title">Rýchly prístup k bočnému panelu</string>
   <string name="showfolders_pref_title">Zobraziť odkazy</string>
@@ -628,4 +627,8 @@
   <string name="cloud_plugin_not_supported">Zásuvný modul Cloud nepodporuje vydanie Fdroid. Stiahnite si prosím Amaze z obchodu Play.</string>
   <string name="monofont">Písmo Monospace</string>
   <string name="showHeaders">Zobraziť záhlavie</string>
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Položka</string>
+  <string name="items">Položky</string>
+  <string name="bytes">Bajtov</string>
 </resources>

@@ -68,7 +68,6 @@
     <string name="name">Nama</string>
     <string name="date">Tanggal</string>
     <string name="location">Lokasi</string>
-    <string name="size">Ukuran Folder</string>
     <string name="totalitems">Total Item</string>
     <string name="enterzipname">Masukkan Nama Zip</string>
     <string name="noappfound">Tidak ada Apl yang bisa membuka berkas ini</string>
@@ -97,9 +96,9 @@
     <string name="compress">Kompres</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
-    <string name="confirm">Konfirm</string>
+    <string name="dialog_delete_title">Konfirm</string>
     <string name="deleting">Menghapus</string>
-    <string name="questiondelete">Apakah Anda benar-benar ingin menghapus berkas ini?</string>
+    <string name="dialog_delete_disclaimer">Apakah Anda benar-benar ingin menghapus berkas ini?</string>
     <string name="questionset">Apakah Anda ingin menetapkan jalur saat ini sebagai beranda untuk tab ini?</string>
     <string name="viewmode">Mode Tampilan</string>
     <string name="uimode">Mode UI</string>
@@ -201,8 +200,6 @@
     <string name="nofiles">Tidak Ada Berkas</string>
     <string name="tapnhold">Sentuh dan tahan Berkas atau Folder untuk menampilkan opsi tambahan</string>
     <string name="pathcopied">Jalur disalin ke papan klip</string>
-    <string name="used">Digunakan Oleh yang Lain:</string>
-    <string name="free">Ruang Kosong:</string>
     <string name="atroot">Anda berada di root</string>
     <string name="listview">Tampilan List</string>
     <string name="gridview">Tampilan Grid</string>

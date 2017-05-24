@@ -51,7 +51,6 @@
   <string name="file_empty">O arquivo está vazio</string>
   <string name="error">Erro</string>
   <string name="cantlistfiles">Não é possível listar arquivos sem root</string>
-  <string name="searchresults">Resultados da pesquisa</string>
   <string name="itemsselected">Itens selecionados</string>
   <string name="newhomedirectory">Nova pasta Início</string>
   <string name="rename">Renomear</string>
@@ -66,7 +65,7 @@
   <string name="name">Nome: </string>
   <string name="date">Data: </string>
   <string name="location">Local: </string>
-  <string name="size">Tamanho da pasta: </string>
+  <string name="size_capitalized">Tamanho</string>
   <string name="totalitems">Total de items: </string>
   <string name="enterzipname">Insira o nome do Zip</string>
   <string name="noappfound">Nenhum aplicativo encontrado para abrir este arquivo</string>
@@ -76,8 +75,6 @@
   <string name="tab">Aba</string>
   <string name="file">Arquivo</string>
   <string name="folder">Pasta</string>
-  <string name="title_files">Arquivos</string>
-  <string name="title_dirs">Diretórios</string>
   <string name="newfolder">Nova pasta</string>
   <string name="entername">Insira o nome</string>
   <string name="extracting">Extraindo</string>
@@ -97,9 +94,11 @@
   <string name="compress">Compactar</string>
   <string name="yes">Sim</string>
   <string name="no">Não</string>
-  <string name="confirm">Confirmar</string>
+  <string name="dialog_delete_category_directories">Diretórios</string>
+  <string name="dialog_delete_category_files">Arquivos</string>
+  <string name="dialog_delete_disclaimer">Deseja excluir este(s) arquivo(s)?</string>
+  <string name="dialog_delete_title">Confirmar</string>
   <string name="deleting">Excluindo</string>
-  <string name="questiondelete">Deseja excluir este(s) arquivo(s)?</string>
   <string name="questionset">Deseja definir o caminho atual como pasta inicial desta aba?</string>
   <string name="viewmode">Modo de exibição</string>
   <string name="uimode">Modo de interface</string>
@@ -189,8 +188,6 @@
   <string name="copying_fles">Copiando arquivos</string>
   <string name="done">Concluído</string>
   <string name="Extracting_fles">Extraindo arquivos</string>
-  <string name="items">Itens</string>
-  <string name="item">Item</string>
   <string name="set">Definir</string>
   <string name="enablerootmde">Ative o modo Root</string>
   <string name="goback">Voltar</string>
@@ -199,8 +196,6 @@
   <string name="nofiles">Nenhum arquivo</string>
   <string name="tapnhold">Toque longo num arquivo ou pasta para mais opções</string>
   <string name="pathcopied">Caminho copiado para a área de transferência</string>
-  <string name="used">Usado por outros:  </string>
-  <string name="free">Espaço livre:  </string>
   <string name="atroot">Você está na raiz</string>
   <string name="listview">Exibição em lista</string>
   <string name="gridview">Exibição em grade</string>
@@ -356,7 +351,6 @@
   <string name="clear">Limpar</string>
   <string name="md5">md5: </string>
   <string name="md5_2">Copiar md5</string>
-  <string name="total">Total: </string>
   <string name="calculating"> calculando </string>
   <string name="sort">Ordenar</string>
   <string name="ascending">Crescente</string>
@@ -576,5 +570,8 @@ Abra o prompt de comando. Digite \'ipconfig\' e pressione Enter. Procure Gateway
   <string name="contributors_6_summary">Servidor FTP</string>
   <string name="contributors_7_summary">Disparar um shell interativo</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Item</string>
+  <string name="items">Itens</string>
   <string name="bytes">Bytes</string>
 </resources>

@@ -51,7 +51,6 @@
   <string name="file_empty">Bestand is leeg</string>
   <string name="error">Fout</string>
   <string name="cantlistfiles">Kan geen bestandenlijst maken zonder root-toegang</string>
-  <string name="searchresults">Zoekresultaten</string>
   <string name="itemsselected">Geselecteerde items</string>
   <string name="newhomedirectory">Nieuwe persoonlijke map</string>
   <string name="rename">Naam wijzigen</string>
@@ -66,7 +65,7 @@
   <string name="name">Naam: </string>
   <string name="date">Datum: </string>
   <string name="location">Locatie: </string>
-  <string name="size">Grootte: </string>
+  <string name="size_capitalized">Grootte</string>
   <string name="totalitems">Totale items: </string>
   <string name="enterzipname">Zip-naam invoeren</string>
   <string name="noappfound">Geen app gevonden om dit bestand te openen</string>
@@ -76,8 +75,6 @@
   <string name="tab">Tabblad</string>
   <string name="file">Bestand</string>
   <string name="folder">Map</string>
-  <string name="title_files">Bestanden</string>
-  <string name="title_dirs">Mappen</string>
   <string name="newfolder">Nieuwe map</string>
   <string name="entername">Naam invoeren</string>
   <string name="extracting">Uitpakken</string>
@@ -97,9 +94,11 @@
   <string name="compress">Comprimeren</string>
   <string name="yes">Ja</string>
   <string name="no">Nee</string>
-  <string name="confirm">Bevestigen</string>
+  <string name="dialog_delete_category_directories">Mappen</string>
+  <string name="dialog_delete_category_files">Bestanden</string>
+  <string name="dialog_delete_disclaimer">Weet je zeker dat je de volgende bestanden wilt verwijderen?</string>
+  <string name="dialog_delete_title">Bevestigen</string>
   <string name="deleting">Verwijderen</string>
-  <string name="questiondelete">Weet je zeker dat je de volgende bestanden wilt verwijderen?</string>
   <string name="questionset">Wilt u het huidige pad instellen als standaard voor dit tabblad?</string>
   <string name="viewmode">Weergavemodus</string>
   <string name="uimode">UI-modus</string>
@@ -189,8 +188,6 @@
   <string name="copying_fles">Bestanden kopiëren</string>
   <string name="done">Gereed</string>
   <string name="Extracting_fles">Bestanden uitpakken</string>
-  <string name="items">Objecten</string>
-  <string name="item">Object</string>
   <string name="set">Stel in</string>
   <string name="enablerootmde">Root-modus activeren</string>
   <string name="goback">Terug</string>
@@ -199,8 +196,6 @@
   <string name="nofiles">Geen bestanden</string>
   <string name="tapnhold">Druk en houd een bestand of map ingedrukt voor meer opties</string>
   <string name="pathcopied">Pad gekopieerd naar klembord</string>
-  <string name="used">Gebruikt: </string>
-  <string name="free">Vrij: </string>
   <string name="atroot">Je bent in de bovenste map</string>
   <string name="listview">Lijstweergave</string>
   <string name="gridview">Roosterweergave</string>
@@ -356,7 +351,6 @@
   <string name="clear">Wissen</string>
   <string name="md5">md5-hash: </string>
   <string name="md5_2">Md5-hash kopiëren</string>
-  <string name="total">Totaal: </string>
   <string name="calculating"> berekenen </string>
   <string name="sort">Sorteren</string>
   <string name="ascending">Oplopend</string>
@@ -511,4 +505,7 @@ Anders wordt er naar een voorval gezocht.</string>
   <string name="contributors_6_summary">FTP–Server</string>
   <string name="contributors_7_summary">Interactieve shell starten</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Object</string>
+  <string name="items">Objecten</string>
 </resources>

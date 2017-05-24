@@ -51,7 +51,6 @@
   <string name="file_empty">Файл пустий</string>
   <string name="error">Помилка</string>
   <string name="cantlistfiles">Не можете виконати без рут прав</string>
-  <string name="searchresults">Результати пошуку</string>
   <string name="itemsselected">Вибрані елементи</string>
   <string name="newhomedirectory">Новий домашній каталог</string>
   <string name="rename">Перейменувати</string>
@@ -66,7 +65,7 @@
   <string name="name">Ім\'я: </string>
   <string name="date">Дата: </string>
   <string name="location">Розташований в: </string>
-  <string name="size">Розмір: </string>
+  <string name="size_capitalized">Розмір</string>
   <string name="totalitems">Всього елементів: </string>
   <string name="enterzipname">Введіть ім\'я zip архіву</string>
   <string name="noappfound">Немає додатків для відкриття цього файлу</string>
@@ -76,8 +75,6 @@
   <string name="tab">Вкладка</string>
   <string name="file">Файл</string>
   <string name="folder">Тека</string>
-  <string name="title_files">Файли</string>
-  <string name="title_dirs">Папки</string>
   <string name="newfolder">Нова тека</string>
   <string name="entername">Введіть ім\'я</string>
   <string name="extracting">Розпаковування...</string>
@@ -97,9 +94,11 @@
   <string name="compress">Архівувати</string>
   <string name="yes">Так</string>
   <string name="no">Немає</string>
-  <string name="confirm">Підтвердіть</string>
+  <string name="dialog_delete_category_directories">Папки</string>
+  <string name="dialog_delete_category_files">Файли</string>
+  <string name="dialog_delete_disclaimer">Ви впевнені, що хочете вилучити вибрані файли?</string>
+  <string name="dialog_delete_title">Підтвердіть</string>
   <string name="deleting">Видалення...</string>
-  <string name="questiondelete">Ви впевнені, що хочете вилучити вибрані файли?</string>
   <string name="questionset">Бажаєте встановити поточний шлях як домашній для цієї вкладки?</string>
   <string name="viewmode">Режим перегляду</string>
   <string name="uimode">Режим інтерфейсу</string>
@@ -189,8 +188,6 @@
   <string name="copying_fles">Копіювання файлів</string>
   <string name="done">Закінчено</string>
   <string name="Extracting_fles">Розпаковування файлів</string>
-  <string name="items">Елементи</string>
-  <string name="item">Елемент</string>
   <string name="set">Встановити</string>
   <string name="enablerootmde">Включити режим рут прав</string>
   <string name="goback">Повернутися</string>
@@ -199,8 +196,6 @@
   <string name="nofiles">Немає файлів</string>
   <string name="tapnhold">Натисніть та утримуйте файл або теку для додаткових опцій</string>
   <string name="pathcopied">Шлях скопійований в буфер обміну</string>
-  <string name="used">Використовується:</string>
-  <string name="free">Вільно:</string>
   <string name="atroot">Ви знаходитесь в корені</string>
   <string name="listview">Список</string>
   <string name="gridview">Сітка</string>
@@ -357,7 +352,6 @@
   <string name="clear">Очистити</string>
   <string name="md5">MD5</string>
   <string name="md5_2">Копіювати md5</string>
-  <string name="total">Загалом: </string>
   <string name="calculating">обчислюю </string>
   <string name="sort">Сортувати</string>
   <string name="ascending">За зростанням</string>
@@ -618,7 +612,6 @@
   <string name="crypt_decryption_fail_password">Пароль невірний!</string>
   <string name="crypt_fingerprint_authenticate">Торкніться сенсору для продовження</string>
   <string name="authenticate_password">Введіть пароль</string>
-  <string name="bytes">Байт</string>
   <string name="cloud_error_new_account">Не вдалося додати новий обліковий запис</string>
   <string name="cloud_error_plugin">Плагін для цієї хмари не знайдено. Будь ласка, завантажити з Play Store.</string>
   <string name="cloud_error_failed_restart">Помилка завантаження. Будь ласка, выдкрийте Amaze Cloud. </string>
@@ -630,4 +623,8 @@
   <string name="cloud_plugin_not_supported">Хмарний плагін не підтримує Fdroid білд.         Будь ласка, завантажте з Play Store.</string>
   <string name="monofont">Моноширинний шрифт</string>
   <string name="showHeaders">Відображати заголовки</string>
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Елемент</string>
+  <string name="items">Елементи</string>
+  <string name="bytes">Байт</string>
 </resources>

@@ -50,7 +50,6 @@
   <string name="file_empty">Фајл је празан</string>
   <string name="error">Грешка</string>
   <string name="cantlistfiles">Не могу да излистам фајлове без кореног приступа</string>
-  <string name="searchresults">Резултати претраге</string>
   <string name="itemsselected">ставки изабрано</string>
   <string name="newhomedirectory">Нова почетна фасцикла</string>
   <string name="rename">Преименуј</string>
@@ -65,7 +64,7 @@
   <string name="name">Име: </string>
   <string name="date">Датум: </string>
   <string name="location">Локација: </string>
-  <string name="size">Величина: </string>
+  <string name="size_capitalized">Величина</string>
   <string name="totalitems">Укупно ставки: </string>
   <string name="enterzipname">Унесите име архиве</string>
   <string name="noappfound">Нема апликације за отварање овог фајла</string>
@@ -75,7 +74,6 @@
   <string name="tab">Језичак</string>
   <string name="file">Фајл</string>
   <string name="folder">Фасцикла</string>
-  <string name="title_dirs">Фасцикле</string>
   <string name="newfolder">Нова фасцикла</string>
   <string name="entername">Унесите назив</string>
   <string name="extracting">Распакујем</string>
@@ -95,9 +93,10 @@
   <string name="compress">Компресуј</string>
   <string name="yes">Да</string>
   <string name="no">Не</string>
-  <string name="confirm">Потврда</string>
+  <string name="dialog_delete_category_directories">Фасцикле</string>
+  <string name="dialog_delete_disclaimer">Желите ли заиста да обришете следеће ставке?</string>
+  <string name="dialog_delete_title">Потврда</string>
   <string name="deleting">Бришем</string>
-  <string name="questiondelete">Желите ли заиста да обришете следеће ставке?</string>
   <string name="questionset">Желите ли да поставите текућу путању као почетну за овај језичак?</string>
   <string name="viewmode">Режим приказа</string>
   <string name="uimode">Режим сучеља</string>
@@ -187,8 +186,6 @@
   <string name="copying_fles">Копирам фајлове</string>
   <string name="done">Завршено</string>
   <string name="Extracting_fles">Распакујем фајлове</string>
-  <string name="items">ставки</string>
-  <string name="item">ставка</string>
   <string name="set">Постави</string>
   <string name="enablerootmde">Омогући корени режим</string>
   <string name="goback">Иди назад</string>
@@ -197,8 +194,6 @@
   <string name="nofiles">Нема фајлова</string>
   <string name="tapnhold">Тапните и држите фајл или фасциклу за више могућности</string>
   <string name="pathcopied">Путања копирана на клипборд</string>
-  <string name="used">Искор:  </string>
-  <string name="free">Слобо:  </string>
   <string name="atroot">У кореној сте фасцикли</string>
   <string name="listview">Приказ списка</string>
   <string name="gridview">Приказ мреже</string>
@@ -350,7 +345,6 @@
   <string name="clear">Очисти</string>
   <string name="md5">мд5: </string>
   <string name="md5_2">Копирај мд5</string>
-  <string name="total">Укупно: </string>
   <string name="calculating"> израчунавам </string>
   <string name="sort">Ређање</string>
   <string name="ascending">Растуће</string>
@@ -434,4 +428,7 @@
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">ФТП сервер</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">ставка</string>
+  <string name="items">ставки</string>
 </resources>

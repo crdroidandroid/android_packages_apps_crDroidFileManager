@@ -51,7 +51,6 @@
   <string name="file_empty">Το αρχείο είναι κενό</string>
   <string name="error">Σφάλμα</string>
   <string name="cantlistfiles">Αδύνατη η εμφάνιση αρχείων χωρίς root</string>
-  <string name="searchresults">Αποτελέσματα αναζήτησης</string>
   <string name="itemsselected">Αντικείμενα επιλέχθηκαν</string>
   <string name="newhomedirectory">Νέος αρχικός φάκελος εισόδου</string>
   <string name="rename">Μετονομασία</string>
@@ -66,7 +65,7 @@
   <string name="name">Όνομα: </string>
   <string name="date">Ημερομηνία: </string>
   <string name="location">Βρίσκεται σε: </string>
-  <string name="size">Μέγεθος: </string>
+  <string name="size_capitalized">Μέγεθος</string>
   <string name="totalitems">Συνολικά αντικείμενα: </string>
   <string name="enterzipname">Εισάγετε το όνομα του Zip</string>
   <string name="noappfound">Δε βρέθηκε εφαρμογή για το άνοιγμα αυτού του αρχείου</string>
@@ -76,8 +75,6 @@
   <string name="tab">Καρτέλα</string>
   <string name="file">Αρχείο</string>
   <string name="folder">Φάκελος</string>
-  <string name="title_files">Αρχεία</string>
-  <string name="title_dirs">Φάκελοι</string>
   <string name="newfolder">Νέος φάκελος</string>
   <string name="entername">Εισάγετε όνομα</string>
   <string name="extracting">Εξαγωγή</string>
@@ -97,9 +94,11 @@
   <string name="compress">Συμπίεση</string>
   <string name="yes">Ναι</string>
   <string name="no">Όχι</string>
-  <string name="confirm">Επιβεβαίωση</string>
+  <string name="dialog_delete_category_directories">Φάκελοι</string>
+  <string name="dialog_delete_category_files">Αρχεία</string>
+  <string name="dialog_delete_disclaimer">Θέλετε πραγματικά να διαγράψετε τα αρχεία;</string>
+  <string name="dialog_delete_title">Επιβεβαίωση</string>
   <string name="deleting">Διαγραφή</string>
-  <string name="questiondelete">Θέλετε πραγματικά να διαγράψετε τα αρχεία;</string>
   <string name="questionset">Θέλετε να ορίσετε την τρέχουσα διαδρομή ως \"αρχική\" για αυτή την καρτέλα;</string>
   <string name="viewmode">Τρόπος απεικόνισης</string>
   <string name="uimode">Κατάσταση διεπαφής χρήστη</string>
@@ -189,8 +188,6 @@
   <string name="copying_fles">Αντιγραφή αρχείων</string>
   <string name="done">Ολοκληρώθηκε</string>
   <string name="Extracting_fles">Εξαγωγή αρχείων</string>
-  <string name="items">Αντικείμενα</string>
-  <string name="item">Αντικείμενο</string>
   <string name="set">Ορισμός</string>
   <string name="enablerootmde">Ενεργοποίηση κατάστασης root</string>
   <string name="goback">Πίσω</string>
@@ -199,8 +196,6 @@
   <string name="nofiles">Δεν υπάρχουν αρχεία</string>
   <string name="tapnhold">Αγγίξτε παρατεταμένα ένα αρχείο ή φάκελο για περισσότερες επιλογές</string>
   <string name="pathcopied">Η διαδρομή αντιγράφτηκε</string>
-  <string name="used">Χρησιμοποιούνται:  </string>
-  <string name="free">Ελεύθερα:  </string>
   <string name="atroot">Είστε στον root</string>
   <string name="listview">Εμφάνιση σε λίστα</string>
   <string name="gridview">Εμφάνιση σε πλέγμα</string>
@@ -356,7 +351,6 @@
   <string name="clear">Καθαρισμός</string>
   <string name="md5">MD5</string>
   <string name="md5_2">Αντιγραφή md5</string>
-  <string name="total">Σύνολο: </string>
   <string name="calculating"> υπολογισμός </string>
   <string name="sort">Ταξινόμηση</string>
   <string name="ascending">Αύξουσα</string>
@@ -486,4 +480,7 @@
   <string name="contributors_3_summary">Μηχανή Θεμάτων</string>
   <string name="contributors_6_summary">Διακομιστής FTP</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Αντικείμενο</string>
+  <string name="items">Αντικείμενα</string>
 </resources>

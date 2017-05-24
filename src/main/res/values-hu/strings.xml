@@ -51,7 +51,6 @@
   <string name="file_empty">A fájl üres</string>
   <string name="error">Hiba</string>
   <string name="cantlistfiles">Nem listázhatja ki a fájlokat root jogosultság nélkül</string>
-  <string name="searchresults">Keresési eredmények</string>
   <string name="itemsselected">elem kiválasztva</string>
   <string name="newhomedirectory">Új kezdőkönyvtár</string>
   <string name="rename">Átnevezés</string>
@@ -66,7 +65,7 @@
   <string name="name">Név</string>
   <string name="date">Dátum</string>
   <string name="location">Hely</string>
-  <string name="size">Mappa mérete</string>
+  <string name="size_capitalized">Méret</string>
   <string name="totalitems">Összes elem</string>
   <string name="enterzipname">Adja meg a zip nevét</string>
   <string name="noappfound">Nincs megfelelő alkalmazás a fájl megnyitására</string>
@@ -76,8 +75,6 @@
   <string name="tab">Lap</string>
   <string name="file">Fájl</string>
   <string name="folder">Mappa</string>
-  <string name="title_files">Fájlok</string>
-  <string name="title_dirs">Könyvtárak</string>
   <string name="newfolder">Új mappa</string>
   <string name="entername">Adja meg a nevet</string>
   <string name="extracting">Kicsomagolás</string>
@@ -97,9 +94,11 @@
   <string name="compress">Tömörítés</string>
   <string name="yes">Igen</string>
   <string name="no">Nem</string>
-  <string name="confirm">Megerősítés</string>
+  <string name="dialog_delete_category_directories">Könyvtárak</string>
+  <string name="dialog_delete_category_files">Fájlok</string>
+  <string name="dialog_delete_disclaimer">Valóban törölni szeretné a következő fájlokat?</string>
+  <string name="dialog_delete_title">Megerősítés</string>
   <string name="deleting">Törlés</string>
-  <string name="questiondelete">Valóban törölni szeretné a következő fájlokat?</string>
   <string name="questionset">Beállítja az aktuális útvonalat kezdőlapként ezen a fülön?</string>
   <string name="viewmode">Megjelenítési mód</string>
   <string name="uimode">Kezelőfelület mód</string>
@@ -190,8 +189,6 @@
   <string name="copying_fles">Fájlok másolása</string>
   <string name="done">Kész</string>
   <string name="Extracting_fles">Fájlok kibontása</string>
-  <string name="items">Elem</string>
-  <string name="item">Elem</string>
   <string name="set">Beállítás</string>
   <string name="enablerootmde">Root mód engedélyezése</string>
   <string name="goback">Vissza</string>
@@ -200,8 +197,6 @@
   <string name="nofiles">Nincsenek fájlok</string>
   <string name="tapnhold">Érintse meg és tartsa nyomva a fájlt vagy mappát további lehetőségek eléréséhez</string>
   <string name="pathcopied">Az útvonal a vágólapra került</string>
-  <string name="used">Mások által használt:</string>
-  <string name="free">Szabad terület:</string>
   <string name="atroot">Jelenleg a gyökérkönyvtárban van</string>
   <string name="listview">Listanézet</string>
   <string name="gridview">Rácsnézet</string>
@@ -358,7 +353,6 @@ Folytatja?</string>
   <string name="clear">Törlés</string>
   <string name="md5">md5: </string>
   <string name="md5_2">md5 másolása</string>
-  <string name="total">Összes:</string>
   <string name="calculating">kiszámítás</string>
   <string name="sort">Rendezés</string>
   <string name="ascending">Növekvő</string>
@@ -552,4 +546,7 @@ megtalálásához..</li><li/><br/>\\n
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">FTP-kiszolgáló</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Elem</string>
+  <string name="items">Elem</string>
 </resources>

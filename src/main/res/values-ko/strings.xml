@@ -50,7 +50,6 @@
   <string name="file_empty">파일이 비어있습니다</string>
   <string name="error">오류</string>
   <string name="cantlistfiles">파일 목록을 보려면 루트 권한이 필요합니다</string>
-  <string name="searchresults">검색 결과</string>
   <string name="itemsselected">항목이 선택되었습니다</string>
   <string name="newhomedirectory">새로운 홈 디렉토리</string>
   <string name="rename">이름 변경</string>
@@ -65,7 +64,7 @@
   <string name="name">이름: </string>
   <string name="date">생성일: </string>
   <string name="location">경로: </string>
-  <string name="size">크기: </string>
+  <string name="size_capitalized">크기</string>
   <string name="totalitems">항목 개수: </string>
   <string name="enterzipname">압축 파일의 이름을 입력해 주세요</string>
   <string name="noappfound">이 파일을 열 수 있는 애플리케이션을 찾지 못 했습니다</string>
@@ -75,8 +74,6 @@
   <string name="tab">탭</string>
   <string name="file">파일</string>
   <string name="folder">폴더</string>
-  <string name="title_files">파일</string>
-  <string name="title_dirs">폴더</string>
   <string name="newfolder">새 폴더</string>
   <string name="entername">이름을 입력해 주세요</string>
   <string name="extracting">압축을 해제하는 중입니다</string>
@@ -96,9 +93,11 @@
   <string name="compress">압축</string>
   <string name="yes">예</string>
   <string name="no">아니오</string>
-  <string name="confirm">확인</string>
+  <string name="dialog_delete_category_directories">폴더</string>
+  <string name="dialog_delete_category_files">파일</string>
+  <string name="dialog_delete_disclaimer">다음의 파일을 정말로 삭제하시겠습니까?</string>
+  <string name="dialog_delete_title">확인</string>
   <string name="deleting">삭제하는 중입니다</string>
-  <string name="questiondelete">다음의 파일을 정말로 삭제하시겠습니까?</string>
   <string name="viewmode">보기 형식</string>
   <string name="uimode">UI</string>
   <string name="directorysort">디렉토리 정렬</string>
@@ -187,8 +186,6 @@
   <string name="copying_fles">파일을 복사하는 중입니다</string>
   <string name="done">완료되었습니다</string>
   <string name="Extracting_fles">파일의 압축을 해제하는 중입니다</string>
-  <string name="items">항목</string>
-  <string name="item">아이템</string>
   <string name="set">설정</string>
   <string name="enablerootmde">루트 모드 활성화</string>
   <string name="goback">뒤로가기</string>
@@ -197,8 +194,6 @@
   <string name="nofiles">빈 파일</string>
   <string name="tapnhold">파일이나 폴더를 길게 누르면 더 많은 옵션을 볼 수 있습니다</string>
   <string name="pathcopied">클립보드에 복사되었습니다</string>
-  <string name="used">사용 공간 :  </string>
-  <string name="free">여유 공간 :  </string>
   <string name="atroot">이미 최상위 폴더에 있습니다</string>
   <string name="listview">목록 보기</string>
   <string name="gridview">격자 보기</string>
@@ -374,4 +369,7 @@
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">FTP 서버</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">아이템</string>
+  <string name="items">항목</string>
 </resources>

@@ -51,7 +51,6 @@
   <string name="file_empty">Datei ist leer</string>
   <string name="error">Fehler</string>
   <string name="cantlistfiles">Kann Dateien ohne Root-Rechte nicht auflisten</string>
-  <string name="searchresults">Suchergebnisse</string>
   <string name="itemsselected">Elemente ausgewählt</string>
   <string name="newhomedirectory">Neues Home-Verzeichnis</string>
   <string name="rename">Umbenennen</string>
@@ -66,7 +65,7 @@
   <string name="name">Name</string>
   <string name="date">Datum</string>
   <string name="location">Standort</string>
-  <string name="size">Ordnergröße</string>
+  <string name="size_capitalized">Größe</string>
   <string name="totalitems">Objekte insgesamt</string>
   <string name="enterzipname">Zip-Namen eingeben</string>
   <string name="noappfound">Keine App zum öffnen dieser Datei gefunden</string>
@@ -76,8 +75,6 @@
   <string name="tab">Tab</string>
   <string name="file">Datei</string>
   <string name="folder">Ordner</string>
-  <string name="title_files">DATEIEN</string>
-  <string name="title_dirs">VERZEICHNISSE</string>
   <string name="newfolder">Neuer Ordner</string>
   <string name="entername">Namen eingeben</string>
   <string name="extracting">Extrahieren</string>
@@ -97,9 +94,11 @@
   <string name="compress">Komprimieren</string>
   <string name="yes">Ja</string>
   <string name="no">Nein</string>
-  <string name="confirm">Bestätigen</string>
+  <string name="dialog_delete_category_directories">VERZEICHNISSE</string>
+  <string name="dialog_delete_category_files">DATEIEN</string>
+  <string name="dialog_delete_disclaimer">Möchten Sie die folgenden Dateien wirklich endgültig löschen?</string>
+  <string name="dialog_delete_title">Bestätigen</string>
   <string name="deleting">Löschen</string>
-  <string name="questiondelete">Möchten Sie die folgenden Dateien wirklich endgültig löschen?</string>
   <string name="questionset">Möchten Sie den aktuellen Pfad als Standard für dieses Tab setzen?</string>
   <string name="viewmode">Ansichtsmodus</string>
   <string name="uimode">Listenmodus</string>
@@ -189,8 +188,6 @@
   <string name="copying_fles">Kopiere Dateien</string>
   <string name="done">Fertig</string>
   <string name="Extracting_fles">Extrahiere Dateien</string>
-  <string name="items">Elemente</string>
-  <string name="item">Objekt</string>
   <string name="set">Setzen</string>
   <string name="enablerootmde">Root-Modus aktivieren</string>
   <string name="goback">Zurück</string>
@@ -199,8 +196,6 @@
   <string name="nofiles">Keine Dateien</string>
   <string name="tapnhold">Tippe und halte Datei für mehr Optionen</string>
   <string name="pathcopied">Pfad in Zwischenspeicher kopiert</string>
-  <string name="used">Benutzt:\u0020</string>
-  <string name="free">Frei:\u0020</string>
   <string name="atroot">Oberstes Verzeichnis erreicht</string>
   <string name="listview">Listenansicht</string>
   <string name="gridview">Tabellenansicht</string>
@@ -356,7 +351,6 @@
   <string name="clear">Löschen</string>
   <string name="md5">MD5:</string>
   <string name="md5_2">MD5 kopieren</string>
-  <string name="total">Gesamt:</string>
   <string name="calculating">Berechne</string>
   <string name="sort">Sortieren</string>
   <string name="ascending">Aufsteigend</string>
@@ -521,4 +515,7 @@ rund um die Entwicklung</string>
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">FTP Server</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Objekt</string>
+  <string name="items">Elemente</string>
 </resources>

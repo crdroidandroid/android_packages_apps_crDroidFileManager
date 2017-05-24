@@ -48,7 +48,6 @@
   <string name="file_empty">Fil är tom</string>
   <string name="error">Fel</string>
   <string name="cantlistfiles">Kan inte lista filer utan root</string>
-  <string name="searchresults">Sökresultat</string>
   <string name="newhomedirectory">Ny hem-mapp</string>
   <string name="rename">Byt namn</string>
   <string name="save">Spara</string>
@@ -59,7 +58,7 @@
   <string name="name">Namn</string>
   <string name="date">Datum</string>
   <string name="location">Plats</string>
-  <string name="size">Storlek på mapp</string>
+  <string name="size_capitalized">Storlek</string>
   <string name="noappfound">Ingen app hittades för att öppna denna fil</string>
   <string name="copying">Kopierar</string>
   <string name="moving">Flyttar</string>
@@ -67,8 +66,6 @@
   <string name="tab">Flik</string>
   <string name="file">Fil</string>
   <string name="folder">Mapp</string>
-  <string name="title_files">Filer</string>
-  <string name="title_dirs">Kataloger</string>
   <string name="newfolder">Ny mapp</string>
   <string name="entername">Ange namn</string>
   <string name="extracting">Extraherar</string>
@@ -82,9 +79,11 @@
   <string name="compress">Komprimera</string>
   <string name="yes">Ja</string>
   <string name="no">Nej</string>
-  <string name="confirm">Bekräfta</string>
+  <string name="dialog_delete_category_directories">Kataloger</string>
+  <string name="dialog_delete_category_files">Filer</string>
+  <string name="dialog_delete_disclaimer">Vill du verkligen ta bort följande filer?</string>
+  <string name="dialog_delete_title">Bekräfta</string>
   <string name="deleting">Tar bort</string>
-  <string name="questiondelete">Vill du verkligen ta bort följande filer?</string>
   <string name="viewmode">Visningsläge</string>
   <string name="uimode">UI-läge</string>
   <string name="sortby">Sortera på</string>
@@ -163,8 +162,6 @@
   <string name="newfile">Ny fil</string>
   <string name="nofiles">Inga filer</string>
   <string name="pathcopied">Sökväg kopierad till urklipp</string>
-  <string name="used">Används av andra:  </string>
-  <string name="free">Ledigt utrymme:  </string>
   <string name="atroot">Du är vid roten</string>
   <string name="listview">Listvy</string>
   <string name="gridview">Rutnätsvy</string>
@@ -281,7 +278,6 @@
   <string name="clear">Rensa</string>
   <string name="md5">md5: </string>
   <string name="md5_2">Kopiera md5</string>
-  <string name="total">Totalt: </string>
   <string name="calculating"> beräknar </string>
   <string name="sort">Sortera</string>
   <string name="ascending">Stigande</string>
@@ -409,4 +405,5 @@
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">FTP-server</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
 </resources>

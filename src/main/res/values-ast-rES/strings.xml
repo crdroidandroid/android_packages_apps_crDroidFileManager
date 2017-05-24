@@ -50,7 +50,6 @@
   <string name="file_empty">El ficheru ta baleru</string>
   <string name="error">Fallu</string>
   <string name="cantlistfiles">Nun puen llistase lo ficheros ensin root</string>
-  <string name="searchresults">Resultaos de gueta</string>
   <string name="itemsselected">Elementos esbillaos</string>
   <string name="newhomedirectory">Direutoriu nuevu d\'aniciu</string>
   <string name="rename">Renomar</string>
@@ -65,7 +64,6 @@
   <string name="name">Nome</string>
   <string name="date">Data</string>
   <string name="location">Allugamientu</string>
-  <string name="size">Tamañu de carpeta</string>
   <string name="totalitems">Elementos totales</string>
   <string name="enterzipname">Introduz el nome\'l ZIP</string>
   <string name="noappfound">Nun s\'alcontró aplicación dala p\'abrir esti ficheru</string>
@@ -75,7 +73,6 @@
   <string name="tab">Llingüeta</string>
   <string name="file">Ficheru</string>
   <string name="folder">Carpeta</string>
-  <string name="title_dirs">Diretorios</string>
   <string name="newfolder">Carpeta nueva</string>
   <string name="entername">Introduz el nome</string>
   <string name="extracting">Estrayendo</string>
@@ -95,9 +92,10 @@
   <string name="compress">Comprimir</string>
   <string name="yes">Sí</string>
   <string name="no">Non</string>
-  <string name="confirm">Confirmar</string>
+  <string name="dialog_delete_category_directories">Diretorios</string>
+  <string name="dialog_delete_disclaimer">¿De xuru que quies desaniciar los ficheros de darréu?</string>
+  <string name="dialog_delete_title">Confirmar</string>
   <string name="deleting">Desaniciando</string>
-  <string name="questiondelete">¿De xuru que quies desaniciar los ficheros de darréu?</string>
   <string name="questionset">¿De xuru que quies afitar el camín actual como l\'aniciu pa esta llingüeta?</string>
   <string name="viewmode">Mou de vista</string>
   <string name="uimode">Mou d\'IU</string>
@@ -186,8 +184,6 @@
   <string name="copying_fles">Copiando ficheros</string>
   <string name="done">Fecho</string>
   <string name="Extracting_fles">Estrayendo ficheros</string>
-  <string name="items">Elementos</string>
-  <string name="item">Elementu</string>
   <string name="set">Afitar</string>
   <string name="enablerootmde">Habilitar mou root</string>
   <string name="goback">Dir p\'atrás</string>
@@ -196,8 +192,6 @@
   <string name="nofiles">Nun hai ficheros</string>
   <string name="tapnhold">Calca y ten primío nun ficheru o carpeta pa más opciones</string>
   <string name="pathcopied">El camín copióse al cartafueyu</string>
-  <string name="used">Úsase por otros:</string>
-  <string name="free">Espaciu llibre:</string>
   <string name="atroot">Tas nel raigañu</string>
   <string name="listview">Vista de llistáu</string>
   <string name="gridview">Vista de rexáu</string>
@@ -348,7 +342,6 @@ inestable\'l preséu.\\n¿Siguir?</string>
   <string name="clear">Llimpiar</string>
   <string name="md5">MD5:</string>
   <string name="md5_2">Copiar MD5</string>
-  <string name="total">Total:</string>
   <string name="calculating">calculando</string>
   <string name="sort">Ordenar</string>
   <string name="ascending">Ascendente</string>
@@ -500,4 +493,7 @@ to ordenador.</li><li/><br/>\\n
   <!-- references 'name/size/location/hash' copied to clipboard -->
   <string name="contributors_6_summary">Sirvidor FTP</string>
   <!-- references to 'Some files weren't successfully %s -->
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Elementu</string>
+  <string name="items">Elementos</string>
 </resources>

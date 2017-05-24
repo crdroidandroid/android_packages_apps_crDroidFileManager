@@ -50,7 +50,6 @@
   <string name="loading">Зареждане&#8230;</string>
   <string name="file_empty">Файлът е празен</string>
   <string name="error">Грешка</string>
-  <string name="searchresults">Резултати от търсенето</string>
   <string name="itemsselected">Избрани елементи</string>
   <string name="newhomedirectory">Нова начална директория</string>
   <string name="rename">Преименувай</string>
@@ -64,7 +63,7 @@
   <string name="name">Име</string>
   <string name="date">Дата</string>
   <string name="location">Местоположение</string>
-  <string name="size">Размера на папка</string>
+  <string name="size_capitalized">Размер</string>
   <string name="totalitems">Общо елементи</string>
   <string name="noappfound">Не е намерено приложение за този тип файлове</string>
   <string name="copying">Копиране</string>
@@ -73,8 +72,6 @@
   <string name="tab">Раздел</string>
   <string name="file">Файл</string>
   <string name="folder">Папка</string>
-  <string name="title_files">Файлове</string>
-  <string name="title_dirs">Директории</string>
   <string name="newfolder">Нова папка</string>
   <string name="entername">Въведете име</string>
   <string name="extracting">Извличане</string>
@@ -93,9 +90,11 @@
   <string name="compress">Компресирай</string>
   <string name="yes">Да</string>
   <string name="no">Не</string>
-  <string name="confirm">Потвърждаване</string>
+  <string name="dialog_delete_category_directories">Директории</string>
+  <string name="dialog_delete_category_files">Файлове</string>
+  <string name="dialog_delete_disclaimer">Наистина ли искате да изтриете следните файлове?</string>
+  <string name="dialog_delete_title">Потвърждаване</string>
   <string name="deleting">Изтриване</string>
-  <string name="questiondelete">Наистина ли искате да изтриете следните файлове?</string>
   <string name="questionset">Искате ли да зададете текущия път като домашен за този раздел?</string>
   <string name="viewmode">Режим на преглед</string>
   <string name="sortby">Подреждане по</string>
@@ -170,8 +169,6 @@
   <string name="copying_fles">Копиране на файлове</string>
   <string name="done">Готово</string>
   <string name="Extracting_fles">Извличане на файлове</string>
-  <string name="items">Елементи</string>
-  <string name="item">Елемент</string>
   <string name="set">Задай</string>
   <string name="enablerootmde">Разрешаване на Root режим</string>
   <string name="goback">Назад</string>
@@ -180,8 +177,6 @@
   <string name="nofiles">Няма файлове</string>
   <string name="tapnhold">Докоснете и задръжте върху файл или папка за повече опции</string>
   <string name="pathcopied">Пътят е копиран в клипборда</string>
-  <string name="used">Използван от други:  </string>
-  <string name="free">Свободно пространство:  </string>
   <string name="atroot">Вие сте в основата</string>
   <string name="listview">Списъчен изглед</string>
   <string name="gridview">Табличен изглед</string>
@@ -304,7 +299,6 @@
   <string name="clear">Изчисти</string>
   <string name="md5">MD5</string>
   <string name="md5_2">Копиране на md5</string>
-  <string name="total">Общо: </string>
   <string name="calculating"> изчисляване </string>
   <string name="sort">Сортирай</string>
   <string name="ascending">Възходящо</string>
@@ -470,4 +464,7 @@
   <string name="crypt_encrypt">Криптиране</string>
   <string name="crypt_decrypt">Декриптиране</string>
   <string name="operation_fail_following">Операцията е неуспешна за следните файлове</string>
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Елемент</string>
+  <string name="items">Елементи</string>
 </resources>

@@ -51,7 +51,6 @@
   <string name="file_empty">Il file è vuoto</string>
   <string name="error">Errore</string>
   <string name="cantlistfiles">Non è possibile elencare i file senza il percorso root</string>
-  <string name="searchresults">Risultati ricerca</string>
   <string name="itemsselected">Elementi selezionati</string>
   <string name="newhomedirectory">Nuova home directory</string>
   <string name="rename">Rinomina</string>
@@ -66,7 +65,7 @@
   <string name="name">Nome</string>
   <string name="date">Data</string>
   <string name="location">Percorso</string>
-  <string name="size">Dimensioni cartella</string>
+  <string name="size_capitalized">Dimensioni</string>
   <string name="totalitems">Elementi totali</string>
   <string name="enterzipname">Inserisci nome file ZIP</string>
   <string name="noappfound">Nessuna app trovata per aprire questo file</string>
@@ -76,8 +75,6 @@
   <string name="tab">Scheda</string>
   <string name="file">File</string>
   <string name="folder">Cartella</string>
-  <string name="title_files">File</string>
-  <string name="title_dirs">Cartelle</string>
   <string name="newfolder">Nuova cartella</string>
   <string name="entername">Inserisci nome</string>
   <string name="extracting">Estrazione</string>
@@ -103,9 +100,11 @@ Tocca e tieni premuto qualsiasi file per ulteriori opzioni
   <string name="compress">Comprimi</string>
   <string name="yes">Sì</string>
   <string name="no">No</string>
-  <string name="confirm">Conferma</string>
+  <string name="dialog_delete_category_directories">Cartelle</string>
+  <string name="dialog_delete_category_files">File</string>
+  <string name="dialog_delete_disclaimer">Vuoi davvero eliminare i seguenti file?</string>
+  <string name="dialog_delete_title">Conferma</string>
   <string name="deleting">Eliminazione</string>
-  <string name="questiondelete">Vuoi davvero eliminare i seguenti file?</string>
   <string name="questionset">Vuoi impostare il percorso corrente come home per questa scheda?</string>
   <string name="viewmode">Modalità visualizzazione</string>
   <string name="uimode">Modalità interfaccia utente</string>
@@ -195,8 +194,6 @@ Tocca e tieni premuto qualsiasi file per ulteriori opzioni
   <string name="copying_fles">Copia file in corso</string>
   <string name="done">Fatto</string>
   <string name="Extracting_fles">Estrazione file in corso</string>
-  <string name="items">Elementi</string>
-  <string name="item">Elemento</string>
   <string name="set">Imposta</string>
   <string name="enablerootmde">Abilità modalità root</string>
   <string name="goback">Indietro</string>
@@ -207,8 +204,6 @@ Tocca e tieni premuto qualsiasi file per ulteriori opzioni
 Tieni premuto un file od una cartella per altre opzioni
 </string>
   <string name="pathcopied">Percorso copiato</string>
-  <string name="used">In uso:</string>
-  <string name="free">Spazio libero:</string>
   <string name="atroot">Sei alla root</string>
   <string name="listview">Visualizzazione lista</string>
   <string name="gridview">Visualizzazione griglia</string>
@@ -366,7 +361,6 @@ I cambiamenti saranno effettivi dopo il riavvio dell\'app
   <string name="clear">Pulisci</string>
   <string name="md5">md5:</string>
   <string name="md5_2">Copia md5</string>
-  <string name="total">Totale:</string>
   <string name="calculating">calcolo in corso</string>
   <string name="sort">Ordina</string>
   <string name="ascending">Crescente</string>
@@ -565,5 +559,8 @@ Tieni premuto un file od una cartella per altre opzioni
   <string name="crypt_decryption_fail_password">Password errata!</string>
   <string name="crypt_fingerprint_authenticate">Tocca il sensore per continuare</string>
   <string name="authenticate_password">Inserisci la password</string>
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Elemento</string>
+  <string name="items">Elementi</string>
   <string name="bytes">Bytes</string>
 </resources>

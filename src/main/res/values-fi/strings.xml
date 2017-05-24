@@ -51,7 +51,6 @@
   <string name="file_empty">Tiedosto on tyhjä</string>
   <string name="error">Virhe</string>
   <string name="cantlistfiles">Ei voida listata tiedostoja ilman Root-oikeutta</string>
-  <string name="searchresults">Hakutulokset</string>
   <string name="itemsselected">Kohdetta valittu</string>
   <string name="newhomedirectory">Uusi kotihakemisto</string>
   <string name="rename">Nimeä uudelleen</string>
@@ -66,7 +65,7 @@
   <string name="name">Nimi</string>
   <string name="date">pvm</string>
   <string name="location">Sijainti</string>
-  <string name="size">Kansion koko</string>
+  <string name="size_capitalized">Koko</string>
   <string name="totalitems">Kohteiden määrä</string>
   <string name="enterzipname">Kirjoita tiedostonimi</string>
   <string name="noappfound">Ei löydetty sovellusta jolla tämän tiedostotyypin voisi avata</string>
@@ -76,8 +75,6 @@
   <string name="tab">Välilehti</string>
   <string name="file">Tiedosto</string>
   <string name="folder">Kansio</string>
-  <string name="title_files">Tiedostot</string>
-  <string name="title_dirs">Hakemistot</string>
   <string name="newfolder">Uusi kansio</string>
   <string name="entername">Anna nimi</string>
   <string name="extracting">Puretaan</string>
@@ -97,9 +94,11 @@
   <string name="compress">Pakkaa</string>
   <string name="yes">Kyllä</string>
   <string name="no">Ei</string>
-  <string name="confirm">Vahvista</string>
+  <string name="dialog_delete_category_directories">Hakemistot</string>
+  <string name="dialog_delete_category_files">Tiedostot</string>
+  <string name="dialog_delete_disclaimer">Haluatko varmasti poistaa nämä tiedostot?</string>
+  <string name="dialog_delete_title">Vahvista</string>
   <string name="deleting">Poistetaan</string>
-  <string name="questiondelete">Haluatko varmasti poistaa nämä tiedostot?</string>
   <string name="questionset">Haluatko asettaa nykyisen polun kodiksi tässä välilehdessä?</string>
   <string name="viewmode">Näyttötila</string>
   <string name="uimode">Käyttöliittymätila</string>
@@ -190,8 +189,6 @@
   <string name="copying_fles">Kopioidaan tiedostoja</string>
   <string name="done">Valmis</string>
   <string name="Extracting_fles">Puretaan tiedostoja</string>
-  <string name="items">Kohteet</string>
-  <string name="item">Kohde</string>
   <string name="set">Aseta</string>
   <string name="enablerootmde">Ota Root-tila käyttöön</string>
   <string name="goback">Mene takaisin</string>
@@ -200,8 +197,6 @@
   <string name="nofiles">Ei tiedostoja</string>
   <string name="tapnhold">Napauta ja pidä pohjassa nähdäksesi lisää asetuksia</string>
   <string name="pathcopied">Polku kopioitu leikepöydälle</string>
-  <string name="used">Muut käyttää:  </string>
-  <string name="free">Vapaa tila:  </string>
   <string name="atroot">Olet juuri</string>
   <string name="listview">Listanäkymä</string>
   <string name="gridview">Ruudukkonäkymä</string>
@@ -357,7 +352,6 @@
   <string name="clear">Tyhjennä</string>
   <string name="md5">MD5</string>
   <string name="md5_2">Kopioi MD5</string>
-  <string name="total">Yhteensä:</string>
   <string name="calculating">lasketaan</string>
   <string name="sort">Lajittele</string>
   <string name="ascending">Nouseva</string>
@@ -621,7 +615,6 @@
   <string name="crypt_decryption_fail_password">Väärä salasana!</string>
   <string name="crypt_fingerprint_authenticate">Paina kosketusanturia jatkaaksesi</string>
   <string name="authenticate_password">Syötä salasana</string>
-  <string name="bytes">Tavua</string>
   <string name="sidebarfolders_title">Sivupalkin pikanäppäimet</string>
   <string name="sidebarquickaccess_title">Sivupalkin nopeavaus</string>
   <string name="showfolders_pref_title">Näytä pikanäppäimet</string>
@@ -644,4 +637,8 @@
         lataa Amaze Google Play Storesta.</string>
   <string name="monofont">Monospace fontti</string>
   <string name="showHeaders">Näytä ylätunniste</string>
+  <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
+  <string name="item">Kohde</string>
+  <string name="items">Kohteet</string>
+  <string name="bytes">Tavua</string>
 </resources>

@@ -29,7 +29,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Binder;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
@@ -39,13 +38,15 @@ import android.util.Log;
 import com.amaze.filemanager.R;
 import com.amaze.filemanager.activities.BaseActivity;
 import com.amaze.filemanager.activities.MainActivity;
+import com.amaze.filemanager.database.CryptHandler;
+import com.amaze.filemanager.database.EncryptedEntry;
 import com.amaze.filemanager.exceptions.RootNotPermittedException;
 import com.amaze.filemanager.filesystem.BaseFile;
 import com.amaze.filemanager.filesystem.FileUtil;
 import com.amaze.filemanager.filesystem.HFile;
 import com.amaze.filemanager.filesystem.Operations;
 import com.amaze.filemanager.filesystem.RootHelper;
-import com.amaze.filemanager.utils.CloudUtil;
+import com.amaze.filemanager.utils.CryptUtil;
 import com.amaze.filemanager.utils.DataPackage;
 import com.amaze.filemanager.utils.Futils;
 import com.amaze.filemanager.utils.GenericCopyUtil;
@@ -54,7 +55,6 @@ import com.amaze.filemanager.utils.ProgressHandler;
 import com.amaze.filemanager.utils.RootUtils;
 import com.amaze.filemanager.utils.ServiceWatcherUtil;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -124,21 +124,6 @@ public class CopyService extends Service {
         return START_STICKY;
     }
 
-    /**
-     * Helper method to calculate source files size
-     * @param files
-     * @param context
-     * @return
-     */
-    long getTotalBytes(ArrayList<BaseFile> files, Context context) {
-        long totalBytes = 0;
-        for (BaseFile file : files) {
-            if (file.isDirectory()) totalBytes += file.folderSize(context);
-            else totalBytes += file.length(context);
-        }
-        return totalBytes;
-    }
-
     public void onDestroy() {
         this.unregisterReceiver(receiver3);
     }
@@ -147,6 +132,8 @@ public class CopyService extends Service {
         ArrayList<BaseFile> sourceFiles;
         boolean move;
         Copy copy;
+        private String targetPath;
+        private OpenMode openMode;
 
         protected Integer doInBackground(Bundle... p1) {
 
@@ -155,7 +142,7 @@ public class CopyService extends Service {
 
             // setting up service watchers and initial data packages
             // finding total size on background thread (this is necessary condition for SMB!)
-            totalSize = getTotalBytes(sourceFiles, c);
+            totalSize = Futils.getTotalBytes(sourceFiles, c);
             totalSourceFiles = sourceFiles.size();
             progressHandler = new ProgressHandler(totalSourceFiles, totalSize);
 
@@ -182,11 +169,19 @@ public class CopyService extends Service {
             intent1.setCompleted(false);
             putDataPackage(intent1);
 
-            String targetPath = p1[0].getString(TAG_COPY_TARGET);
+            targetPath = p1[0].getString(TAG_COPY_TARGET);
             move = p1[0].getBoolean(TAG_COPY_MOVE);
+            openMode = OpenMode.getOpenMode(p1[0].getInt(TAG_COPY_OPEN_MODE));
             copy = new Copy();
-            copy.execute(sourceFiles, targetPath, move,
-                    OpenMode.getOpenMode(p1[0].getInt(TAG_COPY_OPEN_MODE)));
+            copy.execute(sourceFiles, targetPath, move, openMode);
+
+            if (copy.failedFOps.size() == 0) {
+
+                // adding/updating new encrypted db entry if any encrypted file was copied/moved
+                for (BaseFile sourceFile : sourceFiles) {
+                    findAndReplaceEncryptedEntry(sourceFile);
+                }
+            }
             return id;
         }
 
@@ -198,9 +193,56 @@ public class CopyService extends Service {
             // stopping watcher if not yet finished
             watcherUtil.stopWatch();
             generateNotification(copy.failedFOps, move);
+
             Intent intent = new Intent("loadlist");
             sendBroadcast(intent);
             stopSelf();
+        }
+
+        /**
+         * Iterates through every file to find an encrypted file and update/add a new entry about it's
+         * metadata in the database
+         * @param sourceFile the file which is to be iterated
+         */
+        private void findAndReplaceEncryptedEntry(BaseFile sourceFile) {
+
+            // even directories can end with CRYPT_EXTENSION
+            if (sourceFile.isDirectory() && !sourceFile.getName().endsWith(CryptUtil.CRYPT_EXTENSION)) {
+
+                for (BaseFile file : sourceFile.listFiles(getApplicationContext(), BaseActivity.rootMode)) {
+                    // iterating each file inside source files which were copied to find instance of
+                    // any copied / moved encrypted file
+
+                    findAndReplaceEncryptedEntry(file);
+
+                }
+            } else {
+
+                if (sourceFile.getName().endsWith(CryptUtil.CRYPT_EXTENSION)) {
+                    try {
+
+                        CryptHandler cryptHandler = new CryptHandler(getApplicationContext());
+                        EncryptedEntry oldEntry = cryptHandler.findEntry(sourceFile.getPath());
+                        EncryptedEntry newEntry = new EncryptedEntry();
+
+                        newEntry.setPassword(oldEntry.getPassword());
+                        newEntry.setPath(targetPath + "/" + sourceFile.getName());
+
+                        if (move) {
+
+                            // file was been moved, update the existing entry
+                            newEntry.setId(oldEntry.getId());
+                            cryptHandler.updateEntry(oldEntry, newEntry);
+                        } else {
+                            // file was copied, create a new entry with same data
+                            cryptHandler.addEntry(newEntry);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        // couldn't change the entry, leave it alone
+                    }
+                }
+            }
         }
 
         class Copy {

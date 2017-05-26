@@ -38,7 +38,6 @@ LOCAL_FULL_LIBS_MANIFEST_FILES := $(LOCAL_PATH)/src/play/AndroidManifest.xml
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src/main)
 LOCAL_SRC_FILES += $(call all-java-files-under, src/play)
-LOCAL_SRC_FILES += $(call all-java-files-under, libs/StickyHeadersRecyclerView/src/main)
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/src/main/res \
@@ -90,6 +89,7 @@ LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
     aar-play-services-basement \
     aar-play-services-plus \
     aar-systembartint \
+    aar-sticky-headers-recyclerview \
     mokee-libsuperuser
 
 include $(BUILD_PACKAGE)
@@ -98,10 +98,11 @@ include $(CLEAR_VARS)
 
 PLAY_VERSION := 10.2.1
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
-    aar-fab:libs/com.github.clans.fab-1.6.1.aar \
-    aar-material-dialogs:libs/com.afollestad.material-dialogs.core-0.9.2.3.aar \
+    aar-fab:libs/com.github.clans.fab-1.6.4.aar \
+    aar-material-dialogs:libs/com.afollestad.material-dialogs.core-0.9.4.3.aar \
     aar-mp-android-chart:libs/com.github.mikephil-3.0.2.aar \
     aar-systembartint:libs/com.readystatesoftware.systembartint-1.0.3.aar \
+    aar-sticky-headers-recyclerview:libs/com.github.emmanuelmess.sticky-headers-recyclerview.aar \
     aar-cloudrail-si-android:libs/com.cloudrail-2.17.0.aar \
     aar-play-services-base:../../../external/google/play-services-base/$(PLAY_VERSION)/play-services-base-$(PLAY_VERSION).aar \
     aar-play-services-basement:../../../external/google/play-services-basement/$(PLAY_VERSION)/play-services-basement-$(PLAY_VERSION).aar \

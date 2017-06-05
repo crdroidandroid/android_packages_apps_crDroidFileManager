@@ -89,7 +89,6 @@ LOCAL_STATIC_JAVA_AAR_LIBRARIES := \
     aar-play-services-basement \
     aar-play-services-plus \
     aar-systembartint \
-    aar-sticky-headers-recyclerview \
     mokee-libsuperuser
 
 include $(BUILD_PACKAGE)
@@ -102,7 +101,6 @@ LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
     aar-material-dialogs:libs/com.afollestad.material-dialogs.core-0.9.4.3.aar \
     aar-mp-android-chart:libs/com.github.mikephil-3.0.2.aar \
     aar-systembartint:libs/com.readystatesoftware.systembartint-1.0.3.aar \
-    aar-sticky-headers-recyclerview:libs/com.github.emmanuelmess.sticky-headers-recyclerview.aar \
     aar-cloudrail-si-android:libs/com.cloudrail-2.17.0.aar \
     aar-play-services-base:../../../external/google/play-services-base/$(PLAY_VERSION)/play-services-base-$(PLAY_VERSION).aar \
     aar-play-services-basement:../../../external/google/play-services-basement/$(PLAY_VERSION)/play-services-basement-$(PLAY_VERSION).aar \

@@ -13,8 +13,8 @@ import com.amaze.filemanager.exceptions.RootNotPermittedException;
 import com.amaze.filemanager.fragments.MainFragment;
 import com.amaze.filemanager.ui.LayoutElement;
 import com.amaze.filemanager.ui.icons.Icons;
-import com.amaze.filemanager.utils.CloudUtil;
-import com.amaze.filemanager.utils.Futils;
+import com.amaze.filemanager.utils.cloud.CloudUtil;
+import com.amaze.filemanager.utils.files.Futils;
 import com.amaze.filemanager.utils.Logger;
 import com.amaze.filemanager.utils.OTGUtil;
 import com.amaze.filemanager.utils.OpenMode;
@@ -1052,7 +1052,7 @@ public class HFile {
                                     file.lastModified() + "");
                 } else {
                     layoutElement = utilitiesProvider.getFutils().newElement(Icons.loadMimeIcon(
-                            file.getPath(), !mainFragment.IS_LIST, mainFragment.res),
+                            file.getPath(), !mainFragment.IS_LIST, mainFragment.getResources()),
                             file.getPath(), RootHelper.parseFilePermission(file),
                             file.getPath(), file.length() + "", file.length(), false, false, file.lastModified() + "");
                 }

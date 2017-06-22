@@ -28,7 +28,7 @@ import com.amaze.filemanager.activities.BaseActivity;
 import com.amaze.filemanager.activities.MainActivity;
 import com.amaze.filemanager.database.CloudHandler;
 import com.amaze.filemanager.database.CryptHandler;
-import com.amaze.filemanager.database.EncryptedEntry;
+import com.amaze.filemanager.database.models.EncryptedEntry;
 import com.amaze.filemanager.filesystem.BaseFile;
 import com.amaze.filemanager.filesystem.FileUtil;
 import com.amaze.filemanager.filesystem.HFile;
@@ -41,6 +41,8 @@ import com.amaze.filemanager.services.DeleteTask;
 import com.amaze.filemanager.services.ExtractService;
 import com.amaze.filemanager.services.ZipTask;
 import com.amaze.filemanager.ui.dialogs.GeneralDialogCreation;
+import com.amaze.filemanager.utils.files.CryptUtil;
+import com.amaze.filemanager.utils.files.Futils;
 import com.amaze.filemanager.utils.provider.UtilitiesProviderInterface;
 
 import java.io.File;
@@ -533,7 +535,7 @@ public class MainActivityHelper {
     }
 
     public void deleteFiles(ArrayList<BaseFile> files) {
-        if (files == null) return;
+        if (files == null || files.size() == 0) return;
         if (files.get(0).isSmb()) {
             new DeleteTask(null, mainActivity).execute((files));
             return;

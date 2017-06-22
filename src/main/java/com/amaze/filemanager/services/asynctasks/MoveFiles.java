@@ -24,17 +24,16 @@ import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.amaze.filemanager.activities.BaseActivity;
-import com.amaze.filemanager.database.CloudHandler;
 import com.amaze.filemanager.database.CryptHandler;
-import com.amaze.filemanager.database.EncryptedEntry;
+import com.amaze.filemanager.database.models.EncryptedEntry;
 import com.amaze.filemanager.exceptions.RootNotPermittedException;
 import com.amaze.filemanager.filesystem.BaseFile;
 import com.amaze.filemanager.fragments.MainFragment;
 import com.amaze.filemanager.services.CopyService;
 import com.amaze.filemanager.utils.AppConfig;
-import com.amaze.filemanager.utils.CloudUtil;
-import com.amaze.filemanager.utils.CryptUtil;
-import com.amaze.filemanager.utils.Futils;
+import com.amaze.filemanager.utils.cloud.CloudUtil;
+import com.amaze.filemanager.utils.files.CryptUtil;
+import com.amaze.filemanager.utils.files.Futils;
 import com.amaze.filemanager.utils.OpenMode;
 import com.amaze.filemanager.utils.RootUtils;
 import com.amaze.filemanager.utils.ServiceWatcherUtil;
@@ -49,6 +48,11 @@ import jcifs.smb.SmbFile;
 
 import static com.amaze.filemanager.activities.MainActivity.dataUtils;
 
+/**
+ * AsyncTask that moves files from source to destination by trying to rename files first,
+ * if they're in the same filesystem, else starting the copy service.
+ * Be advised - do not start this AsyncTask directly but use {@link CopyFileCheck} instead
+ */
 public class MoveFiles extends AsyncTask<ArrayList<String>, Void, Boolean> {
     private ArrayList<ArrayList<BaseFile>> files;
     private MainFragment mainFrag;

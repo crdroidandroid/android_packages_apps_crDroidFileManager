@@ -579,4 +579,5 @@ megtalálásához..</li><li/><br/>\\n
   <string name="items">Elem</string>
   <string name="byte_singular">byte</string>
   <string name="bytes">bytes</string>
+  <!-- end of plurals -->
 </resources>

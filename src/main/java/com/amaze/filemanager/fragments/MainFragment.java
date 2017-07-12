@@ -81,8 +81,6 @@ import com.amaze.filemanager.database.models.Tab;
 import com.amaze.filemanager.filesystem.BaseFile;
 import com.amaze.filemanager.filesystem.HFile;
 import com.amaze.filemanager.filesystem.MediaStoreHack;
-import com.amaze.filemanager.fragments.preference_fragments.Preffrag;
-import com.amaze.filemanager.services.EncryptService;
 import com.amaze.filemanager.services.asynctasks.LoadList;
 import com.amaze.filemanager.ui.LayoutElement;
 import com.amaze.filemanager.ui.dialogs.GeneralDialogCreation;
@@ -855,13 +853,13 @@ public class MainFragment extends android.support.v4.app.Fragment {
             // check to initialize search results
             // if search task is been running, cancel it
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-            SearchAsyncHelper fragment = (SearchAsyncHelper) fragmentManager
+            SearchWorkerFragment fragment = (SearchWorkerFragment) fragmentManager
                     .findFragmentByTag(MainActivity.TAG_ASYNC_HELPER);
             if (fragment != null) {
 
-                if (fragment.mSearchTask.getStatus() == AsyncTask.Status.RUNNING) {
+                if (fragment.mSearchAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
 
-                    fragment.mSearchTask.cancel(true);
+                    fragment.mSearchAsyncTask.cancel(true);
                 }
                 getActivity().getSupportFragmentManager().beginTransaction().remove(fragment).commit();
             }
@@ -914,33 +912,41 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 }
 
                 if (e.isDirectory()) {
+
                     computeScroll();
                     loadlist(path, false, openMode);
                 } else {
-                    if (e.getMode() == OpenMode.SMB) {
-                        try {
-                            SmbFile smbFile = new SmbFile(e.getDesc());
-                            launchSMB(smbFile, e.getlongSize(), getMainActivity());
-                        } catch (MalformedURLException ex) {
-                            ex.printStackTrace();
-                        }
-                    } else if (e.getMode() == OpenMode.OTG) {
 
-                        utils.openFile(OTGUtil.getDocumentFile(e.getDesc(), getContext(), false),
-                                (MainActivity) getActivity());
-                    } else if (e.getMode() == OpenMode.DROPBOX
-                            || e.getMode() == OpenMode.BOX
-                            || e.getMode() == OpenMode.GDRIVE
-                            || e.getMode() == OpenMode.ONEDRIVE) {
-
-                        Toast.makeText(getContext(), getResources().getString(R.string.please_wait), Toast.LENGTH_LONG).show();
-                        CloudUtil.launchCloud(e.generateBaseFile(), openMode, getMainActivity());
-                    } else if (getMainActivity().mReturnIntent) {
-                        returnIntentResults(new File(e.getDesc()));
-                    } else {
-
-                        utils.openFile(new File(e.getDesc()), (MainActivity) getActivity());
+                    if (getMainActivity().mReturnIntent) {
+                        returnIntentResults(e.generateBaseFile());
+                        return;
                     }
+
+                    switch (e.getMode()) {
+                        case SMB:
+                            try {
+                                SmbFile smbFile = new SmbFile(e.getDesc());
+                                launchSMB(smbFile, e.getlongSize(), getMainActivity());
+                            } catch (MalformedURLException ex) {
+                                ex.printStackTrace();
+                            }
+                            break;
+                        case OTG:
+                            utils.openFile(OTGUtil.getDocumentFile(e.getDesc(), getContext(), false),
+                                    (MainActivity) getActivity());
+                            break;
+                        case DROPBOX:
+                        case BOX:
+                        case GDRIVE:
+                        case ONEDRIVE:
+                            Toast.makeText(getContext(), getResources().getString(R.string.please_wait), Toast.LENGTH_LONG).show();
+                            CloudUtil.launchCloud(e.generateBaseFile(), openMode, getMainActivity());
+                            break;
+                        default:
+                            utils.openFile(new File(e.getDesc()), (MainActivity) getActivity());
+                            break;
+                    }
+
                     dataUtils.addHistoryFile(e.getDesc());
                 }
             } else {
@@ -978,22 +984,44 @@ public class MainFragment extends android.support.v4.app.Fragment {
         loadlist(CURRENT_PATH, false, OpenMode.UNKNOWN);
     }
 
-    private void returnIntentResults(File file) {
+    public void returnIntentResults(BaseFile baseFile) {
+
         getMainActivity().mReturnIntent = false;
 
         Intent intent = new Intent();
         if (getMainActivity().mRingtonePickerIntent) {
 
-            Uri mediaStoreUri = MediaStoreHack.getUriFromFile(file.getPath(), getActivity());
-            System.out.println(mediaStoreUri.toString() + "\t" + MimeTypes.getMimeType(file));
-            intent.setDataAndType(mediaStoreUri, MimeTypes.getMimeType(file));
+            Uri mediaStoreUri = MediaStoreHack.getUriFromFile(baseFile.getPath(), getActivity());
+            System.out.println(mediaStoreUri.toString() + "\t" + MimeTypes.getMimeType(new File(baseFile.getPath())));
+            intent.setDataAndType(mediaStoreUri, MimeTypes.getMimeType(new File(baseFile.getPath())));
             intent.putExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI, mediaStoreUri);
             getActivity().setResult(FragmentActivity.RESULT_OK, intent);
             getActivity().finish();
         } else {
 
             Log.d("pickup", "file");
-            intent.setData(Uri.fromFile(file));
+
+            switch (baseFile.getMode()) {
+                case FILE:
+                case ROOT:
+                    intent.setData(Uri.fromFile(new File(baseFile.getPath())));
+                    break;
+                case OTG:
+                    intent.setData(OTGUtil.getDocumentFile(baseFile.getPath(), getContext(), true).getUri());
+                    break;
+                case SMB:
+                case DROPBOX:
+                case GDRIVE:
+                case ONEDRIVE:
+                case BOX:
+                    Toast.makeText(getActivity(),
+                            getActivity().getResources().getString(R.string.smb_launch_error),
+                            Toast.LENGTH_LONG).show();
+
+                    getMainActivity().mReturnIntent = true;
+                    return;
+            }
+
             getActivity().setResult(FragmentActivity.RESULT_OK, intent);
             getActivity().finish();
         }
@@ -1064,7 +1092,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
      */
     public void createViews(ArrayList<LayoutElement> bitmap, boolean back, String path,
                             final OpenMode openMode, boolean results, boolean grid) {
-        if ( (bitmap != null) && (isAdded()) ) {
+        if (bitmap != null && isAdded()) {
             synchronized (bitmap) {
                 if (GO_BACK_ITEM)
                     if (!path.equals("/") && (openMode == OpenMode.FILE || openMode == OpenMode.ROOT)
@@ -1076,9 +1104,8 @@ public class MainFragment extends android.support.v4.app.Fragment {
                         if (bitmap.size() == 0 || !bitmap.get(0).getSize().equals(goback)) {
 
                             Bitmap iconBitmap = BitmapFactory.decodeResource(res, R.drawable.ic_arrow_left_white_24dp);
-                            bitmap.add(0,
-                                    utils.newElement(new BitmapDrawable(res, iconBitmap),
-                                            "..", "", "", goback, 0, false, true, ""));
+                            bitmap.add(0, new LayoutElement(new BitmapDrawable(res, iconBitmap),
+                                    "..", "", "", goback, 0, false, true, ""));
                         }
                     }
 
@@ -1097,7 +1124,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                     switchToGrid();
                 else if (!grid && !IS_LIST) switchToList();
                 if (adapter == null) {
-                    adapter = new RecyclerAdapter(ma, utilsProvider, bitmap, ma.getActivity());
+                    adapter = new RecyclerAdapter(ma, utilsProvider, bitmap, ma.getActivity(), SHOW_HEADERS);
                 } else {
                     adapter.setItems(getLayoutElements());
                 }
@@ -1116,8 +1143,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 if (addheader && IS_LIST) {
                     dividerItemDecoration = new DividerItemDecoration(getActivity(), true, SHOW_DIVIDERS);
                     listView.addItemDecoration(dividerItemDecoration);
-                    //headersDecor = new StickyRecyclerHeadersDecoration(adapter);// TODO: 30/5/2017 delete this
-                    //listView.addItemDecoration(headersDecor);// TODO: 30/5/2017 delete this
                     addheader = false;
                 }
                 if (!results) this.results = false;
@@ -1320,10 +1345,10 @@ public class MainFragment extends android.support.v4.app.Fragment {
                     // the path back to parent on back press
                     CURRENT_PATH = parentPath;
 
-                    MainActivityHelper.addSearchFragment(fm, new SearchAsyncHelper(),
+                    MainActivityHelper.addSearchFragment(fm, new SearchWorkerFragment(),
                             parentPath, MainActivityHelper.SEARCH_TEXT, openMode, BaseActivity.rootMode,
-                            sharedPref.getBoolean(SearchAsyncHelper.KEY_REGEX, false),
-                            sharedPref.getBoolean(SearchAsyncHelper.KEY_REGEX_MATCHES, false));
+                            sharedPref.getBoolean(SearchWorkerFragment.KEY_REGEX, false),
+                            sharedPref.getBoolean(SearchWorkerFragment.KEY_REGEX_MATCHES, false));
                 } else loadlist(CURRENT_PATH, true, OpenMode.UNKNOWN);
 
                 mRetainSearchTask = false;
@@ -1331,10 +1356,10 @@ public class MainFragment extends android.support.v4.app.Fragment {
         } else {
             // to go back after search list have been popped
             FragmentManager fm = getActivity().getSupportFragmentManager();
-            SearchAsyncHelper fragment = (SearchAsyncHelper) fm.findFragmentByTag(MainActivity.TAG_ASYNC_HELPER);
+            SearchWorkerFragment fragment = (SearchWorkerFragment) fm.findFragmentByTag(MainActivity.TAG_ASYNC_HELPER);
             if (fragment != null) {
-                if (fragment.mSearchTask.getStatus() == AsyncTask.Status.RUNNING) {
-                    fragment.mSearchTask.cancel(true);
+                if (fragment.mSearchAsyncTask.getStatus() == AsyncTask.Status.RUNNING) {
+                    fragment.mSearchAsyncTask.cancel(true);
                 }
             }
             loadlist(new File(CURRENT_PATH).getPath(), true, OpenMode.UNKNOWN);
@@ -1428,7 +1453,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
         super.onResume();
         (getActivity()).registerReceiver(receiver2, new IntentFilter("loadlist"));
 
-        startFileObserver();
+        //startFileObserver();
         fixIcons(false);
     }
 
@@ -1499,16 +1524,19 @@ public class MainFragment extends android.support.v4.app.Fragment {
     }
 
     // method to add search result entry to the LIST_ELEMENT arrayList
-    private void addTo(BaseFile mFile) {
+    private LayoutElement addTo(BaseFile mFile) {
         File f = new File(mFile.getPath());
         String size = "";
         if (!dataUtils.getHiddenfiles().contains(mFile.getPath())) {
             if (mFile.isDirectory()) {
                 size = "";
-                LayoutElement layoutElement = utils.newElement(folder, f.getPath(), mFile.getPermission(), mFile.getLink(), size, 0, true, false, mFile.getDate() + "");
+                LayoutElement layoutElement = new LayoutElement(folder, f.getPath(), mFile.getPermission(),
+                        mFile.getLink(), size, 0, true, false, mFile.getDate() + "");
+
                 layoutElement.setMode(mFile.getMode());
                 addLayoutElement(layoutElement);
                 folder_count++;
+                return layoutElement;
             } else {
                 long longSize = 0;
                 try {
@@ -1523,15 +1551,19 @@ public class MainFragment extends android.support.v4.app.Fragment {
                     //e.printStackTrace();
                 }
                 try {
-                    LayoutElement layoutElement = utils.newElement(Icons.loadMimeIcon(f.getPath(), !IS_LIST, res), f.getPath(), mFile.getPermission(), mFile.getLink(), size, longSize, false, false, mFile.getDate() + "");
+                    LayoutElement layoutElement = new LayoutElement(Icons.loadMimeIcon(f.getPath(), !IS_LIST, res),
+                            f.getPath(), mFile.getPermission(), mFile.getLink(), size, longSize, false, false, mFile.getDate() + "");
                     layoutElement.setMode(mFile.getMode());
                     addLayoutElement(layoutElement);
                     file_count++;
+                    return layoutElement;
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
+
+        return null;
     }
 
     @Override
@@ -1593,14 +1625,14 @@ public class MainFragment extends android.support.v4.app.Fragment {
             }
 
             // adding new value to LIST_ELEMENTS
-            addTo(a);
+            LayoutElement layoutElementAdded = addTo(a);
             if (!results) {
                 createViews(getLayoutElements(), false, (CURRENT_PATH), openMode, false, !IS_LIST);
                 pathname.setText(getMainActivity().getString(R.string.empty));
                 mFullPath.setText(getMainActivity().getString(R.string.searching) + " " + query);
                 results = true;
             } else {
-                adapter.addItem();
+                adapter.addItem(layoutElementAdded);
             }
             stopAnimation();
         }
@@ -1620,7 +1652,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
 
             @Override
             public void onPostExecute(Void c) {
-                createViews(getLayoutElements(), true, (CURRENT_PATH), openMode, true, !IS_LIST);
+                createViews(getLayoutElements(), true, (CURRENT_PATH), openMode, true, !IS_LIST);// TODO: 7/7/2017 this is really inneffient, use RecycleAdapter's createHeaders()
                 pathname.setText(getMainActivity().getString(R.string.empty));
                 mFullPath.setText(getMainActivity().getString(R.string.searchresults) + " " + query);
             }
@@ -1674,7 +1706,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
     public void onDetach() {
         super.onDetach();
     }
-    
+
     public MainActivity getMainActivity() {
         return (MainActivity) getActivity();
     }

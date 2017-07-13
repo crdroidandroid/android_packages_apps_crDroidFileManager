@@ -199,8 +199,7 @@ public class MainActivity extends BaseActivity implements
     /* Request code used to invoke sign in user interactions. */
     static final int RC_SIGN_IN = 0;
 
-    /*Global variable for storing data. MUST be set null if cleared*/
-    public static DataUtils dataUtils = DataUtils.getInstance();
+    private DataUtils dataUtils = DataUtils.getInstance();
 
     public DrawerLayout mDrawerLayout;
     public ListView mDrawerList;
@@ -281,7 +280,6 @@ public class MainActivity extends BaseActivity implements
     private StringBuffer newPathBuilder, oldPathBuilder;
     private AppBarLayout appBarLayout;
 
-    private int COUNTER = 0;//TODO why does this exist
     private static final int PATH_ANIM_START_DELAY = 0;
     private static final int PATH_ANIM_END_DELAY = 0;
 
@@ -1628,9 +1626,8 @@ public class MainActivity extends BaseActivity implements
 
         if (sharedPref.getBoolean(PREFERENCE_SHOW_SIDEBAR_FOLDERS, true)) {
             if (dataUtils.getBooks().size() > 0) {
-                if (!sharedPref.contains(FoldersPref.KEY)) {
-                    Collections.sort(dataUtils.getBooks(), new BookSorter());
-                }
+
+                Collections.sort(dataUtils.getBooks(), new BookSorter());
 
                 synchronized (dataUtils.getBooks()) {
 
@@ -2461,45 +2458,42 @@ public class MainActivity extends BaseActivity implements
                 }
             }).setStartDelay(PATH_ANIM_START_DELAY).start();
         } else if (oldPath.isEmpty()) {
+
             // case when app starts
-            COUNTER++;
-            Log.d(getClass().getSimpleName(), "COUNTER: " + COUNTER);
-            if (COUNTER == 1) {
-                animPath.setAnimation(slideIn);
-                animPath.setText(newPath);
-                animPath.animate().setListener(new AnimatorListenerAdapter() {
-                    @Override
-                    public void onAnimationStart(Animator animation) {
-                        super.onAnimationStart(animation);
-                        animPath.setVisibility(View.VISIBLE);
-                        bapath.setText("");
-                        scroll.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                scroll1.fullScroll(View.FOCUS_RIGHT);
-                            }
-                        });
-                    }
+            animPath.setAnimation(slideIn);
+            animPath.setText(newPath);
+            animPath.animate().setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                    super.onAnimationStart(animation);
+                    animPath.setVisibility(View.VISIBLE);
+                    bapath.setText("");
+                    scroll.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            scroll1.fullScroll(View.FOCUS_RIGHT);
+                        }
+                    });
+                }
 
-                    @Override
-                    public void onAnimationEnd(Animator animation) {
-                        super.onAnimationEnd(animation);
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                animPath.setVisibility(View.GONE);
-                                bapath.setText(newPath);
-                            }
-                        }, PATH_ANIM_END_DELAY);
-                    }
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            animPath.setVisibility(View.GONE);
+                            bapath.setText(newPath);
+                        }
+                    }, PATH_ANIM_END_DELAY);
+                }
 
-                    @Override
-                    public void onAnimationCancel(Animator animation) {
-                        super.onAnimationCancel(animation);
-                        //onAnimationEnd(animation);
-                    }
-                }).setStartDelay(PATH_ANIM_START_DELAY).start();
-            }
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                    super.onAnimationCancel(animation);
+                    //onAnimationEnd(animation);
+                }
+            }).setStartDelay(PATH_ANIM_START_DELAY).start();
         } else {
             // completely different path
             // first slide out of old path followed by slide in of new path

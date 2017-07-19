@@ -57,6 +57,7 @@ public class MainActivityHelper {
 
     private MainActivity mainActivity;
     private Futils utils;
+    private DataUtils dataUtils = DataUtils.getInstance();
 
     /*
      * A static string which saves the last searched query. Used to retain search task after
@@ -94,7 +95,7 @@ public class MainActivityHelper {
                     Toast.makeText(mainActivity, "Media Mounted", Toast.LENGTH_SHORT).show();
                     String a = intent.getData().getPath();
                     if (a != null && a.trim().length() != 0 && new File(a).exists() && new File(a).canExecute()) {
-                        MainActivity.dataUtils.getStorages().add(a);
+                        dataUtils.getStorages().add(a);
                         mainActivity.refreshDrawer();
                     } else {
                         mainActivity.refreshDrawer();
@@ -167,7 +168,7 @@ public class MainActivityHelper {
 
     public void add(int pos) {
         final MainFragment ma = (MainFragment) ((TabFragment) mainActivity.getSupportFragmentManager().findFragmentById(R.id.content_frame)).getTab();
-        final String path = ma.CURRENT_PATH;
+        final String path = ma.getCurrentPath();
 
         switch (pos) {
             case NEW_FOLDER:
@@ -611,7 +612,7 @@ public class MainActivityHelper {
         TabFragment tabFragment = mainActivity.getFragment();
         if (tabFragment == null) return;
         final MainFragment ma = (MainFragment) tabFragment.getTab();
-        final String fpath = ma.CURRENT_PATH;
+        final String fpath = ma.getCurrentPath();
 
         /*SearchTask task = new SearchTask(ma.searchHelper, ma, query);
                 task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, fpath);*/

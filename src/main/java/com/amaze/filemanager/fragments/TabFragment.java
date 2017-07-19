@@ -28,6 +28,7 @@ import com.amaze.filemanager.ui.ColorCircleDrawable;
 import com.amaze.filemanager.ui.drawer.EntryItem;
 import com.amaze.filemanager.ui.views.DisablableViewPager;
 import com.amaze.filemanager.ui.views.Indicator;
+import com.amaze.filemanager.utils.DataUtils;
 import com.amaze.filemanager.utils.Logger;
 import com.amaze.filemanager.utils.MainActivityHelper;
 import com.amaze.filemanager.utils.OpenMode;
@@ -37,8 +38,6 @@ import com.amaze.filemanager.utils.color.ColorUsage;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.amaze.filemanager.activities.MainActivity.dataUtils;
 
 /**
  * Created by Arpit on 15-12-2014.
@@ -74,6 +73,7 @@ public class TabFragment extends android.support.v4.app.Fragment
     private String startColor, endColor;
 
     private TabHandler tabHandler;
+    private DataUtils dataUtils = DataUtils.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -208,14 +208,14 @@ public class TabFragment extends android.support.v4.app.Fragment
         for (Fragment fragment : fragments) {
             if (fragment.getClass().getName().contains("MainFragment")) {
                 MainFragment m = (MainFragment) fragment;
-                items.add(parsePathForName(m.CURRENT_PATH, m.openMode));
+                items.add(parsePathForName(m.getCurrentPath(), m.openMode));
                 if (i - 1 == MainActivity.currentTab && i == pos) {
-                    mainActivity.updatePath(m.CURRENT_PATH, m.results, m.openMode, m
+                    mainActivity.updatePath(m.getCurrentPath(), m.results, m.openMode, m
                             .folder_count, m.file_count);
-                    mainActivity.updateDrawer(m.CURRENT_PATH);
+                    mainActivity.updateDrawer(m.getCurrentPath());
                 }
                 if (m.openMode == OpenMode.FILE) {
-                    tabHandler.addTab(new Tab(i, m.CURRENT_PATH, m.CURRENT_PATH, m.home));
+                    tabHandler.addTab(new Tab(i, m.getCurrentPath(), m.getCurrentPath(), m.home));
                 } else
                     tabHandler.addTab(new Tab(i, m.home, m.home, m.home));
 
@@ -295,10 +295,10 @@ public class TabFragment extends android.support.v4.app.Fragment
             String name = fragments.get(p1).getClass().getName();
             if (name != null && name.contains("Main")) {
                 MainFragment ma = ((MainFragment) fragments.get(p1));
-                if (ma.CURRENT_PATH != null) {
+                if (ma.getCurrentPath() != null) {
                     try {
-                        mainActivity.updateDrawer(ma.CURRENT_PATH);
-                        mainActivity.updatePath(ma.CURRENT_PATH, ma.results, ma.openMode,
+                        mainActivity.updateDrawer(ma.getCurrentPath());
+                        mainActivity.updatePath(ma.getCurrentPath(), ma.results, ma.openMode,
                                 ma.folder_count, ma.file_count);
                         if (buttons.getVisibility() == View.VISIBLE) {
                             mainActivity.bbar(ma);

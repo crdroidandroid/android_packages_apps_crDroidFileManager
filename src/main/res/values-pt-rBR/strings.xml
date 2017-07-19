@@ -641,4 +641,8 @@ Abra o prompt de comando. Digite \'ipconfig\' e pressione Enter. Procure Gateway
   <string name="bytes">Bytes</string>
   <!-- end of plurals -->
   <string name="no_name">O arquivo deve ter um nome</string>
+  <string name="add_item">Adicionar Item</string>
+  <string name="failed_smb_decrypt_path">Falha ao carregar a conexão SMB</string>
+  <string name="failed_cloud_new_connection">Falha ao adicionar nova conexão de Nuvem</string>
+  <string name="failed_cloud_api_key">Falha ao autenticar no plugin Nuvem</string>
 </resources>

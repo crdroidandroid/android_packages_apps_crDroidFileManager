@@ -640,4 +640,7 @@
   <!-- end of plurals -->
   <string name="no_name">Файл должен иметь имя</string>
   <string name="add_item">Добавить элемент</string>
+  <string name="failed_smb_decrypt_path">Не удалось загрузить SMB соединение</string>
+  <string name="failed_cloud_new_connection">Не удалось добавить новое подключение к Облаку</string>
+  <string name="failed_cloud_api_key">Ошибка аутентификации Облачного плагина</string>
 </resources>

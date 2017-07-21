@@ -647,4 +647,9 @@
   <string name="byte_singular">байт</string>
   <string name="bytes">Байты</string>
   <!-- end of plurals -->
+  <string name="no_name">Файл павінен мець імя</string>
+  <string name="add_item">Дадаць элемент</string>
+  <string name="failed_smb_decrypt_path">Не атрымалася загрузіць SMB злучэнне</string>
+  <string name="failed_cloud_new_connection">Не атрымалася дадаць новае падключэнне да Воблака</string>
+  <string name="failed_cloud_api_key">Памылка аўтэнтыфікацыі Воблачнага плагіна</string>
 </resources>

@@ -605,6 +605,8 @@ Tieni premuto un file od una cartella per altre opzioni
   <string name="cloud_share_copied">Link condivisibile copiato negli Appunti</string>
   <string name="copy_low_memory">A corto di memoria, si prega di liberare della RAM</string>
   <string name="cloud_token_lost">Token perso, accedi nuovamente</string>
+  <string name="cloud_plugin_not_supported">Cloud plug-in non è supportato per le build Fdroid.       Scarica Amaze dal Play Storie.</string>
+  <string name="monofont">Carattere a Spaziatura Fissa</string>
   <string name="showHeaders">Mostra Header</string>
   <!--FROM HERE ON STRINGS ARE EXCLUSIVELY USED IN plurals.xml-->
   <string name="noitems">Nessun elemento</string>
@@ -613,4 +615,9 @@ Tieni premuto un file od una cartella per altre opzioni
   <string name="byte_singular">byte</string>
   <string name="bytes">Bytes</string>
   <!-- end of plurals -->
+  <string name="no_name">Il file deve avere un nome</string>
+  <string name="add_item">Aggiungi Elemento</string>
+  <string name="failed_smb_decrypt_path">Impossibile caricare connessione SMB</string>
+  <string name="failed_cloud_new_connection">Impossibile aggiungere nuova connessione Cloud</string>
+  <string name="failed_cloud_api_key">Impossibile autenticare il plug-in Cloud</string>
 </resources>

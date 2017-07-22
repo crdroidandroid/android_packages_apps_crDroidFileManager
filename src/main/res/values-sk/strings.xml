@@ -290,8 +290,8 @@
   <string name="archive_preferences">Nastavenia archívu</string>
   <string name="archive_extract_folder">Priečinok pre rozbaľovanie archívov</string>
   <string name="zip_create_folder">Priečinok pre vytváranie archívov</string>
-  <string name="archive_summary">Archívne súbory budú extrahované do tohoto priečinku. Predvolená hodnota je priečinok, v ktorom archív uložený</string>
-  <string name="zip_summary">Nové archívne súbory budú vytvorené v tomto priečinku. Predvolená hodnota je priečinok, v ktorom sú súbory uložené</string>
+  <string name="archive_summary">Archívne súbory budú extrahované do tohoto priečinku. Predvolená hodnota je priečinok, v ktorom je archív uložený. </string>
+  <string name="zip_summary">Nové archívne súbory budú vytvorené v tomto priečinku. Predvolená hodnota je priečinok, v ktorom sú súbory uložené.</string>
   <string name="openas">Otvoriť ako</string>
   <string name="text">Text</string>
   <string name="audio">Zvuk</string>
@@ -636,4 +636,7 @@
   <!-- end of plurals -->
   <string name="no_name">Súbor by mal mať názov</string>
   <string name="add_item">Pridať položku</string>
+  <string name="failed_smb_decrypt_path">Pokus o otvorenie SMB spojenia zlyhal</string>
+  <string name="failed_cloud_new_connection">Nepodarilo sa pridať nové cloudové pripojenie</string>
+  <string name="failed_cloud_api_key">Zlyhalo overenie cloudového pluginu</string>
 </resources>

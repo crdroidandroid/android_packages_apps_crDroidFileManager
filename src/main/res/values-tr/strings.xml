@@ -650,4 +650,9 @@ Kaldırmak için boş bırakın.</string>
   <string name="byte_singular">byte</string>
   <string name="bytes">Bytes</string>
   <!-- end of plurals -->
+  <string name="no_name">Dosya bir isme sahip olmalı</string>
+  <string name="add_item">Öğe Ekle</string>
+  <string name="failed_smb_decrypt_path">SMB bağlantısı kurulamadı</string>
+  <string name="failed_cloud_new_connection">Yeni Bulut servisi ekleme başarısız</string>
+  <string name="failed_cloud_api_key">Bulut eklentisinin kimlik doğrulaması başarısız</string>
 </resources>

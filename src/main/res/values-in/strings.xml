@@ -605,4 +605,8 @@ Fitur ini membuat file tersedia di jaringan lokal, sehingga PC dan perangkat sel
   <string name="bytes">Bytes</string>
   <!-- end of plurals -->
   <string name="no_name">Berkas harus memiliki nama</string>
+  <string name="add_item">Tambah Item</string>
+  <string name="failed_smb_decrypt_path">Gagal memuat koneksi SMB</string>
+  <string name="failed_cloud_new_connection">Gagal menambahkan koneksi Cloud baru</string>
+  <string name="failed_cloud_api_key">Gagal saat otentikasi plug-in Cloud</string>
 </resources>

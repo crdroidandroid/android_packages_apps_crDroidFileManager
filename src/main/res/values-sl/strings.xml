@@ -85,6 +85,7 @@
   <string name="guide5">Uporabite gumb »Nazaj« v napravi, če želite kadar koli zapreti aplikacijo ...</string>
   <string name="guide6">..in gumb s puščico za navigacijo v upravitelju datotek</string>
   <string name="maintab">Glavnega zavihka ni mogoče odstraniti</string>
+  <string name="openparent">Odprta starševski imenik</string>
   <string name="openwith">Odpri z</string>
   <string name="share">Skupna raba</string>
   <string name="about">O nas</string>
@@ -333,6 +334,7 @@
   <string name="grantper">Odobri dovoljenje</string>
   <string name="grantfailed">Dovoljenje ni odobreno</string>
   <string name="creatingfile">Ustvarjanje nove datoteke</string>
+  <string name="creatingfolder">Ustvarjanje mape</string>
   <string name="renaming">Preimenovanje</string>
   <string name="cantbeempty">%s ne sme biti prazno</string>
   <string name="ip">Naslov</string>
@@ -433,12 +435,17 @@
   <string name="of">od</string>
   <string name="processing_file">Obdelava datoteke</string>
   <string name="current_speed">Trenutna hitrost</string>
+  <string name="error_io">I/O napaka</string>
   <string name="tap_and_hold_tips">Tapnite in pridržite na datoteko ali mapo za več možnosti</string>
   <string name="permission_read">Preberi</string>
+  <string name="permission_write">Zapiši</string>
+  <string name="permission_execute">Izvedi</string>
   <string name="permission_owner">Lastnik</string>
   <string name="permission_group">Skupina</string>
   <string name="permission_other">Drugo</string>
   <string name="clipboard_path_copy">Pot kopirana v odložišče</string>
+  <string name="error_busybox">Ne najdem Busybox-a. Zapiranje interaktivne lupine.</string>
+  <string name="service_timer">Pretečeni čas</string>
   <string name="please_wait">Prosim, počakajte</string>
   <string name="cloud_connection">Povezava v oblak</string>
   <string name="cloud_connection_new">Nova povezava v oblak</string>

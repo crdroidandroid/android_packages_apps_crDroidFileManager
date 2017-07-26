@@ -19,26 +19,50 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Lieszeechen</string>
+  <string name="cancel">OFBRIECHEN</string>
+  <string name="save">Späicheren</string>
+  <string name="location">Standuert</string>
+  <string name="size_capitalized">Gréisst</string>
+  <string name="share">Deelen</string>
   <string name="yes">Jo</string>
   <string name="no">Nee</string>
   <string name="home">Doheem</string>
+  <string name="delete">Läschen</string>
   <!-- New -->
   <!-- Array -->
   <!-- UI -->
   <!-- Theme -->
   <!--Skin-->
+  <string name="red">Rout</string>
+  <string name="blue">Blo</string>
+  <string name="green">Gréng</string>
   <!--DirectorySortMode-->
   <!--SortBy-->
+  <string name="sortSize">Gréisst</string>
   <!--ListMode-->
   <!--Folder-->
+  <string name="Yellow">Giel</string>
   <string name="skip">Iwwersprangen</string>
+  <string name="version">Versioun</string>
+  <string name="details">Detailer</string>
   <string name="other">Aner</string>
+  <string name="color_title">Faarf</string>
+  <string name="none">Keen</string>
   <string name="password">Passwuert</string>
   <string name="defualt">Standard</string>
+  <string name="path">Pad</string>
   <string name="start_ftp">Start</string>
+  <string name="information">Informatioun</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Titel</string>
+  <string name="duration">Dauer</string>
   <!-- reference to audio/video file -->
+  <string name="width">Breet</string>
+  <string name="height">Héicht</string>
+  <string name="exposure_time">Beliichtungszäit</string>
+  <string name="focal_length">Brennwäit</string>
   <string name="document">Dokument</string>
   <!-- reference to a document file -->
   <!-- %s will be replaced with either copied or moved -->

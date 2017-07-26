@@ -19,6 +19,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">&quot;બુકમાર્ક્સ&quot;</string>
+  <string name="location">&quot;સ્થાન&quot;</string>
   <string name="size_capitalized">કદ</string>
   <!-- New -->
   <!-- Array -->
@@ -43,6 +45,7 @@
   <string name="information">માહિતી</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">&quot;શીર્ષક&quot;</string>
   <!-- reference to audio/video file -->
   <string name="exposure_time">પ્રદર્શન સમય</string>
   <string name="focal_length">ફોકલ લેન્થ</string>

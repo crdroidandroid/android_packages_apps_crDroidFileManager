@@ -19,9 +19,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Bokmerker</string>
   <string name="storage">Lagring</string>
   <string name="cancel">Avbryt</string>
   <string name="save">Lagre</string>
+  <string name="location">Posisjon</string>
   <string name="size_capitalized">Størrelse</string>
   <string name="share">Del</string>
   <string name="yes">Ja</string>
@@ -67,6 +69,7 @@
   <string name="information">Informasjon</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Tittel</string>
   <string name="duration">Varighet</string>
   <!-- reference to audio/video file -->
   <string name="width">Bredde</string>

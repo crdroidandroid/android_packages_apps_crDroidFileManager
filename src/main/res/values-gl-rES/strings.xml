@@ -19,7 +19,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Marcadores</string>
   <string name="storage">Almacenamento</string>
+  <string name="location">Localización</string>
   <string name="size_capitalized">Tamaño</string>
   <!-- New -->
   <!-- Array -->
@@ -45,6 +47,7 @@
   <string name="information">Información</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Título</string>
   <!-- reference to audio/video file -->
   <string name="exposure_time">Tempo de exposición</string>
   <string name="focal_length">Distancia focal</string>

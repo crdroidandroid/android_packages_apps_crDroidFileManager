@@ -403,6 +403,7 @@
   <string name="information">Πληροφορίες</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Τίτλος</string>
   <string name="duration">Διάρκεια</string>
   <!-- reference to audio/video file -->
   <string name="frame_rate">Ρυθμός Καρέ</string>

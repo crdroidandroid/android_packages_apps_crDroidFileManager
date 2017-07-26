@@ -19,8 +19,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">บุ๊คมาร์ค</string>
   <string name="cancel">ยกเลิก</string>
   <string name="save">บันทึก</string>
+  <string name="location">ตำแหน่งที่ตั้ง</string>
   <string name="size_capitalized">ขนาด</string>
   <string name="share">แบ่งปัน</string>
   <string name="dialog_delete_title">ยืนยัน</string>
@@ -50,6 +52,7 @@
   <string name="information">ข้อมูล</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">ชื่อเรื่อง</string>
   <string name="duration">ระยะเวลา</string>
   <!-- reference to audio/video file -->
   <string name="width">ความกว้าง</string>

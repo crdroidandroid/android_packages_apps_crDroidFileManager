@@ -358,6 +358,7 @@
   <string name="information">Informații</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Titlu</string>
   <string name="duration">Durată</string>
   <!-- reference to audio/video file -->
   <string name="width">Lăţime</string>

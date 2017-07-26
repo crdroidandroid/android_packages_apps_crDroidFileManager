@@ -19,7 +19,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Laster-markak</string>
   <string name="storage">Biltegiratzea</string>
+  <string name="location">Kokalekua</string>
   <string name="size_capitalized">Tamaina</string>
   <string name="home">Etxean</string>
   <!-- New -->
@@ -48,6 +50,7 @@
   <string name="information">Informazioa</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Izenburua</string>
   <!-- reference to audio/video file -->
   <string name="exposure_time">Esposizio-denbora</string>
   <string name="focal_length">Foku-distantzia</string>

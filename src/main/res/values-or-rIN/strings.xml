@@ -19,6 +19,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">&quot;ବୁକମାର୍କଗୁଡିକ&quot;</string>
+  <string name="location">&quot;ଅବସ୍ଥାନ&quot;</string>
   <!-- New -->
   <!-- Array -->
   <!-- UI -->
@@ -32,6 +34,7 @@
   <string name="password">ପାସୱାର୍ଡ୍</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">&quot;ଟାଇଟଲ୍&quot;</string>
   <!-- reference to audio/video file -->
   <string name="document">ଡକ୍ୟୁମେଣ୍ଟ୍</string>
   <!-- reference to a document file -->

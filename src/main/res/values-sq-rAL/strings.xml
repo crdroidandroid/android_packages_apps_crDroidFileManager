@@ -19,6 +19,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="location">Vendndodhja</string>
   <string name="size_capitalized">Madhësia</string>
   <!-- New -->
   <!-- Array -->
@@ -42,6 +43,7 @@
   <string name="information">Informacione</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Titulli</string>
   <!-- reference to audio/video file -->
   <string name="exposure_time">Ora e ekspozimit</string>
   <string name="focal_length">Largësia e fokusimit</string>

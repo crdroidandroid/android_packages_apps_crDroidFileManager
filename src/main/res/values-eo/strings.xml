@@ -19,6 +19,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Legosignoj</string>
+  <string name="save">Konservi</string>
+  <string name="location">Loko</string>
+  <string name="share">Konigi</string>
+  <string name="delete">Forigi</string>
   <!-- New -->
   <!-- Array -->
   <!-- UI -->
@@ -28,6 +33,7 @@
   <!--SortBy-->
   <!--ListMode-->
   <!--Folder-->
+  <string name="version">Versio</string>
   <string name="password">Pasvorto</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->

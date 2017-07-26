@@ -225,6 +225,7 @@
   <string name="information">Informacija</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Pavadinimas</string>
   <string name="duration">Trukmė</string>
   <!-- reference to audio/video file -->
   <string name="width">Plotis</string>

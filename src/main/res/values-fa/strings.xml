@@ -391,6 +391,7 @@
   <string name="information">اطلاعات</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">عنوان</string>
   <string name="duration">مدت</string>
   <!-- reference to audio/video file -->
   <string name="width">عرض</string>

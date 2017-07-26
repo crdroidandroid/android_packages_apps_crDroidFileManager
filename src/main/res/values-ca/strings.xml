@@ -19,9 +19,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Marcadors</string>
   <string name="storage">Emmagatzematge</string>
   <string name="cancel">CANCEL·LA</string>
   <string name="save">Desa</string>
+  <string name="location">Ubicació</string>
   <string name="size_capitalized">Mida</string>
   <string name="share">Comparteix</string>
   <string name="yes">Sí</string>
@@ -67,6 +69,7 @@
   <string name="information">Informació</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Títol</string>
   <string name="duration">Durada</string>
   <!-- reference to audio/video file -->
   <string name="width">Amplada</string>

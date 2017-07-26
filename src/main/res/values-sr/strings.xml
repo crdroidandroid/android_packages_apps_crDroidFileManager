@@ -410,6 +410,7 @@
   <string name="information">Информације</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Наслов</string>
   <string name="duration">Трајање</string>
   <!-- reference to audio/video file -->
   <string name="width">Ширина</string>

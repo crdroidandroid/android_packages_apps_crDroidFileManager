@@ -19,8 +19,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">बुकमार्क</string>
   <string name="cancel">रद्द करें</string>
   <string name="save">सहेजें</string>
+  <string name="location">स्थान</string>
   <string name="size_capitalized">आकार</string>
   <string name="share">साझा करें</string>
   <string name="dialog_delete_title">पुष्टि करें</string>
@@ -49,6 +51,7 @@
   <string name="information">जानकारी</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">शीर्षक</string>
   <string name="duration">अवधि</string>
   <!-- reference to audio/video file -->
   <string name="width">चौड़ाई</string>

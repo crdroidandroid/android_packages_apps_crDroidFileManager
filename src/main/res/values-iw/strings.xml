@@ -19,10 +19,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">סימניות</string>
   <string name="storage">אחסון</string>
   <string name="setting">הגדרות</string>
   <string name="cancel">ביטול</string>
   <string name="save">שמור</string>
+  <string name="location">מיקום</string>
   <string name="size_capitalized">גודל</string>
   <string name="share">שיתוף</string>
   <string name="about">אודות</string>
@@ -73,6 +75,7 @@
   <string name="information">מידע</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">כותרת</string>
   <string name="duration">משך</string>
   <!-- reference to audio/video file -->
   <string name="width">רוחב</string>

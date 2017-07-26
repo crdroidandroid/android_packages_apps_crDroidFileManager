@@ -19,8 +19,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Əlfəcinlər</string>
   <string name="cancel">LƏĞV ET</string>
   <string name="save">Yadda saxla</string>
+  <string name="location">Yer</string>
   <string name="size_capitalized">Ölçü</string>
   <string name="share">Paylaşın</string>
   <string name="dialog_delete_title">Təsdiqlə</string>
@@ -55,6 +57,7 @@
   <string name="information">Məlumat</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Başlıq</string>
   <string name="duration">Müddət:</string>
   <!-- reference to audio/video file -->
   <string name="width">Enlilik</string>

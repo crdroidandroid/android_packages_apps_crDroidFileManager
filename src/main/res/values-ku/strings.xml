@@ -19,19 +19,44 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">وێبگە نیشانەکراوەکان</string>
+  <string name="cancel">لابردن</string>
+  <string name="save">پاشەکەوتکردن</string>
+  <string name="location">شوێن</string>
+  <string name="size_capitalized">قه‌باره‌</string>
+  <string name="share">به‌شداری پێکردن</string>
+  <string name="delete">سڕینه‌وه‌</string>
   <!-- New -->
   <!-- Array -->
   <!-- UI -->
   <!-- Theme -->
   <!--Skin-->
+  <string name="red">سوور</string>
+  <string name="blue">شین</string>
+  <string name="cyan">شینی ئاسمانی</string>
+  <string name="green">سەوز</string>
   <!--DirectorySortMode-->
   <!--SortBy-->
+  <string name="sortSize">قه‌باره‌</string>
   <!--ListMode-->
   <!--Folder-->
+  <string name="Yellow">زەرد</string>
+  <string name="version">وه‌شان</string>
+  <string name="details">زانیاری زیاتر</string>
+  <string name="color_title">ڕەنگ</string>
+  <string name="none">هیچیان</string>
   <string name="password">تێپەڕەوشە</string>
+  <string name="path">ڕێچکە</string>
+  <string name="information">زانیاری</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">سەردێڕ</string>
+  <string name="duration">ماوه‌</string>
   <!-- reference to audio/video file -->
+  <string name="width">پانی</string>
+  <string name="height">بەرزی</string>
+  <string name="exposure_time">كاتى كەوتنەبەر</string>
+  <string name="focal_length">درێژیی تیشکۆیی</string>
   <!-- reference to a document file -->
   <!-- %s will be replaced with either copied or moved -->
   <!-- reference to - 'Written #bytes out of #bytes' in process viewer -->

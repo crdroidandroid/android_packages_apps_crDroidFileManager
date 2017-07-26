@@ -19,8 +19,10 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     -->
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+  <string name="books">Grāmatzīmes</string>
   <string name="cancel">ATCELT</string>
   <string name="save">Saglabāt</string>
+  <string name="location">Atrašanās vieta</string>
   <string name="size_capitalized">Izmēri</string>
   <string name="share">Dalies</string>
   <string name="dialog_delete_title">Apstiprināt</string>
@@ -49,6 +51,7 @@
   <string name="information">Informācija</string>
   <!-- reference to file accessed date -->
   <!-- reference to file modified date -->
+  <string name="title">Virsraksts</string>
   <string name="duration">Ilgums</string>
   <!-- reference to audio/video file -->
   <string name="width">Platums</string>

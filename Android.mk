@@ -34,14 +34,14 @@ ifneq ($(INCREMENTAL_BUILDS),)
     LOCAL_JACK_FLAGS := --multi-dex native
 endif
 
-LOCAL_MANIFEST_FILE := src/main/AndroidManifest.xml
-LOCAL_FULL_LIBS_MANIFEST_FILES := $(LOCAL_PATH)/src/play/AndroidManifest.xml
+LOCAL_MANIFEST_FILE := app/src/main/AndroidManifest.xml
+LOCAL_FULL_LIBS_MANIFEST_FILES := $(LOCAL_PATH)/app/src/play/AndroidManifest.xml
 
-LOCAL_SRC_FILES := $(call all-java-files-under, src/main)
-LOCAL_SRC_FILES += $(call all-java-files-under, src/play)
+LOCAL_SRC_FILES := $(call all-java-files-under, app/src/main)
+LOCAL_SRC_FILES += $(call all-java-files-under, app/src/play)
 
 LOCAL_RESOURCE_DIR := \
-    $(LOCAL_PATH)/src/main/res \
+    $(LOCAL_PATH)/app/src/main/res \
     frameworks/support/v7/appcompat/res \
     frameworks/support/v7/cardview/res \
     frameworks/support/v7/recyclerview/res \
@@ -98,24 +98,24 @@ include $(CLEAR_VARS)
 
 PLAY_VERSION := 10.2.1
 LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := \
-    aar-fab:libs/com.github.clans.fab-1.6.4.aar \
-    aar-libsuperuser:libs/libsuperuser-1.0.0.201608240809.aar \
-    aar-material-dialogs:libs/com.afollestad.material-dialogs.core-0.9.4.3.aar \
-    aar-mp-android-chart:libs/com.github.mikephil-3.0.2.aar \
-    aar-systembartint:libs/com.readystatesoftware.systembartint-1.0.3.aar \
-    aar-cloudrail-si-android:libs/com.cloudrail-2.17.0.aar \
+    aar-fab:app/libs/com.github.clans.fab-1.6.4.aar \
+    aar-libsuperuser:app/libs/libsuperuser-1.0.0.201608240809.aar \
+    aar-material-dialogs:app/libs/com.afollestad.material-dialogs.core-0.9.4.3.aar \
+    aar-mp-android-chart:app/libs/com.github.mikephil-3.0.2.aar \
+    aar-systembartint:app/libs/com.readystatesoftware.systembartint-1.0.3.aar \
+    aar-cloudrail-si-android:app/libs/com.cloudrail-2.17.0.aar \
     aar-play-services-base:../../../external/google/play-services-base/$(PLAY_VERSION)/play-services-base-$(PLAY_VERSION).aar \
     aar-play-services-basement:../../../external/google/play-services-basement/$(PLAY_VERSION)/play-services-basement-$(PLAY_VERSION).aar \
     aar-play-services-plus:../../../external/google/play-services-plus/$(PLAY_VERSION)/play-services-plus-$(PLAY_VERSION).aar \
-    jar-commons-compress:libs/org.apache.commons.commons-compress-1.10.jar \
-    jar-ftplet-api:libs/org.apache.ftpserver.ftplet-api-1.1.0.jar \
-    jar-ftpserver-core:libs/org.apache.ftpserver.ftpserver-core-1.1.0.jar \
-    jar-jcifs:libs/jcifs-1.3.18.jar \
-    jar-jsch:libs/jsch-0.1.53.jar \
-    jar-junrar:libs/com.github.junrar-0.7.jar \
-    jar-mina-core:libs/mina-core-2.0.13.jar \
-    jar-slf4j-api:libs/org.slf4j.slf4j-api-1.7.21.jar \
-    jar-slf4j-simple:libs/org.slf4j.slf4j-simple-1.7.21.jar
+    jar-commons-compress:app/libs/org.apache.commons.commons-compress-1.10.jar \
+    jar-ftplet-api:app/libs/org.apache.ftpserver.ftplet-api-1.1.0.jar \
+    jar-ftpserver-core:app/libs/org.apache.ftpserver.ftpserver-core-1.1.0.jar \
+    jar-jcifs:app/libs/jcifs-1.3.18.jar \
+    jar-jsch:app/libs/jsch-0.1.53.jar \
+    jar-junrar:app/libs/com.github.junrar-0.7.jar \
+    jar-mina-core:app/libs/mina-core-2.0.13.jar \
+    jar-slf4j-api:app/libs/org.slf4j.slf4j-api-1.7.21.jar \
+    jar-slf4j-simple:app/libs/org.slf4j.slf4j-simple-1.7.21.jar
 
 include $(BUILD_MULTI_PREBUILT)
 

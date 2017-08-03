@@ -110,6 +110,7 @@ import com.amaze.filemanager.utils.theme.AppTheme;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -331,7 +332,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
             public void onGlobalLayout() {
                 if ((columns == 0 || columns == -1)) {
                     int screen_width = listView.getWidth();
-                    int dptopx = Utils.dpToPx(115, getContext());
+                    int dptopx = Utils.dpToPx(getContext(), 115);
                     columns = screen_width / dptopx;
                     if (columns == 0 || columns == -1) columns = 3;
                     if (!IS_LIST) mLayoutManagerGrid.setSpanCount(columns);
@@ -356,12 +357,13 @@ public class MainFragment extends android.support.v4.app.Fragment {
     }
 
     void setGridLayoutSpanSizeLookup(GridLayoutManager mLayoutManagerGrid) {
+
         mLayoutManagerGrid.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+
             @Override
             public int getSpanSize(int position) {
                 switch(adapter.getItemViewType(position)){
                     case RecyclerAdapter.TYPE_HEADER_FILES:
-                        return columns;
                     case RecyclerAdapter.TYPE_HEADER_FOLDERS:
                         return columns;
                     default:
@@ -389,6 +391,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 mLayoutManagerGrid = new GridLayoutManager(getActivity(), 3);
             else
                 mLayoutManagerGrid = new GridLayoutManager(getActivity(), columns);
+        setGridLayoutSpanSizeLookup(mLayoutManagerGrid);
         listView.setLayoutManager(mLayoutManagerGrid);
         adapter = null;
     }
@@ -1047,13 +1050,13 @@ public class MainFragment extends android.support.v4.app.Fragment {
     LoadList loadList;
 
     public void loadlist(String path, boolean back, OpenMode openMode) {
+
         if (mActionMode != null) {
             mActionMode.finish();
         }
-        /*if(openMode==-1 && android.util.Patterns.EMAIL_ADDRESS.matcher(path).matches())
-            bindDrive(path);
-        else */
-        if (loadList != null) loadList.cancel(true);
+
+        if (loadList != null && loadList.getStatus() == AsyncTask.Status.RUNNING)
+            loadList.cancel(true);
         loadList = new LoadList(ma.getActivity(), utilsProvider, back, ma, openMode);
         loadList.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (path));
 
@@ -1369,7 +1372,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 if (MainActivityHelper.SEARCH_TEXT != null) {
 
                     // starting the search query again :O
-                    getMainActivity().mainFragment = (MainFragment) getMainActivity().getFragment().getTab();
+                    getMainActivity().mainFragment = (MainFragment) getMainActivity().getTabFragment().getCurrentTabFragment();
                     FragmentManager fm = getMainActivity().getSupportFragmentManager();
 
                     // getting parent path to resume search from there
@@ -1779,28 +1782,30 @@ public class MainFragment extends android.support.v4.app.Fragment {
             super(path);
         }
 
+        private long lastArrivalTime = 0l;
+        private static final int DEFER_CONSTANT = 5;
+
         @Override
         public void onEvent(int event, String path) {
 
             synchronized (getLayoutElements()) {
 
+                long currentArrivalTime = Calendar.getInstance().getTimeInMillis();
+
+                if (currentArrivalTime-lastArrivalTime < DEFER_CONSTANT) {
+                    // defer the observer until unless it reports a change after at least 5 secs of last one
+                    return;
+                }
+
+                lastArrivalTime = currentArrivalTime;
+
                 switch (event) {
                     case CREATE:
                     case MOVED_TO:
-                        /*HFile fileCreated = new HFile(openMode, CURRENT_PATH + "/" + path);
-                        addLayoutElement(fileCreated.generateLayoutElement(MainFragment.this, utilsProvider));
-                        Log.d(getClass().getSimpleName(), "ADDED: " + CURRENT_PATH + "/" + path);*/
-                        break;
                     case DELETE:
                     case MOVED_FROM:
-                        /*for (int i = 0; i < getLayoutElementSize(); i++) {
-                            File currentFile = new File(getLayoutElement(i).getDesc());
-                            if (currentFile.getName().equals(path)) {
-                                removeLayoutElement(i);
-                                break;
-                            }
-                        }
-                        Log.d(getClass().getSimpleName(), "REMOVED: " + CURRENT_PATH + "/" + path);*/
+                    case ATTRIB:
+                    case MODIFY:
                         break;
                     case DELETE_SELF:
                     case MOVE_SELF:
@@ -1812,10 +1817,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
                             }
                         });
                         return;
-                    case ATTRIB:
-                    case MODIFY:
-                        // just generate adapter list without making any change to it's content
-                        break;
                     default:
                         return;
                 }
@@ -1823,21 +1824,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        /*if (listView.getVisibility() == View.VISIBLE) {
-                            if (getLayoutElements().size() == 0) {
-
-                                // no item left in list, recreate views
-                                createViews(getLayoutElements(), true, CURRENT_PATH, openMode, results, !IS_LIST);
-                            } else {
-
-                                // we already have some elements in list view, invalidate the adapter
-                                adapter.setItems(getLayoutElements());
-                            }
-                        } else {
-                            // there was no list view, means the directory was empty
-                            loadlist(CURRENT_PATH, true, openMode);
-                        }*/
 
                         computeScroll();
                         loadlist(CURRENT_PATH, true, openMode);

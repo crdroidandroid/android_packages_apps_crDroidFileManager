@@ -1,6 +1,7 @@
 /* Diego Felipe Lassa <diegoflassa@gmail.com>
  *
- * Copyright (C) 2014 Arpit Khurana <arpitkh96@gmail.com>, Vishal Nehra <vishalmeham2@gmail.com>
+ * Copyright (C) 2014 Arpit Khurana <arpitkh96@gmail.com>, Vishal Nehra <vishalmeham2@gmail.com>,
+ *                          Emmanuel Messulam <emmanuelbendavid@gmail.com>, Jens Klingenberg <mail@jensklingenberg.de>
  *
  * This file is part of Amaze File Manager.
  *
@@ -109,6 +110,7 @@ import com.amaze.filemanager.utils.theme.AppTheme;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -122,7 +124,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
     public BitmapDrawable folder, apk, DARK_IMAGE, DARK_VIDEO;
     public LinearLayout buttons;
     public int sortby, dsort, asc;
-    public String home, goback;
+    public String home;
     public boolean selection, results = false, SHOW_HIDDEN, CIRCULAR_IMAGES, SHOW_PERMISSIONS,
             SHOW_SIZE, SHOW_LAST_MODIFIED;
     public LinearLayout pathbar;
@@ -159,7 +161,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
     private AppBarLayout mToolbarContainer;
     private TextView pathname, mFullPath;
     private boolean stopAnims = true;
-    private View nofilesview;
+    private SwipeRefreshLayout nofilesview;
 
     private android.support.v7.widget.RecyclerView listView;
     private UtilitiesProviderInterface utilsProvider;
@@ -289,7 +291,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
         SHOW_HIDDEN = sharedPref.getBoolean("showHidden", false);
         COLORISE_ICONS = sharedPref.getBoolean("coloriseIcons", true);
         mFolderBitmap = BitmapFactory.decodeResource(res, R.drawable.ic_grid_folder_new);
-        goback = getString(R.string.goback);
         folder = new BitmapDrawable(res, mFolderBitmap);
         getSortModes();
         DARK_IMAGE = new BitmapDrawable(res, BitmapFactory.decodeResource(res, R.drawable.ic_doc_image_dark));
@@ -316,6 +317,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 mLayoutManagerGrid = new GridLayoutManager(getActivity(), 3);
             else
                 mLayoutManagerGrid = new GridLayoutManager(getActivity(), columns);
+            setGridLayoutSpanSizeLookup(mLayoutManagerGrid);
             listView.setLayoutManager(mLayoutManagerGrid);
         }
         // use a linear layout manager
@@ -330,7 +332,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
             public void onGlobalLayout() {
                 if ((columns == 0 || columns == -1)) {
                     int screen_width = listView.getWidth();
-                    int dptopx = Utils.dpToPx(115, getContext());
+                    int dptopx = Utils.dpToPx(getContext(), 115);
                     columns = screen_width / dptopx;
                     if (columns == 0 || columns == -1) columns = 3;
                     if (!IS_LIST) mLayoutManagerGrid.setSpanCount(columns);
@@ -354,6 +356,23 @@ public class MainFragment extends android.support.v4.app.Fragment {
         }
     }
 
+    void setGridLayoutSpanSizeLookup(GridLayoutManager mLayoutManagerGrid) {
+
+        mLayoutManagerGrid.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+
+            @Override
+            public int getSpanSize(int position) {
+                switch(adapter.getItemViewType(position)){
+                    case RecyclerAdapter.TYPE_HEADER_FILES:
+                    case RecyclerAdapter.TYPE_HEADER_FOLDERS:
+                        return columns;
+                    default:
+                        return 1;
+                }
+            }
+        });
+    }
+
     void switchToGrid() {
         IS_LIST = false;
 
@@ -372,6 +391,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 mLayoutManagerGrid = new GridLayoutManager(getActivity(), 3);
             else
                 mLayoutManagerGrid = new GridLayoutManager(getActivity(), columns);
+        setGridLayoutSpanSizeLookup(mLayoutManagerGrid);
         listView.setLayoutManager(mLayoutManagerGrid);
         adapter = null;
     }
@@ -424,11 +444,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
             outState.putInt("file_count", file_count);
 
             if (selection) {
-                ArrayList<String> selectedPaths = new ArrayList<>();
-                for(LayoutElement e : adapter.getCheckedItems()) {
-                    selectedPaths.add(e.getDesc());
-                }
-                outState.putStringArrayList("position", selectedPaths);
+                outState.putIntegerArrayList("position", adapter.getCheckedItemsIndex());
             }
 
             outState.putBoolean("results", results);
@@ -459,8 +475,8 @@ public class MainFragment extends android.support.v4.app.Fragment {
             getMainActivity().updatePath(CURRENT_PATH, results, openMode, folder_count, file_count);
             createViews(getLayoutElements(), true, (CURRENT_PATH), openMode, results, !IS_LIST);
             if (savedInstanceState.getBoolean("selection")) {
-                for (String path : savedInstanceState.getStringArrayList("position")) {
-                    adapter.toggleChecked(true, path);
+                for (Integer index : savedInstanceState.getIntegerArrayList("position")) {
+                    adapter.toggleChecked(index, null);
                 }
             }
         }
@@ -629,13 +645,13 @@ public class MainFragment extends android.support.v4.app.Fragment {
         // called when the user selects a contextual menu item
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             computeScroll();
-            ArrayList<LayoutElement> plist = adapter.getCheckedItems();
+            ArrayList<LayoutElement> checkedItems = adapter.getCheckedItems();
             switch (item.getItemId()) {
                 case R.id.openmulti:
                     if (Build.VERSION.SDK_INT >= 16) {
                         Intent intentresult = new Intent();
                         ArrayList<Uri> resulturis = new ArrayList<>();
-                        for (LayoutElement element : plist) {
+                        for (LayoutElement element : checkedItems) {
                             try {
                                 resulturis.add(Uri.fromFile(new File(element.getDesc())));
                             } catch (Exception e) {
@@ -654,7 +670,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                     }
                     return true;
                 case R.id.about:
-                    LayoutElement x = plist.get(0);
+                    LayoutElement x = checkedItems.get(0);
                     GeneralDialogCreation.showPropertiesDialogWithPermissions((x).generateBaseFile(),
                             x.getPermissions(), (BaseActivity) getActivity(), BaseActivity.rootMode,
                             utilsProvider.getAppTheme());
@@ -702,11 +718,11 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 */
                 case R.id.delete:
                     GeneralDialogCreation.deleteFilesDialog(getContext(), getLayoutElements(),
-                            getMainActivity(), plist, utilsProvider.getAppTheme());
+                            getMainActivity(), checkedItems, utilsProvider.getAppTheme());
                     return true;
                 case R.id.share:
                     ArrayList<File> arrayList = new ArrayList<>();
-                    for (LayoutElement e: plist) {
+                    for (LayoutElement e: checkedItems) {
                         arrayList.add(new File(e.getDesc()));
                     }
                     if (arrayList.size() > 100)
@@ -729,7 +745,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                     }
                     return true;
                 case R.id.openparent:
-                    loadlist(new File(plist.get(0).getDesc()).getParent(), false, OpenMode.FILE);
+                    loadlist(new File(checkedItems.get(0).getDesc()).getParent(), false, OpenMode.FILE);
                     return true;
                 case R.id.all:
                     if (adapter.areAllChecked(CURRENT_PATH)) {
@@ -744,26 +760,26 @@ public class MainFragment extends android.support.v4.app.Fragment {
 
                     final ActionMode m = mode;
                     final BaseFile f;
-                    f = plist.get(0).generateBaseFile();
+                    f = checkedItems.get(0).generateBaseFile();
                     rename(f);
                     mode.finish();
                     return true;
                 case R.id.hide:
-                    for (int i1 = 0; i1 < plist.size(); i1++) {
-                        hide(plist.get(i1).getDesc());
+                    for (int i1 = 0; i1 < checkedItems.size(); i1++) {
+                        hide(checkedItems.get(i1).getDesc());
                     }
                     updateList();
                     mode.finish();
                     return true;
                 case R.id.ex:
-                    getMainActivity().mainActivityHelper.extractFile(new File(plist.get(0).getDesc()));
+                    getMainActivity().mainActivityHelper.extractFile(new File(checkedItems.get(0).getDesc()));
                     mode.finish();
                     return true;
                 case R.id.cpy:
                     getMainActivity().MOVE_PATH = null;
                     ArrayList<BaseFile> copies = new ArrayList<>();
-                    for (int i2 = 0; i2 < plist.size(); i2++) {
-                        copies.add(plist.get(i2).generateBaseFile());
+                    for (int i2 = 0; i2 < checkedItems.size(); i2++) {
+                        copies.add(checkedItems.get(i2).generateBaseFile());
                     }
                     getMainActivity().COPY_PATH = copies;
                     getMainActivity().supportInvalidateOptionsMenu();
@@ -772,8 +788,8 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 case R.id.cut:
                     getMainActivity().COPY_PATH = null;
                     ArrayList<BaseFile> copie = new ArrayList<>();
-                    for (int i3 = 0; i3 < plist.size(); i3++) {
-                        copie.add(plist.get(i3).generateBaseFile());
+                    for (int i3 = 0; i3 < checkedItems.size(); i3++) {
+                        copie.add(checkedItems.get(i3).generateBaseFile());
                     }
                     getMainActivity().MOVE_PATH = copie;
                     getMainActivity().supportInvalidateOptionsMenu();
@@ -781,17 +797,17 @@ public class MainFragment extends android.support.v4.app.Fragment {
                     return true;
                 case R.id.compress:
                     ArrayList<BaseFile> copies1 = new ArrayList<>();
-                    for (int i4 = 0; i4 < plist.size(); i4++) {
-                        copies1.add(plist.get(i4).generateBaseFile());
+                    for (int i4 = 0; i4 < checkedItems.size(); i4++) {
+                        copies1.add(checkedItems.get(i4).generateBaseFile());
                     }
                     GeneralDialogCreation.showCompressDialog((MainActivity) getActivity(), copies1, CURRENT_PATH);
                     mode.finish();
                     return true;
                 case R.id.openwith:
-                    Futils.openunknown(new File(plist.get(0).getDesc()), getActivity(), true);
+                    Futils.openunknown(new File(checkedItems.get(0).getDesc()), getActivity(), true);
                     return true;
                 case R.id.addshortcut:
-                    addShortcut(plist.get(0));
+                    addShortcut(checkedItems.get(0));
                     mode.finish();
                     return true;
                 default:
@@ -847,11 +863,12 @@ public class MainFragment extends android.support.v4.app.Fragment {
     /**
      * method called when list item is clicked in the adapter
      *
+     * @param isBackButton is it the back button aka '..'
      * @param position the position
      * @param e the list item
      * @param imageView the check {@link RoundedImageView} that is to be animated
      */
-    public void onListItemClicked(int position, LayoutElement e, ImageView imageView) {
+    public void onListItemClicked(boolean isBackButton, int position, LayoutElement e, ImageView imageView) {
         if (results) {
             // check to initialize search results
             // if search task is been running, cancel it
@@ -875,7 +892,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
         }
 
         if (selection) {
-            if (!e.getSize().equals(goback)) {
+            if (!isBackButton) {
                 // the first {goback} item if back navigation is enabled
                 adapter.toggleChecked(position, imageView);
             } else {
@@ -885,7 +902,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 mActionMode = null;
             }
         } else {
-            if (!e.getSize().equals(goback)) {
+            if (!isBackButton) {
                 // hiding search view if visible
                 if (MainActivity.isSearchViewEnabled) getMainActivity().hideSearchView();
 
@@ -1033,20 +1050,28 @@ public class MainFragment extends android.support.v4.app.Fragment {
     LoadList loadList;
 
     public void loadlist(String path, boolean back, OpenMode openMode) {
+
         if (mActionMode != null) {
             mActionMode.finish();
         }
-        /*if(openMode==-1 && android.util.Patterns.EMAIL_ADDRESS.matcher(path).matches())
-            bindDrive(path);
-        else */
-        if (loadList != null) loadList.cancel(true);
+
+        if (loadList != null && loadList.getStatus() == AsyncTask.Status.RUNNING)
+            loadList.cancel(true);
         loadList = new LoadList(ma.getActivity(), utilsProvider, back, ma, openMode);
         loadList.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (path));
 
     }
 
     void initNoFileLayout() {
-        nofilesview = rootView.findViewById(R.id.nofilelayout);
+        nofilesview = (SwipeRefreshLayout) rootView.findViewById(R.id.nofilelayout);
+        nofilesview.setColorSchemeColors(accentColor);
+        nofilesview.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadlist((CURRENT_PATH), false, openMode);
+                nofilesview.setRefreshing(false);
+            }
+        });
         if (utilsProvider.getAppTheme().equals(AppTheme.LIGHT))
             ((ImageView) nofilesview.findViewById(R.id.image)).setColorFilter(Color.parseColor("#666666"));
         else {
@@ -1110,11 +1135,14 @@ public class MainFragment extends android.support.v4.app.Fragment {
                                     || path.equals(CloudHandler.CLOUD_PREFIX_BOX + "/")
                                     || path.equals(CloudHandler.CLOUD_PREFIX_DROPBOX + "/");
 
+                String goToParentText = getString(R.string.goback);
+
                 if (GO_BACK_ITEM && !path.equals("/") && (openMode == OpenMode.FILE || openMode == OpenMode.ROOT)
-                        && !isOtg && !isOnTheCloud && (bitmap.size() == 0 || !bitmap.get(0).getSize().equals(goback))) {
+                        && !isOtg && !isOnTheCloud && (bitmap.size() == 0 || !bitmap.get(0).getSize().equals(goToParentText))) {
+                    //create the "go to parent" button (aka '..')
                     Bitmap iconBitmap = BitmapFactory.decodeResource(res, R.drawable.ic_arrow_left_white_24dp);
-                    bitmap.add(0, new LayoutElement(new BitmapDrawable(res, iconBitmap),
-                            "..", "", "", goback, 0, false, true, ""));
+                    bitmap.add(0, new LayoutElement(new BitmapDrawable(res, iconBitmap), "..", "",
+                            "", goToParentText, 0, false, true, ""));
                 }
               
                 if (bitmap.size() == 0 && !results) {
@@ -1344,7 +1372,7 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 if (MainActivityHelper.SEARCH_TEXT != null) {
 
                     // starting the search query again :O
-                    getMainActivity().mainFragment = (MainFragment) getMainActivity().getFragment().getTab();
+                    getMainActivity().mainFragment = (MainFragment) getMainActivity().getTabFragment().getCurrentTabFragment();
                     FragmentManager fm = getMainActivity().getSupportFragmentManager();
 
                     // getting parent path to resume search from there
@@ -1404,7 +1432,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 adapter.toggleChecked(false);
             } else {
                 if (openMode == OpenMode.SMB) {
-
                     try {
                         if (!CURRENT_PATH.equals(smbPath)) {
                             String path = (new SmbFile(CURRENT_PATH).getParent());
@@ -1413,15 +1440,13 @@ public class MainFragment extends android.support.v4.app.Fragment {
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
-                } else if (CURRENT_PATH.equals("/") || CURRENT_PATH.equals(home) ||
-                        CURRENT_PATH.equals(OTGUtil.PREFIX_OTG)
+                } else if (CURRENT_PATH.equals("/") || CURRENT_PATH.equals(OTGUtil.PREFIX_OTG)
                         || CURRENT_PATH.equals(CloudHandler.CLOUD_PREFIX_BOX + "/")
                         || CURRENT_PATH.equals(CloudHandler.CLOUD_PREFIX_DROPBOX + "/")
                         || CURRENT_PATH.equals(CloudHandler.CLOUD_PREFIX_GOOGLE_DRIVE + "/")
-                        || CURRENT_PATH.equals(CloudHandler.CLOUD_PREFIX_ONE_DRIVE + "/")
-                        )
+                        || CURRENT_PATH.equals(CloudHandler.CLOUD_PREFIX_ONE_DRIVE + "/")) {
                     getMainActivity().exit();
-                else if (utils.canGoBack(getContext(), currentFile)) {
+                } else if (utils.canGoBack(getContext(), currentFile)) {
                     loadlist(currentFile.getParent(getContext()), true, openMode);
                 } else getMainActivity().exit();
             }
@@ -1757,28 +1782,30 @@ public class MainFragment extends android.support.v4.app.Fragment {
             super(path);
         }
 
+        private long lastArrivalTime = 0l;
+        private static final int DEFER_CONSTANT = 5;
+
         @Override
         public void onEvent(int event, String path) {
 
             synchronized (getLayoutElements()) {
 
+                long currentArrivalTime = Calendar.getInstance().getTimeInMillis();
+
+                if (currentArrivalTime-lastArrivalTime < DEFER_CONSTANT) {
+                    // defer the observer until unless it reports a change after at least 5 secs of last one
+                    return;
+                }
+
+                lastArrivalTime = currentArrivalTime;
+
                 switch (event) {
                     case CREATE:
                     case MOVED_TO:
-                        /*HFile fileCreated = new HFile(openMode, CURRENT_PATH + "/" + path);
-                        addLayoutElement(fileCreated.generateLayoutElement(MainFragment.this, utilsProvider));
-                        Log.d(getClass().getSimpleName(), "ADDED: " + CURRENT_PATH + "/" + path);*/
-                        break;
                     case DELETE:
                     case MOVED_FROM:
-                        /*for (int i = 0; i < getLayoutElementSize(); i++) {
-                            File currentFile = new File(getLayoutElement(i).getDesc());
-                            if (currentFile.getName().equals(path)) {
-                                removeLayoutElement(i);
-                                break;
-                            }
-                        }
-                        Log.d(getClass().getSimpleName(), "REMOVED: " + CURRENT_PATH + "/" + path);*/
+                    case ATTRIB:
+                    case MODIFY:
                         break;
                     case DELETE_SELF:
                     case MOVE_SELF:
@@ -1790,10 +1817,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
                             }
                         });
                         return;
-                    case ATTRIB:
-                    case MODIFY:
-                        // just generate adapter list without making any change to it's content
-                        break;
                     default:
                         return;
                 }
@@ -1801,21 +1824,6 @@ public class MainFragment extends android.support.v4.app.Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        /*if (listView.getVisibility() == View.VISIBLE) {
-                            if (getLayoutElements().size() == 0) {
-
-                                // no item left in list, recreate views
-                                createViews(getLayoutElements(), true, CURRENT_PATH, openMode, results, !IS_LIST);
-                            } else {
-
-                                // we already have some elements in list view, invalidate the adapter
-                                adapter.setItems(getLayoutElements());
-                            }
-                        } else {
-                            // there was no list view, means the directory was empty
-                            loadlist(CURRENT_PATH, true, openMode);
-                        }*/
 
                         computeScroll();
                         loadlist(CURRENT_PATH, true, openMode);

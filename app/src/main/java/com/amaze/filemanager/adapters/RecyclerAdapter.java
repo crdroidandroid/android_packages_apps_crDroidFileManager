@@ -9,7 +9,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
-import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,9 +41,10 @@ import java.util.ArrayList;
  * There are 3 types of item TYPE_ITEM, TYPE_HEADER_FOLDERS and TYPE_HEADER_FILES and EMPTY_LAST_ITEM
  * represeted by ItemViewHolder, SpecialViewHolder and EmptyViewHolder respectively.
  * The showPopup shows the file's popup menu.
- * TODO optimize checking items (all the toggleChecked()).
+ * The 'go to parent' aka '..' button (go to settings to activate it) is just a folder.
  *
  * Created by Arpit on 11-04-2015 edited by Emmanuel Messulam <emmanuelbendavid@gmail.com>
+ *                                edited by Jens Klingenberg <mail@jensklingenberg.de>
  */
 public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.ViewHolder> {
 
@@ -63,8 +63,6 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
     private boolean showHeaders;
     private ArrayList<ListItem> itemsDigested = new ArrayList<>();
     private Context context;
-    private SparseBooleanArray checkedItems = new SparseBooleanArray();
-    private SparseBooleanArray animation = new SparseBooleanArray();
     private LayoutInflater mInflater;
     private float minRowHeight;
     private int grey_color, accentColor, iconSkinColor, goBackColor, videoColor, audioColor,
@@ -103,10 +101,14 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
      * @param imageView the check {@link CircleGradientDrawable} that is to be animated
      */
     public void toggleChecked(int position, ImageView imageView) {
+        if(itemsDigested.get(position).getChecked() == ListItem.UNCHECKABLE) {
+            throw new IllegalArgumentException("You have checked a header");
+        }
+
         if (!stoppedAnimation) mainFrag.stopAnimation();
-        if (checkedItems.get(position)) {
+        if (itemsDigested.get(position).getChecked() == ListItem.CHECKED) {
             // if the view at position is checked, un-check it
-            checkedItems.put(position, false);
+            itemsDigested.get(position).setChecked(false);
 
             Animation iconAnimation = AnimationUtils.loadAnimation(context, R.anim.check_out);
             if (imageView != null) {
@@ -116,7 +118,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
             }
         } else {
             // if view is un-checked, check it
-            checkedItems.put(position, true);
+            itemsDigested.get(position).setChecked(true);
 
             Animation iconAnimation = AnimationUtils.loadAnimation(context, R.anim.check_in);
             if (imageView != null) {
@@ -149,7 +151,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
         int i = path.equals("/") || !mainFrag.GO_BACK_ITEM ? 0 : 1;
 
         for (; i < itemsDigested.size(); i++) {
-            checkedItems.put(i, b);
+            itemsDigested.get(i).setChecked(b);
             notifyItemChanged(i);
         }
 
@@ -173,7 +175,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
      */
     public void toggleChecked(boolean b) {
         for (int i = 0; i < itemsDigested.size(); i++) {
-            checkedItems.put(i, b);
+            itemsDigested.get(i).setChecked(b);
             notifyItemChanged(i);
         }
 
@@ -190,28 +192,40 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
     }
 
     public ArrayList<LayoutElement> getCheckedItems() {
-        ArrayList<LayoutElement> checkedItems = new ArrayList<>();
+        ArrayList<LayoutElement> selected = new ArrayList<>();
 
-        for (int i = 0; i < this.checkedItems.size(); i++) {
-            if (this.checkedItems.get(i)) {
-                checkedItems.add(itemsDigested.get(i).elem);
+        for (int i = 0; i < itemsDigested.size(); i++) {
+            if (itemsDigested.get(i).getChecked() == ListItem.CHECKED) {
+                selected.add(itemsDigested.get(i).elem);
             }
         }
 
-        return checkedItems;
+        return selected;
     }
 
     public boolean areAllChecked(String path) {
         boolean allChecked = true;
-        int i;
-        if (path.equals("/") || !mainFrag.GO_BACK_ITEM) i = 0;
-        else i = 1;
-        for (; i < checkedItems.size(); i++) {
-            if (!checkedItems.get(i)) {
+        int i = (path.equals("/") || !mainFrag.GO_BACK_ITEM)? 0:1;
+
+        for (; i < itemsDigested.size(); i++) {
+            if (itemsDigested.get(i).getChecked() == ListItem.NOT_CHECKED) {
                 allChecked = false;
             }
         }
+
         return allChecked;
+    }
+
+    public ArrayList<Integer> getCheckedItemsIndex() {
+        ArrayList<Integer> checked = new ArrayList<>();
+
+        for (int i = 0; i < itemsDigested.size(); i++) {
+            if (itemsDigested.get(i).getChecked() == ListItem.CHECKED) {
+                checked.add(i);
+            }
+        }
+
+        return checked;
     }
 
     @Override
@@ -261,7 +275,6 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
     private void setItems(ArrayList<LayoutElement> arrayList, boolean invalidate) {
         synchronized (arrayList) {
             itemsDigested.clear();
-            checkedItems.clear();
             offset = 0;
             stoppedAnimation = false;
 
@@ -274,8 +287,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
             }
 
             for (int i = 0; i < itemsDigested.size(); i++) {
-                checkedItems.put(i, false);
-                animation.put(i, false);
+                itemsDigested.get(i).setAnimate(false);
             }
 
             if(showHeaders) {
@@ -288,7 +300,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
         boolean[] headers = new boolean[]{false, false};
 
         for (int i = 0; i < itemsDigested.size(); i++) {
-            if(mainFrag.IS_LIST) {// TODO: 31/5/2017 add fragments to gird view
+            
                 if (itemsDigested.get(i).elem != null) {
                     LayoutElement nextItem = itemsDigested.get(i).elem;
 
@@ -305,7 +317,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                         continue;//leave this continue for symmetry
                     }
                 }
-            }
+
         }
 
         if(invalidate) {
@@ -329,26 +341,34 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v;
+        View view;
 
         switch (viewType) {
             case TYPE_HEADER_FOLDERS:
             case TYPE_HEADER_FILES:
-                v = mInflater.inflate(R.layout.list_header, parent, false);
+
+                if (mainFrag.IS_LIST) {
+
+                    view = mInflater.inflate(R.layout.list_header, parent, false);
+                } else {
+
+                    view = mInflater.inflate(R.layout.grid_header, parent, false);
+                }
+
                 int type = viewType == TYPE_HEADER_FOLDERS ? SpecialViewHolder.HEADER_FOLDERS : SpecialViewHolder.HEADER_FILES;
 
-                return new SpecialViewHolder(context, v, utilsProvider, type);
+                return new SpecialViewHolder(context, view, utilsProvider, type);
             case TYPE_ITEM:
-                if (mainFrag.IS_LIST) v = mInflater.inflate(R.layout.rowlayout, parent, false);
-                else v = mInflater.inflate(R.layout.griditem, parent, false);
+                if (mainFrag.IS_LIST) view = mInflater.inflate(R.layout.rowlayout, parent, false);
+                else view = mInflater.inflate(R.layout.griditem, parent, false);
 
-                return new ItemViewHolder(v);
+                return new ItemViewHolder(view);
             case EMPTY_LAST_ITEM:
                 int totalFabHeight = (int) context.getResources().getDimension(R.dimen.fab_height),
                         marginFab = (int) context.getResources().getDimension(R.dimen.fab_margin);
-                v = new View(context);
-                v.setMinimumHeight(totalFabHeight + marginFab);
-                return new EmptyViewHolder(v);
+                view = new View(context);
+                view.setMinimumHeight(totalFabHeight + marginFab);
+                return new EmptyViewHolder(view);
             default:
                 throw new IllegalArgumentException("Illegal: " + viewType);
         }
@@ -358,6 +378,8 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
     public void onBindViewHolder(final RecyclerView.ViewHolder vholder, int p) {
         if(vholder instanceof ItemViewHolder) {
             final ItemViewHolder holder = (ItemViewHolder) vholder;
+            final boolean isBackButton = mainFrag.GO_BACK_ITEM && p == 0;
+
             if (mainFrag.IS_LIST) {
                 if (p == getItemCount() - 1) {
                     holder.rl.setMinimumHeight((int) minRowHeight);
@@ -367,16 +389,16 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                     return;
                 }
             }
-            if (!this.stoppedAnimation && !animation.get(p)) {
+            if (!this.stoppedAnimation && !itemsDigested.get(p).getAnimating()) {
                 animate(holder);
-                animation.put(p, true);
+                itemsDigested.get(p).setAnimate(true);
             }
             final LayoutElement rowItem = itemsDigested.get(p).elem;
             if (mainFrag.IS_LIST) {
                 holder.rl.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mainFrag.onListItemClicked(vholder.getAdapterPosition(), rowItem,
+                        mainFrag.onListItemClicked(isBackButton, vholder.getAdapterPosition(), rowItem,
                                 holder.checkImageView);
                     }
                 });
@@ -393,7 +415,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
 
                     public boolean onLongClick(View p1) {
                         // check if the item on which action is performed is not the first {goback} item
-                        if (!rowItem.getSize().equals(mainFrag.goback)) {
+                        if (!isBackButton) {
                             toggleChecked(vholder.getAdapterPosition(), holder.checkImageView);
                         }
 
@@ -436,7 +458,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                         int id = v.getId();
                         if (id == R.id.generic_icon || id == R.id.picture_icon || id == R.id.apk_icon) {
                             // TODO: transform icon on press to the properties dialog with animation
-                            if (!rowItem.getSize().equals(mainFrag.goback)) {
+                            if (!isBackButton) {
                                 toggleChecked(vholder.getAdapterPosition(), holder.checkImageView);
                             } else mainFrag.goBack();
                         }
@@ -446,7 +468,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                 holder.pictureIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (!rowItem.getSize().equals(mainFrag.goback)) {
+                        if (!isBackButton) {
                             toggleChecked(vholder.getAdapterPosition(), holder.checkImageView);
                         } else mainFrag.goBack();
                     }
@@ -455,7 +477,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                 holder.apkIcon.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if (!rowItem.getSize().equals(mainFrag.goback)) {
+                        if (!isBackButton) {
                             toggleChecked(vholder.getAdapterPosition(), holder.checkImageView);
                         } else mainFrag.goBack();
                     }
@@ -558,7 +580,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                     holder.rl.setBackgroundResource(R.drawable.safr_ripple_black);
                 }
                 holder.rl.setSelected(false);
-                if (checkedItems.get(p)) {
+                if (itemsDigested.get(p).getChecked() == ListItem.CHECKED) {
                     holder.checkImageView.setVisibility(View.VISIBLE);
                     // making sure the generic icon background color filter doesn't get changed
                     // to grey on picture/video/apk/generic text icons when checked
@@ -585,7 +607,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                         }
                     } else gradientDrawable.setColor(iconSkinColor);
 
-                    if (rowItem.getSize().equals(mainFrag.goback))
+                    if (isBackButton)
                         gradientDrawable.setColor(goBackColor);
                 }
                 if (mainFrag.SHOW_PERMISSIONS)
@@ -595,25 +617,20 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                 } else {
                     holder.date.setVisibility(View.GONE);
                 }
-                String size = rowItem.getSize();
 
-                if (size.equals(mainFrag.goback)) {
-
-                    holder.date.setText(size);
-
+                if (isBackButton) {
+                    holder.date.setText(rowItem.getSize());
                     holder.txtDesc.setText("");
-                } else if (mainFrag.SHOW_SIZE)
-
+                } else if (mainFrag.SHOW_SIZE) {
                     holder.txtDesc.setText(rowItem.getSize());
+                }
             } else {
                 // view is a grid view
-                Boolean checked = checkedItems.get(p);
-
                 holder.checkImageViewGrid.setColorFilter(accentColor);
                 holder.rl.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        mainFrag.onListItemClicked(vholder.getAdapterPosition(), rowItem,
+                        mainFrag.onListItemClicked(isBackButton, vholder.getAdapterPosition(), rowItem,
                                 holder.checkImageViewGrid);
                     }
                 });
@@ -621,7 +638,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                 holder.rl.setOnLongClickListener(new View.OnLongClickListener() {
 
                     public boolean onLongClick(View p1) {
-                        if (!rowItem.getSize().equals(mainFrag.goback)) {
+                        if (!isBackButton) {
                             toggleChecked(vholder.getAdapterPosition(), holder.checkImageViewGrid);
                         }
                         return true;
@@ -682,10 +699,10 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                     }
                 }
 
-                if (rowItem.getSize().equals(mainFrag.goback))
+                if (isBackButton)
                     holder.genericIcon.setColorFilter(goBackColor);
 
-                if (checked) {
+                if (itemsDigested.get(p).getChecked() == ListItem.CHECKED) {
                     holder.genericIcon.setColorFilter(iconSkinColor);
                     //holder.genericIcon.setImageDrawable(main.getResources().getDrawable(R.drawable.abc_ic_cab_done_holo_dark));
 
@@ -708,7 +725,7 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
                 }
                 if (mainFrag.SHOW_LAST_MODIFIED)
                     holder.date.setText(rowItem.getDate());
-                if (rowItem.getSize().equals(mainFrag.goback)) {
+                if (isBackButton) {
                     holder.date.setText(rowItem.getSize());
                     holder.txtDesc.setText("");
                 }/*else if(main.SHOW_SIZE)
@@ -757,16 +774,38 @@ public class RecyclerAdapter extends RecyclerArrayAdapter<String, RecyclerView.V
     }
 
     private static class ListItem {
+        public static final int CHECKED = 0, NOT_CHECKED = 1, UNCHECKABLE = 2;
+
         private LayoutElement elem;
         private int specialType;
+        private boolean checked;
+        private boolean animate;
 
         ListItem(LayoutElement elem) {
             this.elem = elem;
-            specialType = -1;
+            specialType = TYPE_ITEM;
         }
 
         ListItem(int specialType) {
             this.specialType = specialType;
+        }
+
+        public void setChecked(boolean checked) {
+            if(specialType == TYPE_ITEM) this.checked = checked;
+        }
+
+        public int getChecked() {
+            if(checked) return CHECKED;
+            else if(specialType == TYPE_ITEM) return NOT_CHECKED;
+            else return UNCHECKABLE;
+        }
+
+        public void setAnimate(boolean animating) {
+            if(specialType == -1) this.animate = animating;
+        }
+
+        public boolean getAnimating() {
+            return animate;
         }
     }
 

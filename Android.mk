@@ -26,6 +26,7 @@ LOCAL_PACKAGE_NAME := crDroidFileManager
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
+LOCAL_OVERRIDES_PACKAGES := DocumentsUI
 
 ifneq ($(INCREMENTAL_BUILDS),)
     LOCAL_PROGUARD_ENABLED := disabled
